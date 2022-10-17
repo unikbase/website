@@ -17,6 +17,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color : black;
+  margin: 0 !important;
+  padding: 0 !important;
 
 }
 
@@ -293,34 +295,94 @@ body {
 
 .section5 #sub-container {
   display: flex;
-
   flex: 1;
 }
 
 .section5 .list {
-  width: 90%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   flex-wrap: wrap;
 
 }
 
 .section5 .list .list-item {
-  width: 40%;
+  width: 100%;
   margin-top: 30px;
-  margin-right: 20px;
-  display: flex;
-  background-color: yellow;
-  justify-content: space-between;
+  float : left;
+  color : #676767;
+}
+
+.section5 .list .list-item .val {
+  float : left;
+  width : 80%;
+  margin-left: 2%;
+  vertical-align: center;
+  margin-top: 5px;
+
 }
 
 .section5 .list .list-item .circle {
+  float : left ;
   width: 50px;
-  height: auto;
+  height: 50px;
   background-color: black;
-  line-height: 50px;
   text-align: center;
+  line-height: 50px;
   border-radius: 25px;
+  color : white;
+
+}
+
+
+/***************************/
+/* section 6 Styling here */
+/***************************/
+.section6 .flex-container-horizontal {
+   justify-content: center;
+   text-align: center;
+}
+
+/***************************/
+/* section 7 Styling here */
+/***************************/
+.section7 {
+  height: 300px;
+  background: black;
+}
+
+.section7 #container {
+  display: flex;
+}
+
+.section7 #container .col {
+  border-right: 1px solid black;
+  width: 27%;
+  display: flex;
+  margin-right: 6.3%;
+  flex-direction: column;
+  line-height: 1.5em;
+}
+
+.section7 #container .col:first-child {
+  justify-content: space-between;
+  color: #6e6e6e
+}
+
+.section7 #container .col:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section7 #container .col:nth-child(2) .item {
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid #525252;
+}
+
+.section7 #container .col:nth-child(2) a {
   color: white;
+  text-decoration: none;
 
 }
