@@ -25,7 +25,10 @@ body {
 #main-container {
   width: 100%;
 }
-
+#main-container a {
+   text-decoration: none;
+   color: black;
+}
 #sub-container {
   width: 70%;
   margin: auto;
@@ -80,6 +83,15 @@ body {
 .header-container #logo{
   margin-right: auto;
 
+}
+
+.header-container #logo img {
+  display: inline-block;
+  float: left;
+}
+
+.header-container #logo .logoName {
+  float: left;
 }
 
 .section-marginable {
@@ -347,7 +359,7 @@ body {
 /* section 7 Styling here */
 /***************************/
 .section7 {
-  height: 300px;
+  height: auto;
   background: black;
 }
 
@@ -385,4 +397,24 @@ body {
   color: white;
   text-decoration: none;
 
+}
+
+.section7 #container .col:last-child {
+   display: flex;
+  justify-content: space-around;
+   flex-direction: column;
+    margin-bottom: 10px;
+   color: white;
+}
+
+.section7 #container .col:last-child {
+   margin-top: 10px;
+}
+
+.section7 #container .col:last-child .header  {
+  color: white;
+}
+.section7 #container .col:last-child .content  {
+  margin: 20px 0px 10px 30px;
+  color: #6e6e6e;
 }
