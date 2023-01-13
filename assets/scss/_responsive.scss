@@ -1,0 +1,33 @@
+@mixin mobile() {
+    .site {
+        &__header {
+            .hamburger {
+                display: block;
+            }
+        }
+
+        &.shown-navigation {
+            .site__header {
+                .hamburger {
+                    position: fixed;
+                    top: 25px;
+                    right: 30px;
+                    z-index: 99999;
+                }
+
+                .navigation {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    @include mobile();
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+    /* CSS */
+    @include mobile();
+}
