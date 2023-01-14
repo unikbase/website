@@ -9,6 +9,11 @@
 
 
 .section {
+    &--bg-transparent {
+        background-color: transparent;
+        color: $black;
+    }
+
     &--bg-dark {
         background-color: $black;
         color: $white;
@@ -55,8 +60,8 @@
     line-height: 24px;
     font-weight: 500;
     color: $black;
-    background-color: $black;
     &__header {
+        background-color: $black;
         height: 100vh;
         position: relative;
         box-sizing: border-box;
@@ -147,6 +152,22 @@
                 li {
                     margin-left: 1em;
                 }
+            }
+            &--sticky {
+                position: fixed;
+                z-index: 999;
+                top:0;
+                left: 0;
+                background-color: $white;
+                &, a {
+                    color: $black;
+                }
+                width: 100vw;
+                justify-content: right;
+                height: 100px;
+                padding-left: calc((100% - 1366px)/2);
+                padding-right: calc((100% - 1366px)/2);
+                box-sizing: border-box;
             }
         }
         
@@ -303,6 +324,23 @@
     #partners {
         min-height: 392px;
         margin-top: -50px;
+        .partners {
+            list-style: none;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0;
+            margin-top: 50px;
+            .partner {
+                margin-right: 24px;
+                a {
+                    display: inline-block;
+                }
+                img {
+                    width: auto;
+                    height: 30px;
+                }
+            }
+        }
     }
 
     #magazines {
@@ -365,6 +403,7 @@
                     li {
                         display: inline-block;
                         float: left;
+                        font-size: 14px;
                         a {
                             color: $red;
                         }
@@ -384,6 +423,79 @@
                     }
                 }
             }
+        }
+    }
+
+    #horse-animation {
+        padding-left: 255px;
+        .animation {
+            flex-grow: 1;
+            flex-shrink: 0;
+            position: absolute;
+            transform: translate(-50%, 0);
+            left: 0;
+            top: 0;
+            img {
+                width: 432px;
+                height: 515px;
+            }
+        }
+    }
+
+    #phone-app-animation {
+        margin-bottom: 0;
+        .article__content {
+            padding-right: 70px;
+        }
+        .animation {
+            width: 30%;
+            flex-basis: 30%;
+            flex-grow: 1;
+            flex-shrink: 0;
+            position: relative;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 380px;
+                height: 800px;
+                transform: translate(0px, -100px)
+            }
+        }
+    }
+
+    #secure-animation {
+        padding-left: 300px;
+        .animation {
+            flex-grow: 1;
+            flex-shrink: 0;
+            position: absolute;
+            transform: translate(-50%, 0);
+            left: 0;
+            top: 0;
+            img {
+                width: 432px;
+                height: 515px;
+            }
+        }
+    }
+
+    #video {
+        margin-top: -320px;
+        a {
+            color: $black;
+            text-decoration-style: underline;
+            text-decoration-color: $red;
+            white-space: nowrap;
+            width: 300px;
+            flex-basis: 300px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            margin-right: 60px;
+        }
+        .video__player {
+            width: 626px;
+            height: 352px;
         }
     }
 }

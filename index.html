@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UnikBase</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 <body class="site site-homepage">
@@ -40,7 +41,7 @@
         <div class="container flex flex--grow flex--end">
             <h1 class="margin--r site__short-about">Unlocking <br>collectibles.</h1>
 
-            <div class="navigation navigation--scroll flex">
+            <div class="navigation navigation--scroll menutext flex">
                 <ul class="menu menu--horizontal">
                     <li class=""><a href="#what-we-do" title="What we do">What we do</a></li>
                     <li class=""><a href="#how-it-works" title="How it works">How it works</a></li>
@@ -113,29 +114,46 @@
                 <div class="article">
                     <h3 class="article__title">UnikBase creates <span class="highlight">digital twins</span> to identify, <br>authenticate and unlock the power of ownership <br> for the <span class="highlight">world's most valuable objects</span>.</h3>
 
-                    <p class="text--underline">We embark our technology in our partner's workflow: auction houses, marketplaces, second hand resellers, dealers, ... </p>
-
-                    <p>We take care of everything along the way:</p>
-                    <ul>
-                        <li>Maintenance of the digital twin:
-                        <br>hosting, protection, wallet.</li>
-                        
-                        <li>Tools for our partners to administrate the <br>
-                            life of the valuable, and the relationship <br>
-                            with their customers and third parties.</li>
-                        <li>Services: insurance of the physical good,<br>
-                        collateral for a loan, rental…</li>
-                    </ul>
+                    <div id="horse-animation" class="flex flex--no-wrap flex--reverse flex--start">
+                        <div class="article__content">
+                            <p class="text--underline">We embark our technology in our partner's workflow: auction houses, marketplaces, second hand resellers, dealers, ... </p>
+    
+                            <p>We take care of everything along the way:</p>
+                            <ul>
+                                <li>Maintenance of the digital twin:
+                                <br>hosting, protection, wallet.</li>
+                                
+                                <li>Tools for our partners to administrate the <br>
+                                    life of the valuable, and the relationship <br>
+                                    with their customers and third parties.</li>
+                                <li>Services: insurance of the physical good,<br>
+                                collateral for a loan, rental…</li>
+                            </ul>
+                        </div>
+    
+                        <div class="article__thumbnail animation">
+                            <div class="animation-wrap">
+                                <img src="assets/images/image-horse-colour.png" class="image--responsive" alt="horse">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="article">
+                <div id="phone-app-animation" class="article">
                     <h3 class="article__title">Why a digital win?</h3>
-                    <div class="article__content">
-                        <ul>
-                            <li>A protection against theft thanks to a unique, invisible and indelible marking: <br>In case of theft, your object can be <br>authenticated in a sure way by the police forces and the legal authorities, via the Track & Trace technology.</li>
-                            <li>A digital passport hosted on a private and ultra secure blockchain-based folder, that can be shared with any third party as needed : 3D-scan, photos, <br>description, original invoice, proof of ownership, previous transactions,… <br>All compiled in a single, confidential, unforgeable and non-duplicable file.
-                            </li>
-                        </ul>
+                    <div class="flex flex--no-wrap flex--horizontal flex--start">
+                        <div class="article__content">
+                            <ul>
+                                <li>A protection against theft thanks to a unique, invisible and indelible marking: <br>In case of theft, your object can be <br>authenticated in a sure way by the police forces and the legal authorities, via the Track & Trace technology.</li>
+                                <li>A digital passport hosted on a private and ultra secure blockchain-based folder, that can be shared with any third party as needed : 3D-scan, photos, <br>description, original invoice, proof of ownership, previous transactions,… <br>All compiled in a single, confidential, unforgeable and non-duplicable file.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article__thumbnail animation">
+                            <div class="animation-wrap">
+                                <img src="assets/images/image-horse-phone.png" alt="horse phone">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,6 +162,23 @@
             <div class="container">
                 <div class="wrap--80 margin--l">
                     <h3 class="section__title">Partners</h3>
+                    <ul class="partners flex flex--nowrap">
+                        <li class="partner">
+                            <a href="#"><img src="assets/images/logo-thepackengers.png" class="image--responsive" alt="thepackengers"></a>
+                        </li>
+                        <li class="partner">
+                            <a href="#"><img src="assets/images/logo-olnica.png" class="image--responsive" alt="Olnica"></a>
+                        </li>
+                        <li class="partner">
+                            <a href="#"><img src="assets/images/logo-helvetia.png" class="image--responsive" alt="helvetia"></a>
+                        </li>
+                        <li class="partner">
+                            <a href="#"><img src="assets/images/logo-fauveparis.png" class="image--responsive" alt="fauveparis"></a>
+                        </li>
+                        <li class="partner">
+                            <a href="#"><img src="assets/images/logo-drouot.png" class="image--responsive" alt="drouot"></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -156,22 +191,46 @@
                 <div class="article">
                     <h3 class="article__title">The Unikbase technology is developed <br>on a proprietary IP combining :</h3>
 
-                    <h4>The Track & Trace technology</h4>
-                    <p>Unikbase taggant, developed by Olnica, is one of the best in the world. Developed from rare earths, it is a chemical compound with a unique code associated with your brand.</p>
-                    <p>Tamper-proof and undetectable to the naked eye.</p>
-
-                    <h4>With a blockchain ledger</h4>
-                    <p>A digital token hosted on a private blockchain with Ethereum bridging capability.</p>
-
-                    <button class="button button--primary">→ Learn more</button>
+                    <div id="secure-animation" class="flex flex--no-wrap flex--reverse">
+                        <div class="article__content">
+                            <h4>The Track & Trace technology</h4>
+                            <p>Unikbase taggant, developed by Olnica, is one of the best in the world. Developed from rare earths, it is a chemical compound with a unique code associated with your brand.</p>
+                            <p>Tamper-proof and undetectable to the naked eye.</p>
+    
+                            <h4>With a blockchain ledger</h4>
+                            <p>A digital token hosted on a private blockchain with Ethereum bridging capability.</p>
+    
+                            <button class="button button--primary">→ Learn more</button>
+                        </div>
+    
+        
+                        <div class="article__thumbnail animation">
+                            <div class="animation-wrap">
+                                <img src="assets/images/illustration-secure_1.png" class="image--responsive" alt="horse">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="extra">
-                    <a href="#" title="Olnica Track and Trace">Olnica Track and Trace</a>
-                </div>
             </div>
         </div>
     </section>
+
+
+    <div id="video" class="section section--bg-transparent">
+        <div class="container">
+            <div class="wrap--80 margin--l">
+                <div class="flex flex--no-wrap">
+                    <a href="#" title="Olnica Track and Trace">Olnica Track and Trace</a>
+                    <div class="video__player">
+                        <div class="video__thumbnail">
+                            <img src="assets/images/video-placeholder-olnica.png" class="image--responsive" alt="olnica">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="about-us" class="section section--bg-white">
         <div class="container flex flex--no-wrap flex--start">
@@ -239,6 +298,7 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

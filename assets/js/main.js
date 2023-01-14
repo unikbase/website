@@ -1,6 +1,6 @@
 (($) => {
   'use strict';
-  
+
   $(document).ready(() => {
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
@@ -23,6 +23,24 @@
           window.location.hash = hash;
         });
       } // End if
+    });
+
+    // Menentukan elemen yang dijadikan normal yaitu .normal
+    var normalNavTop = $('.navigation--scroll').offset().top; 
+    var normalNav = function(){
+      var scrollTop = $(window).scrollTop();  
+      // Kondisi jika discroll maka .nav ditambahkan class normal dan sebaliknya      
+      if (scrollTop > normalNavTop) { 
+          $('.navigation--scroll').addClass('navigation--sticky')
+      } else {
+        $('.navigation--scroll').removeClass('navigation--sticky')
+      }
+    };
+
+    // Jalankan fungsi
+    normalNav();
+    $(window).scroll(function() {
+      normalNav();
     });
   })
 })(jQuery);
