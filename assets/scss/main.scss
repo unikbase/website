@@ -3,14 +3,62 @@
 @import "fontface";
 @import "layout";
 
+@import "utils";
 
 @import "responsive";
 
+
+.section {
+    &--bg-dark {
+        color: $white;
+    }
+    &--bg-gray {
+        background-color: $gray;
+        &,a {
+            color: $black;
+        }
+    }
+    &--bg-light-red {
+        background-color: $light-red;
+        &,a {
+            color: $black;
+        }
+    }
+
+    box-sizing: border-box;
+    padding: 100px 0;
+}
+
 .site {
     font-family: "Archia", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 500;
     color: $black;
+    background-color: $black;
     &__header {
+        height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+        padding-top: 36px;
+        &--decoration {
+            width: 100%;
+            height: 25vh;
+            background-color: $gray;
+            margin-top: 65px;
+            // position: absolute;
+            // bottom: 0;
+            // left: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+        &, a {
+            color: $white;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         
         .hamburger {
             cursor: pointer;
@@ -53,6 +101,98 @@
         /* Moves Line Down */
         .hamburger > div::after {
             top: 12px;
+        }
+
+        .logo {
+            a {
+                display: inline-block;
+            }
+            img {
+                width: auto;
+                height: 32px;
+            }
+        }
+
+        .site__short-about {
+            font-size: 82px;
+            line-height: 94px;
+            font-weight: 500;
+        }
+
+        .navigation {
+            &--scroll {
+                font-size: 24px;
+                line-height: 28px;
+                li {
+                    margin-left: 1em;
+                }
+            }
+        }
+        
+    }
+
+    #why-us {
+        .section__title {
+            font-size: 39px;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 100px;
+        }
+        .posts {
+            .post {
+                box-sizing: border-box;
+                padding-left: 40px;
+                padding-right: 90px;
+                padding-top: 70px;
+                padding-bottom: 70px;
+                position: relative;
+                &__thumbnail {
+                    img {
+                        width: 120px;
+                        margin-right: 36px;
+                    }
+                }
+                &__title {
+                    font-size: 23px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    margin-bottom: 1em;
+                }
+                .readmore {
+                    margin-top: 1em;
+                    display: inline-block;
+                    &::after {
+                        content: " →";
+                        display: inline;
+                        margin-left: 0;
+                    }
+                }
+                &:nth-child(odd)::after {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    width: 2px;
+                    height: calc(100% - 20px);
+                    background-color: $white;
+                    top: 10px;
+                    right: 0;
+                }
+
+                &::before {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    height: 2px;
+                    width: calc(100% - 20px);
+                    background-color: $white;
+                    left: 10px;
+                    bottom: 0;
+                }
+                &:nth-last-child(1)::before,
+                &:nth-last-child(2)::before {
+                    content: none;
+                }
+            }
         }
     }
 }

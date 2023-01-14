@@ -1,0 +1,25 @@
+.margin {
+    &--l {
+        margin-left: auto;
+    }
+    &--r {
+        margin-right: auto;
+    }
+}
+.text {
+    &--align-right {
+        text-align: right;
+    }
+    &--underline {
+        text-decoration: underline;
+        text-decoration-color: $red;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    &--horizontal {
+        flex-direction: row;
+    }
+}

@@ -17,6 +17,13 @@
         align-items: flex-end;
         justify-content: flex-end;
     }
+    &--grow {
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    &--no-wrap {
+        flex-wrap: nowrap;
+    }
 }
 .container {
     box-sizing: border-box;
@@ -30,6 +37,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    &--wrap {
+        flex-wrap: wrap;
+    }
     .col {
         flex-grow: 1;
         flex-shrink: 1;

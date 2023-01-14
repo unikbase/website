@@ -9,35 +9,102 @@
   <link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 <body class="site site-homepage">
-    <header class="site__header">
+    <header class="site__header flex flex--column">
         <div class="container flex">
             <div class="brand">
                 <div class="logo">
-                    <a href="index.html" title="">
-                        <img src="" alt="" class="logo--image">
+                    <a href="index.html" title="UnikBase">
+                        <img src="assets/images/SVG/unikbase-logo-white.svg" alt="UnikeBase" class="logo--image logao--white">
                     </a>
                 </div>
             </div>
             <div class="hamburger d-mobile">
                 <div></div>
             </div>
-            <div class="navigation flex">
-                <ul class="menu">
-                    <li class="d-mobile logo">
+            <div class="navigation flex margin--l">
+                <ul class="menu menu--vertical text--align-right">
+                    <!-- <li class="d-mobile logo">
                         <a href="" title="">
                             <img src="" alt="" class="logo--image">
                         </a>
-                    </li>
-                    <li class="active"><a href="index.html" title="Home">Home</a></li>
+                    </li> -->
+                    <li class=""><a href="#press" title="Press">Press</a></li>
+                    <li class=""><a href="#Account" title="Account">Account</a></li>
                 </ul>
                 <!-- <ul class="menu menu--languages">
                     <li><a href="#" alt=""><i class="icon icon--global"></i>En</a></li>
                 </ul> -->
             </div>
         </div>
+
+        <div class="container flex flex--grow flex--end">
+            <h1 class="margin--r site__short-about">Unlocking <br>collectibles.</h1>
+
+            <div class="navigation navigation--scroll flex">
+                <ul class="menu menu--horizontal">
+                    <li class=""><a href="#what-we-do" title="What we do">What we do</a></li>
+                    <li class=""><a href="#how-it-works" title="How it works">How it works</a></li>
+                    <li class=""><a href="#about-us" title="About us">About us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="site__header--decoration" style="background-image: url(assets/images/header-decoration-1.jpg);">
+        </div>
     </header>
 
-    <section></section>
+    <section id="why-us" class="section section--bg-gray">
+        <div class="container">
+            <h2 class="section__title text--underline">Unlock your collectibles, with Unikbase.</h2>
+
+            <div class="row row--wrap posts">
+                <div class="post col flex flex--no-wrap">
+                    <div class="post__thumbnail">
+                        <img src="assets/images/SVG/illustration-purse.svg" alt="purse">
+                    </div>
+                    <div class="post__content">
+                        <h3 class="post__title">1. Lorem ipsum</h3>
+                        <p class="post__except">Magna aliquam erat volutpat
+                            wisi enim ad minim veniam quis nostrud exerci tation.</p>
+                        <a href="#" class="readmore">Lorem ipsum</a>
+                    </div>
+                </div>
+                <div class="post col flex flex--no-wrap">
+                    <div class="post__thumbnail">
+                        <img src="assets/images/SVG/illustration-secure.svg" alt="purse">
+                    </div>
+                    <div class="post__content">
+                        <h3 class="post__title">2. Lorem ipsum</h3>
+                        <p class="post__except">Magna aliquam erat volutpat
+                            wisi enim ad minim veniam quis nostrud exerci tation.</p>
+                        <a href="#" class="readmore">Lorem ipsum</a>
+                    </div>
+                </div>
+                <div class="post col flex flex--no-wrap">
+                    <div class="post__thumbnail">
+                        <img src="assets/images/SVG/illustration-tag.svg" alt="purse">
+                    </div>
+                    <div class="post__content">
+                        <h3 class="post__title">3. Lorem ipsum</h3>
+                        <p class="post__except">Magna aliquam erat volutpat
+                            wisi enim ad minim veniam quis nostrud exerci tation.</p>
+                        <a href="#" class="readmore">Lorem ipsum</a>
+                    </div>
+                </div>
+                <div class="post col flex flex--no-wrap">
+                    <div class="post__thumbnail">
+                        <img src="assets/images/SVG/illustration-purse.svg" alt="purse">
+                    </div>
+                    <div class="post__content">
+                        <h3 class="post__title">4. Lorem ipsum</h3>
+                        <p class="post__except">Magna aliquam erat volutpat
+                            wisi enim ad minim veniam quis nostrud exerci tation.</p>
+                        <a href="#" class="readmore">Lorem ipsum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="site__footer">
 
