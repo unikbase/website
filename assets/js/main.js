@@ -58,5 +58,21 @@
     }
     detect();
     $(window).scroll(detect);
+
+    const body = document.querySelector('body');
+    body.addEventListener('click', (event) => {
+      const target = event.target;
+      const hamburger = document.querySelector('.site__header .hamburger');
+
+      if ( target === hamburger || hamburger.contains(target) ) {
+        event.preventDefault();
+        if ( !body.classList.contains('shown-navigation') ) {
+          body.classList.add('shown-navigation');
+        } else {
+          body.classList.remove('shown-navigation');
+        }
+        return;
+      }
+    })
   })
 })(jQuery);
