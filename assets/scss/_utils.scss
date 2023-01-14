@@ -15,11 +15,41 @@
         text-decoration-color: $red;
     }
 }
+.highlight {
+    color: $red;
+}
 
 .menu {
     display: flex;
     flex-direction: column;
     &--horizontal {
         flex-direction: row;
+    }
+}
+
+.button {
+    font-size: 14px;
+    line-height: 32px;
+    border: 1.4px solid $black;
+    color: $black;
+    background: transparent;
+    border-radius: 14px;
+    padding-left: 1em;
+    padding-right: 1em;
+    cursor: pointer;
+    &:hover {
+        border-color: lighten($red, 20%);
+        color: lighten($red, 20%);
+    }
+    &--primary {
+        border: 1.4px solid $red;
+        color: $red;
+    }
+}
+
+.image {
+    &--responsive {
+        max-width: 100%;
+        height: auto;
     }
 }

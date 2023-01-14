@@ -10,6 +10,7 @@
 
 .section {
     &--bg-dark {
+        background-color: $black;
         color: $white;
     }
     &--bg-gray {
@@ -17,6 +18,9 @@
         &,a {
             color: $black;
         }
+    }
+    &--bg-white {
+        background-color: $white;
     }
     &--bg-light-red {
         background-color: $light-red;
@@ -27,11 +31,28 @@
 
     box-sizing: border-box;
     padding: 100px 0;
+
+    &__title {
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 500;
+    }
+    &__sub-title {
+        text-transform: uppercase;
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    p {
+        margin: 0.5em;
+    }
 }
 
 .site {
     font-family: "Archia", sans-serif;
     font-size: 18px;
+    line-height: 24px;
     font-weight: 500;
     color: $black;
     background-color: $black;
@@ -138,8 +159,8 @@
             font-weight: 500;
             margin-bottom: 100px;
         }
-        .posts {
-            .post {
+        .blocks {
+            .block {
                 box-sizing: border-box;
                 padding-left: 40px;
                 padding-right: 90px;
@@ -163,8 +184,9 @@
                     display: inline-block;
                     &::after {
                         content: " →";
-                        display: inline;
-                        margin-left: 0;
+                        display: inline-block;
+                        margin-left: 0.5em;
+                        text-decoration: auto;
                     }
                 }
                 &:nth-child(odd)::after {
@@ -191,6 +213,175 @@
                 &:nth-last-child(1)::before,
                 &:nth-last-child(2)::before {
                     content: none;
+                }
+            }
+        }
+    }
+
+    .articles {
+        box-sizing: border-box;
+        padding: 60px;
+        width: 80%;
+        margin-left: auto;
+        .article {
+            margin-bottom: 100px;
+            &__title {
+                font-size: 40px;
+                line-height: 50px;
+                margin-bottom: 70px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    #what-we-do {
+        font-size: 30px;
+        line-height: 40px;
+        ul {
+            list-style-type: initial;
+            list-style-position: inside;
+            font-size: 25px;
+            line-height: 35px;
+            font-weight: normal;
+            margin-left: 1em;
+        }
+        .article {
+            &:last-child ul {
+                list-style: none;
+                padding-left: 1em;
+                li {
+                    margin-bottom: 1em;
+                    padding-left: 2.125em;
+                    position: relative;
+                    &::before {
+                        content: "0"counter(list-item)"\a0\a0";
+                        font-weight: 700;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                    &::after {
+                        content: " ";
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        background-color: $red;
+                        width: 100%;
+                        margin-top: 1em;
+                    }
+                    &:last-child::after{
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+
+    #how-it-works {
+        .article {
+            h4 {
+                display: inline-block;
+                font-size: 30px;
+                line-height: 40px;
+                font-weight: 500;
+                border-bottom: 2px solid $black; 
+                margin-bottom: 0.5em;
+                &:not(:first-child) {
+                    margin-top: 1.25em;
+                }
+            }
+            p {
+                font-weight: normal;
+                font-size: 25px;
+                line-height: 25px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    #partners {
+        min-height: 392px;
+        margin-top: -50px;
+    }
+
+    #magazines {
+        padding: 50px 0;
+        .section {
+            &__title {
+                margin-bottom: 50px;
+            }
+        }
+        .posts {
+            li {
+                text-align: left;
+                display: block;
+                img {
+                    display: inline-block;
+                    height: 40px;
+                    width: auto;
+                    margin-bottom: 1em;
+                }
+                a {
+                    display: block;
+                    &::after {
+                        content: ' →';
+                        display: inline-block;
+                        margin-left: 0.25em;
+                    }
+                }
+            }
+        }
+    }
+
+    #blogs {
+        .section {
+            &__title {
+                margin-bottom: 50px;
+            }
+        }
+        .posts {
+            .post {
+                display: flex;
+                position: relative;
+                &__thumbnail {
+                    width: 50%;
+                    margin-right: 20px;
+                }
+                &__summary {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                }
+                &__date {
+                    margin-right: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 25px;
+                    font-weight: 600;
+                    line-height: 30px;
+                }
+                &__tags {
+                    li {
+                        display: inline-block;
+                        float: left;
+                        a {
+                            color: $red;
+                        }
+                        margin-right: 0.25em;
+                        &:not(:last-child)::after {
+                            content: ',';
+                            display: inline;
+                        }
+                    }
+                }
+                &__content {
+                    font-size: 25px;
+                    line-height: 30px;
+                    font-weight: normal;
+                    p {
+                        margin-left: 0;
+                    }
                 }
             }
         }
