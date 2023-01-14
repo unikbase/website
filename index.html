@@ -11,17 +11,27 @@
 </head>
 <body class="site site-homepage">
     <header class="site__header flex flex--column">
-        <div class="container flex">
+        <div class="container site__navigation flex">
             <div class="brand">
-                <div class="logo">
+                <div class="site__logo">
                     <a href="index.html" title="UnikBase">
-                        <img src="assets/images/SVG/unikbase-logo-white.svg" alt="UnikeBase" class="logo--image logao--white">
+                        <img src="assets/images/SVG/unikbase-logo-white.svg" alt="UnikeBase" class="logo--image logo--white">
+                        <img src="assets/images/SVG/unikbase-logo-blue.svg" alt="UnikeBase" class="logo--image logo--blue">
                     </a>
                 </div>
             </div>
             <div class="hamburger d-mobile">
                 <div></div>
             </div>
+
+            <div class="navigation main-navigation menutext flex">
+                <ul class="menu menu--horizontal">
+                    <li class=""><a href="#what-we-do" title="What we do">What we do</a></li>
+                    <li class=""><a href="#how-it-works" title="How it works">How it works</a></li>
+                    <li class=""><a href="#about-us" title="About us">About us</a></li>
+                </ul>
+            </div>
+
             <div class="navigation flex margin--l">
                 <ul class="menu menu--vertical text--align-right">
                     <!-- <li class="d-mobile logo">
@@ -226,6 +236,7 @@
                         <div class="video__thumbnail">
                             <img src="assets/images/video-placeholder-olnica.png" class="image--responsive" alt="olnica">
                         </div>
+                        <div class="play-button"><img src="assets/images/SVG/icon-play.svg" alt="player button"></div>
                     </div>
                 </div>
             </div>
@@ -293,8 +304,72 @@
         </div>
     </section>
 
-    <footer class="site__footer">
+    <footer class="site__footer section--bg-dark">
+        <div class="widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="widget">
+                            <h4 class="widget__title">Unikbase</h4>
+                            
+                            <p>
+                                <span class="email"><a href="mailto:info@unikbase.fr" title="Email to Unikbase" target="_blank">info@unikbase.fr</a></span> <br>
+                                T: <span class="phone">+06 (0)0000000</span> <br>
+                                <span class="address">Address street</span> <br>
+                                <span class="city">City</span> <br>
+                                <span class="country">Country</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="widget">
+                            <ul class="menu list">
+                                <li><a href="#contact" title="Work with us">Work with us</a></li>
+                                <li><a href="#magazine" title="Press">Press</a></li>
+                                <li><a href="#blog" title="Blog">Blog</a></li>
+                                <li><a href="#faq" title="FAQ">FAQ</a></li>
+                            </ul>
 
+                            <ul class="menu menu-term list">
+                                <li><a href="#privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                                <li><a href="#terms-and-conditions" title="Terms & Conditions">Terms & Conditions</a></li>
+                                <li><a href="#cookie-policy" title="Cookie Policy">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="widget">
+                            <ul class="list">
+                                <li><a href="#certifications-logos" title="Certification logos">Certification logos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container flex flex--horizontal flex--space-between">
+
+            <div class="brand">
+                <div class="site__logo">
+                    <a href="index.html" title="UnikBase">
+                        <img src="assets/images/SVG/unikbase-logo-white.svg" alt="UnikeBase" class="logo--image logo--white">
+                    </a>
+                </div>
+            </div>
+
+            <div class="copy-right">© unikbase, 2023</div>
+
+            <div class="socials">
+                <ul class="list list--vertical flex--center flex--space-between">
+                    <li><a target="_blank" href="https://facebook.com" title="Unikbase on Facebook"><img src="assets/images/svg/icon-facebook.svg" alt="unikbase on facebook"></a></li>
+                    <li><a target="_blank" href="https://instagram.com" title="Unikbase on Instagram"><img src="assets/images/svg/icon-instagram.svg" alt="unikbase on instagram"></a></li>
+                    <li><a target="_blank" href="https://linkedin.com" title="Unikbase on linkedin"><img src="assets/images/svg/icon-linkedin.svg" alt="unikbase on linkedin"></a></li>
+                    <li><a target="_blank" href="https://twitter.com" title="Unikbase on twitter"><img src="assets/images/svg/icon-twitter.svg" alt="unikbase on twitter"></a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

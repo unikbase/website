@@ -31,9 +31,9 @@
       var scrollTop = $(window).scrollTop();  
       // Kondisi jika discroll maka .nav ditambahkan class normal dan sebaliknya      
       if (scrollTop > normalNavTop) { 
-          $('.navigation--scroll').addClass('navigation--sticky')
+          $('.site__navigation').addClass('navigation--sticky')
       } else {
-        $('.navigation--scroll').removeClass('navigation--sticky')
+        $('.site__navigation').removeClass('navigation--sticky')
       }
     };
 
@@ -42,5 +42,21 @@
     $(window).scroll(function() {
       normalNav();
     });
+
+    // Detect change on element
+    let detect = () => {
+      var scrollTop = $(document).scrollTop();
+      var anchors = $('#about-us, #what-we-do, #how-it-works');
+
+      for (var i = 0; i < anchors.length; i++){
+          if (scrollTop > $(anchors[i]).offset().top - 50 && scrollTop < $(anchors[i]).offset().top + $(anchors[i]).height() - 50) {
+              $('.main-navigation .menu li a[href="#' + $(anchors[i]).attr('id') + '"]').parent().addClass('active');
+          } else {
+              $('.main-navigation .menu li a[href="#' + $(anchors[i]).attr('id') + '"]').parent().removeClass('active');
+          }
+      }
+    }
+    detect();
+    $(window).scroll(detect);
   })
 })(jQuery);

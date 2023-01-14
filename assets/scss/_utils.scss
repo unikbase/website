@@ -53,3 +53,12 @@
         height: auto;
     }
 }
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    &--vertical {
+        flex-direction: row;
+    }
+}
