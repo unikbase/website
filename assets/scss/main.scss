@@ -77,8 +77,16 @@
         height: 100vh;
         position: relative;
         box-sizing: border-box;
-        padding-top: 36px;
+        
         .site__navigation {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background-color: $black;
+            padding-top: 36px;
+            padding-bottom: 36px;
+            z-index: 99;
+
             .logo--blue {
                 display: none;
             }
@@ -203,7 +211,6 @@
                 }
                 width: 100vw;
                 justify-content: right;
-                height: 100px;
                 padding-left: calc((100% - 1366px)/2);
                 padding-right: calc((100% - 1366px)/2);
                 box-sizing: border-box;
