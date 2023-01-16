@@ -168,6 +168,12 @@
         #what-we-do {
             font-size: 16px;
             line-height: 26px;
+            .article__title {
+                margin-bottom: 1em;
+                br { 
+                    display: none;
+                }
+            }
             ul {
                 font-size: 14px;
                 line-height: 20px;
