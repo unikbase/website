@@ -169,7 +169,7 @@
             font-size: 16px;
             line-height: 26px;
             ul {
-                font-size: 10px;
+                font-size: 14px;
                 line-height: 20px;
                 br {
                     display: none;
@@ -213,7 +213,7 @@
             }
             .article__thumbnail {
                 width: 100vw;
-                top: -100%;
+                top: -280px;
                 left: 55%;
                 position: absolute;
                 margin-left: 20px;
@@ -271,8 +271,8 @@
                         line-height: 28px;
                     }
                     p {
-                        font-size: 12px;
-                        line-height: 22px;
+                        font-size: 14px;
+                        line-height: 24px;
                     }
 
                 }
@@ -342,8 +342,8 @@
             .widgets {
                 margin-bottom: 10px;
                 .widget {
-                    font-size: 10px;
-                    line-height: 20px;
+                    font-size: 14px;
+                    line-height: 24px;
                     padding-top: 10px;
                     padding-bottom: 10px;
                     margin-right: 0;
@@ -358,8 +358,8 @@
             }
 
             .copy-right {
-                font-size: 10px;
-                line-height: 20px;
+                font-size: 14px;
+                line-height: 24px;
                 order: 1;
                 padding-top: 10px;
                 margin-bottom: 50px;
