@@ -382,14 +382,15 @@
     }
 
     #partners {
-        min-height: 392px;
+        min-height: 292px;
         margin-top: -50px;
+        padding: 100px 0 100px 0;
         .partners {
             list-style: none;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             margin: 0;
-            margin-top: 50px;
+            margin-top: 30px;
             .partner {
                 margin-right: 24px;
                 a {
@@ -397,7 +398,7 @@
                 }
                 img {
                     width: auto;
-                    height: 30px;
+                    height: 28px;
                 }
             }
         }
