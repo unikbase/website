@@ -238,6 +238,10 @@
                 padding-top: 70px;
                 padding-bottom: 70px;
                 position: relative;
+                p {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
                 &__thumbnail {
                     img {
                         width: 120px;
@@ -249,6 +253,12 @@
                     line-height: 24px;
                     font-weight: 500;
                     margin-bottom: 1em;
+                }
+                &__content {
+                    height: 100%;
+                    strong {
+                        font-weight: 600;
+                    }
                 }
                 .readmore {
                     margin-top: 1em;
