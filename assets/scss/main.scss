@@ -5,8 +5,6 @@
 
 @import "utils";
 
-
-
 .section {
     &--bg-transparent {
         background-color: transparent;
@@ -57,6 +55,11 @@
     }
 }
 
+.unikbase-logo-text {
+    font-family: 'Rubik', sans-serif;
+    fill: $white;
+}
+
 .site {
     font-family: "Archia", sans-serif;
     font-size: 18px;
@@ -66,10 +69,6 @@
     &__logo {
         a {
             display: inline-block;
-        }
-        img {
-            width: auto;
-            height: 32px;
         }
     }
     &__header {
@@ -110,11 +109,9 @@
                 .main-navigation {
                     display: block;
                 }
-                .logo--white {
-                    display: none;
-                }
-                .logo--blue {
-                    display: block;
+                
+                .unikbase-logo-text {
+                    fill: $black;
                 }
             }
         }
