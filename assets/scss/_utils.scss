@@ -28,6 +28,7 @@
 }
 
 .button {
+    display: inline-block;
     font-size: 14px;
     line-height: 32px;
     border: 1.4px solid $black;
@@ -37,13 +38,14 @@
     padding-left: 1em;
     padding-right: 1em;
     cursor: pointer;
+    text-decoration: none;
     &:hover {
         border-color: lighten($red, 20%);
         color: lighten($red, 20%);
     }
     &--primary {
         border: 1.4px solid $red;
-        color: $red;
+        color: $red!important;
     }
 }
 

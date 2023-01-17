@@ -400,3 +400,11 @@
     /* CSS */
     @include mobile();
 }
+
+@media screen  and ( min-width: 769px ) {
+    #why-us {
+        position: sticky;
+        z-index: -1;
+        top: -50vh;
+    }
+}
