@@ -36,17 +36,52 @@
             }
         }
         &__header {
+            .site__short-about {
+                font-size: 28px;
+                line-height: 38px;
+            }
+        }
+        &__navigation {
+            &--white,
+            &.navigation--sticky {
+                padding: 36px 0%;
+                justify-content: flex-start;
+                .hamburger {
+
+                    width: 24px;
+                    border-radius: 50%;
+                    padding: 5px;
+                    display: flex!important;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 24px;
+                    background-color: $red;
+                    > div {
+                        margin-top: -2px;
+                    }
+                }
+            }
+
+            &--white .container {
+                background-color: inherit;
+            }
+
             .menu--mobile-float {
+                position: absolute;
                 z-index: 99;
                 display: none;
-                position: fixed;
-                top: 100px;
                 width: 100vw;
                 left: 0;
-                padding: 5vw;
                 box-sizing: border-box;
                 background-position: $black;
                 min-height: 70vh;
+                background-color: inherit;
+                margin-left: -5vw;
+                padding: 5vw;
+
+                top: 100%;
+                left: 0;
                 .navigation {
                     text-transform: none;
                     .menu {
@@ -67,48 +102,9 @@
                 display: block;
                 margin-left: auto;
             }
-            .site__short-about {
-                font-size: 28px;
-                line-height: 38px;
-            }
-        }
-        &__navigation {
-            &.navigation--sticky {
-                padding: 36px 0%;
-                justify-content: flex-start;
-                .hamburger {
-
-                    width: 24px;
-                    border-radius: 50%;
-                    padding: 5px;
-                    display: flex!important;
-                    align-items: center;
-                    flex-direction: column;
-                    justify-content: center;
-                    height: 24px;
-                    background-color: $red;
-                    > div {
-                        margin-top: -2px;
-                    }
-                }
-            }
-        }
-        &.shown-navigation {
-            .site__header {
-                .hamburger {
-                    position: fixed;
-                    right: 5vw;
-                    z-index: 99999;
-                }
-
+            &.shown-navigation {
                 .navigation {
                     display: block;
-                }
-                .menu--mobile-float {
-                    background-color: $black;
-                }
-                .navigation--sticky .menu--mobile-float {
-                    background-color: $white;
                 }
             }
         }
@@ -405,10 +401,10 @@
 @media screen  and ( min-width: 769px ) {
 
     #why-us {
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: -50vh;
-        z-index: 1;
+        // position: -webkit-sticky; /* Safari */
+        // position: sticky;
+        // top: -50vh;
+        // z-index: 1;
     }
     #what-we-do {
         position: relative;

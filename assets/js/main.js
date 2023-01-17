@@ -68,10 +68,10 @@
     };
 
     // Jalankan fungsi
-    normalNav();
-    $(window).scroll(function() {
-      normalNav();
-    });
+    // normalNav();
+    // $(window).scroll(function() {
+    //   normalNav();
+    // });
 
     // Detect change on element
     let detect = () => {
@@ -90,19 +90,15 @@
     $(window).scroll(detect);
 
     const body = document.querySelector('body');
-    body.addEventListener('click', (event) => {
-      const target = event.target;
-      const hamburger = document.querySelector('.site__header .hamburger');
-
-      if ( target === hamburger || hamburger.contains(target) ) {
-        event.preventDefault();
-        if ( !body.classList.contains('shown-navigation') ) {
-          body.classList.add('shown-navigation');
-        } else {
-          body.classList.remove('shown-navigation');
-        }
-        return;
+    $(document).on('click', '.site__navigation .hamburger', (e) => {
+      e.preventDefault();
+      let parent = $(e.currentTarget).closest('.site__navigation');
+      if ( !parent.hasClass('shown-navigation') ) {
+        parent.addClass('shown-navigation');
+      } else {
+        parent.removeClass('shown-navigation');
       }
+      return;
     })
   })
 })(jQuery);

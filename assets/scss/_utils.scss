@@ -19,6 +19,12 @@
     color: $red;
 }
 
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
@@ -63,4 +69,8 @@
     &--vertical {
         flex-direction: row;
     }
+}
+
+.w-100 {
+    width: 100%;
 }
