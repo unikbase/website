@@ -72,6 +72,10 @@
         a {
             display: inline-block;
         }
+        svg {
+            height: 70px;
+            width: auto;
+        }
     }
     &__header {
         background-color: $black;
