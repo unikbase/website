@@ -152,6 +152,7 @@
                             margin-bottom: 0;
                         }
                         .readmore {
+                            display: block;
                             width: 30px;
                             height: 30px;
                             overflow: hidden;
@@ -402,9 +403,15 @@
 }
 
 @media screen  and ( min-width: 769px ) {
+
     #why-us {
+        position: -webkit-sticky; /* Safari */
         position: sticky;
-        z-index: -1;
         top: -50vh;
+        z-index: 1;
+    }
+    #what-we-do {
+        position: relative;
+        z-index: 2;
     }
 }

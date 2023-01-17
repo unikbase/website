@@ -6,6 +6,8 @@
 @import "utils";
 
 .section {
+    position: relative;
+    z-index: 2;
     &--bg-transparent {
         background-color: transparent;
         &,a {
@@ -267,6 +269,7 @@
                 .readmore {
                     margin-top: 1em;
                     display: inline-block;
+                    display: none;
                     &::after {
                         content: " →";
                         display: inline-block;
@@ -546,8 +549,19 @@
     }
 
     #video {
-        background-color: $white;
+        background-color: transparent;
         margin-top: -320px;
+        &::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 320px);
+            bottom: 0;
+            left: 0;
+            background-color: $white;
+            z-index: -1;
+        }
         a {
             color: $black;
             text-decoration-style: underline;
@@ -592,6 +606,8 @@
     }
 
     &__footer {
+        z-index: 2;
+        position: relative;
         padding: 60px 0;
         .col {
             &:first-child,
