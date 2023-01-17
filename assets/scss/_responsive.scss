@@ -415,3 +415,9 @@
         z-index: 2;
     }
 }
+
+@media screen and (min-width: 977px) and (max-width: 1366px) {
+    .container {
+        width: calc(100vw - 40px);
+    }
+}
