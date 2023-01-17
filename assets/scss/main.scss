@@ -337,6 +337,10 @@
             font-weight: normal;
             margin-left: 1em;
         }
+        .articles {
+            z-index: 3;
+            position: relative;
+        }
         .article {
             &:last-child ul {
                 list-style: none;
