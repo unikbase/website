@@ -181,48 +181,32 @@
     }
 
     &__header {
-        background-color: $black;
-        min-height: 100vh;
-        position: relative;
+        background-color: transparent;
+        position: absolute;
         box-sizing: border-box;
-        // > .flex:first-child {
-        //     height: 70vh;
-        // }
-        .site__navigation {
-            background-color: $black;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        pointer-events: none;
+        height: 180vh;
+        .hamburger,
+        .navigation {
+            pointer-events: all;
+        }
+        .brand {
             padding-top: 36px;
             padding-bottom: 36px;
-            z-index: 3;
             position: -webkit-sticky;
             position: sticky;
             top: 0;
         }
-        .site__slogan {
-            width: 100%;
-            padding-bottom: 65px;
-            z-index: 1;
-            // margin-top: calc(100vh - 30vh - 148px);
+        .site__navigation {
+            // background-color: $black;
+            padding-top: 36px;
+            padding-bottom: 36px;
+            z-index: 3;
             position: absolute;
-            top : 70vh;
-            left: 0;
-            transform: translate(0, -100%);
-        }
-        &--decoration {
-            z-index: 2;
-            width: 100%;
-            background-color: $gray;
-            position: absolute;
-            // bottom: 0;
-            // left: 0;
-            margin-top: calc(70vh - 148px);
-            .parralax {
-                width: 100%;
-                height: 30vh;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-            // background-image: url(../images/para);
-            position: relative;
+            top: 0;
         }
         &, a {
             color: $white;
@@ -231,37 +215,71 @@
         a:hover {
             text-decoration: underline;
         }
-        
-        
+        &--slogan {
+            background-color: $black;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            top: 0;
+            box-sizing: border-box;
+            &, a {
+                color: $white;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            height: 80vh;
+            width: 100%;
+            padding-bottom: 65px;
+            z-index: 1;
+            margin-bottom: 100vh;
 
-        .site__short-about {
-            font-size: 82px;
-            line-height: 94px;
-            font-weight: 500;
-        }
-
-        .navigation {
-            &--scroll {
-                font-size: 24px;
-                line-height: 28px;
-                li {
-                    margin-left: 1em;
+            .navigation {
+                &--scroll {
+                    font-size: 24px;
+                    line-height: 28px;
+                    li {
+                        margin-left: 1em;
+                    }
+                }
+                &--sticky {
+                    position: fixed;
+                    z-index: 999;
+                    top:0;
+                    left: 0;
+                    background-color: $white;
+                    &, a {
+                        color: $black;
+                    }
+                    width: 100vw;
+                    justify-content: right;
+                    padding-left: calc((100% - 1366px)/2);
+                    padding-right: calc((100% - 1366px)/2);
+                    box-sizing: border-box;
                 }
             }
-            &--sticky {
-                position: fixed;
-                z-index: 999;
-                top:0;
-                left: 0;
-                background-color: $white;
-                &, a {
-                    color: $black;
-                }
-                width: 100vw;
-                justify-content: right;
-                padding-left: calc((100% - 1366px)/2);
-                padding-right: calc((100% - 1366px)/2);
-                box-sizing: border-box;
+        
+            .site__short-about {
+                font-size: 82px;
+                line-height: 94px;
+                font-weight: 500;
+            }
+        }
+        &--decoration {
+            z-index: 2;
+            width: 100%;
+            background-color: $gray;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            .parralax {
+                width: 100%;
+                height: 20vh;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: left center;
             }
         }
         
