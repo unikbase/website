@@ -367,6 +367,22 @@
 
         #blogs {
             // display: none;
+            .posts {
+                .post {
+                    flex-direction: column;
+                    &__thumbnail {
+                        width: 100%;
+                    }
+                    &__date {
+                        margin-right: 12px;
+                    }
+                    &__content {
+                        > p:first-child {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
         }
 
         &__footer {
