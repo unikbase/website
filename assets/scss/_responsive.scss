@@ -453,12 +453,16 @@
             img {
                 transform: scale(0.3);
                 transform-origin: left top;
-                transition: transform 0.5s;
-                transition-delay: 200;
+                transition: transform 0.3s;
             }
             &--bottom-right {
                 img {
                     transform-origin: right bottom;
+                }
+            }
+            &--bottom-left {
+                img {
+                    transform-origin: left bottom;
                 }
             }
         }

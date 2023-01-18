@@ -106,23 +106,44 @@
       parent.removeClass('shown-navigation');
     })
 
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          (rect.bottom - rect.height/2) <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
+    let scale = 0.3;
+
+
+    function scrollingHandle(up = true) {
+      let startAnimation = window.innerHeight || document.documentElement.clientHeight;
+      let endAnimation = (window.innerHeight || document.documentElement.clientHeight)/2 - 50;
+      $('.animation').each((i, el) => {
+        let bounding = el.getBoundingClientRect();
+        if ( bounding.top > startAnimation ) return;
+        let distance = startAnimation - endAnimation;
+
+        let start = startAnimation;
+        let end = startAnimation - distance;
+        let moving = Math.abs(bounding.top - start);
+
+        if ( bounding.top >= end ) {
+          let update = moving/distance * (1-scale) + scale;
+          $(el).find('img').css({
+            transform: `scale(${update})`
+          })
+        }
+
+        // bounding.height
+      })
     }
 
-    document.addEventListener('scroll', function () {
-      $('.animation').each((i, el) => {
-        if ( isInViewport(el) ) {
-          el.classList.add('animation--loaded');
-        } 
+    let lastScrollTop = 0;
+    document.addEventListener('scroll', function (e) {
+      let st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      scrollingHandle(st > lastScrollTop);
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+      
+      // $('.animation').each((i, el) => {
+      //   if ( isInViewport(el) ) {
+      //     el.classList.add('animation--loaded');
+      //   } 
         
-      })
+      // })
 
     }, {
         passive: true
