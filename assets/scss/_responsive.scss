@@ -48,13 +48,13 @@
             }
         }
         &__header {
-            .site__short-about {
-                font-size: 28px;
-                line-height: 38px;
-            }
             &--decoration .parralax {
                 background-position: center;
             }
+        }
+        .site__short-about {
+            font-size: 28px;
+            line-height: 38px;
         }
         &__navigation {
             .container {
@@ -223,6 +223,11 @@
                 top: 110%;
                 top: calc(100% + 20px);
                 transform: translate(-100%, 0);
+                &-wrap {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                }
                 img {
                     height: 230px;
                     width: auto;
@@ -438,5 +443,31 @@
 @media screen and (min-width: 977px) and (max-width: 1366px) {
     .container {
         width: calc(100vw - 40px);
+    }
+}
+
+@media screen and (min-width: 977px) {
+
+    .animation {
+        &-wrap {
+            img {
+                transform: scale(0.3);
+                transform-origin: left top;
+                transition: transform 0.5s;
+                transition-delay: 200;
+            }
+            &--bottom-right {
+                img {
+                    transform-origin: right bottom;
+                }
+            }
+        }
+        &--loaded {
+            .animation-wrap {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
     }
 }

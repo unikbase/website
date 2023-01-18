@@ -105,5 +105,27 @@
       let parent = $('body');
       parent.removeClass('shown-navigation');
     })
+
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          (rect.bottom - rect.height/2) <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    document.addEventListener('scroll', function () {
+      $('.animation').each((i, el) => {
+        if ( isInViewport(el) ) {
+          el.classList.add('animation--loaded');
+        } 
+        
+      })
+
+    }, {
+        passive: true
+    });
   })
 })(jQuery);

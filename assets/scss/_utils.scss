@@ -74,3 +74,18 @@
 .w-100 {
     width: 100%;
 }
+.clearfix {
+    // overflow: auto;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+.animation {
+    @extend .clearfix;
+    &-wrap {
+        @extend .clearfix;
+    }
+}
