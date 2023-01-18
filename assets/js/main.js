@@ -92,7 +92,8 @@
     const body = document.querySelector('body');
     $(document).on('click', '.site__navigation .hamburger', (e) => {
       e.preventDefault();
-      let parent = $(e.currentTarget).closest('.site__navigation');
+      let parent = $('body');
+      
       if ( !parent.hasClass('shown-navigation') ) {
         parent.addClass('shown-navigation');
       } else {
@@ -101,7 +102,7 @@
       return;
     })
     $('.main-navigation li a').on('click', (e) => {
-      let parent = $(e.currentTarget).closest('.site__navigation');
+      let parent = $('body');
       parent.removeClass('shown-navigation');
     })
   })
