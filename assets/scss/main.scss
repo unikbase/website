@@ -60,6 +60,7 @@
 .unikbase-logo-text {
     font-family: 'Rubik', sans-serif;
     fill: $white;
+    text-decoration: none;
 }
 
 .site {
@@ -125,7 +126,7 @@
 
         &--white {
             background-color: $white;
-            padding: 36px 0;
+            padding: 14px 0;
             position: sticky;
             top: 0;
             z-index: 999;
@@ -279,7 +280,7 @@
 
     #why-us {
         position: sticky;
-        top: -50vh;
+        top: -70vh;
         .section__title {
             font-size: 39px;
             text-align: center;
@@ -443,9 +444,9 @@
     }
 
     #partners {
-        min-height: 292px;
+        min-height: 220px;
         margin-top: -50px;
-        padding: 100px 0 100px 0;
+        padding: 100px 0 75px 0;
         .partners {
             list-style: none;
             align-items: center;
@@ -504,6 +505,10 @@
             .post {
                 display: flex;
                 position: relative;
+                a {
+                    text-decoration: none;
+                    color: $black;
+                }
                 &__thumbnail {
                     width: 50%;
                     margin-right: 20px;
@@ -689,7 +694,9 @@
             }
         }
         .socials {
+            margin-top: 14px;
             flex-basis: 160px;
+            align-items: center;
             img {
                 width: 28px;
                 height: 28px;

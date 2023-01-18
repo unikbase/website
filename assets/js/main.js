@@ -100,5 +100,9 @@
       }
       return;
     })
+    $('.main-navigation li a').on('click', (e) => {
+      let parent = $(e.currentTarget).closest('.site__navigation');
+      parent.removeClass('shown-navigation');
+    })
   })
 })(jQuery);

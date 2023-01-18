@@ -40,11 +40,14 @@
                 font-size: 28px;
                 line-height: 38px;
             }
+            &--decoration .parralax {
+                background-position: center;
+            }
         }
         &__navigation {
             &--white,
             &.navigation--sticky {
-                padding: 36px 0%;
+                padding: 14px 0%;
                 justify-content: flex-start;
                 .hamburger {
 
@@ -110,6 +113,7 @@
         }
 
         #why-us {
+            top: -120%;
             .section {
                 &__title {
                     font-size: 22px;
@@ -119,7 +123,10 @@
             .blocks {
                 flex-direction: column;
                 .block {
-                    padding: 0;
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                    padding-left: 0;
+                    padding-right: 0;
                     &::after {
                         content: none!important;
                     }
@@ -132,7 +139,7 @@
                         width: 100%;
                     }
                     &__except {
-                        display: none;
+                        // display: none;
                     }
                     &__thumbnail img {
                         width: 49px;
@@ -140,15 +147,15 @@
                     }
                     &__content {
                         display: flex;
-                        flex-direction: row;
-                        align-items: center;
+                        flex-direction: column;
+                        align-items: flex-start;
                         justify-content: center;
                         flex-grow: 1;
                         .block__title {
                             margin-bottom: 0;
                         }
                         .readmore {
-                            display: block;
+                            display: none;
                             width: 30px;
                             height: 30px;
                             overflow: hidden;
@@ -337,8 +344,9 @@
             }
         }
 
+        
         #blogs {
-            display: none;
+            // display: none;
         }
 
         &__footer {
