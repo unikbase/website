@@ -1,35 +1,34 @@
 
   // Handle youtube video player 
   
-  function onYouTubeIframeAPIReady () {
-    // iframeId parameter should match your Iframe's id attribute
-    window.unikbaseVideo = new YT.Player('video-player', {
-      width: 140,
-      height: 105,
-      videoId: 'Polqwhz1StI',
-      playerVars: {
-        rel: 0, 
-        showinfo: 0, 
-        ecver: 2, 
-        modestbranding:  1, 
-        loop: 1
-      },
-      events: {
-        'onReady': function (event) {
-          event.target.setVolume(0);
-        }
-      }
-    });
-  }
+  // function onYouTubeIframeAPIReady () {
+  //   // iframeId parameter should match your Iframe's id attribute
+  //   window.unikbaseVideo = new YT.Player('video-player', {
+  //     width: 140,
+  //     height: 105,
+  //     videoId: 'Polqwhz1StI',
+  //     playerVars: {
+  //       rel: 0, 
+  //       showinfo: 0, 
+  //       ecver: 2, 
+  //       modestbranding:  1, 
+  //       loop: 1
+  //     },
+  //     events: {
+  //       'onReady': function (event) {
+  //         event.target.setVolume(0);
+  //       }
+  //     }
+  //   });
+  // }
 (($) => {
   'use strict';
-
+  let video = document.getElementById('video-player');
   $(document).ready(() => {
     $('.play-button').on('click', () => {
       $('.video__content').fadeIn(() => {
-        window.unikbaseVideo.playVideo();
-        window.unikbaseVideo.setVolume(30);
-      }, 300)
+        video.play();
+      })
     });
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
