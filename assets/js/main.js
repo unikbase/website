@@ -132,20 +132,15 @@
     }
 
     let lastScrollTop = 0;
-    document.addEventListener('scroll', function (e) {
+
+    let scrollingListener = (e) => {
       let st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
       scrollingHandle(st > lastScrollTop);
       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-      
-      // $('.animation').each((i, el) => {
-      //   if ( isInViewport(el) ) {
-      //     el.classList.add('animation--loaded');
-      //   } 
-        
-      // })
-
-    }, {
+    }
+    document.addEventListener('scroll', scrollingListener, {
         passive: true
     });
+    scrollingListener();
   })
 })(jQuery);
