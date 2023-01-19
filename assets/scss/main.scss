@@ -473,11 +473,12 @@
             align-items: center;
             justify-content: space-around;
             margin: 0;
-            margin-top: 30px;
+            flex-grow: 1;
             .partner {
                 margin-right: 24px;
                 a {
-                    display: inline-block;
+                    display: flex;
+                    align-items: center;
                 }
                 img {
                     width: auto;
