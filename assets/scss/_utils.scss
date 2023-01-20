@@ -89,3 +89,21 @@
         @extend .clearfix;
     }
 }
+
+.list--number {
+    list-style: none;
+    li {
+        margin-bottom: 1em;
+        padding-left: 2.125em;
+        position: relative;
+        h3 {
+            &::before {
+                content: "0"counter(list-item)"\a0\a0";
+                font-weight: 500;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}

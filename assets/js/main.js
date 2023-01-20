@@ -54,24 +54,6 @@
       } // End if
     });
 
-    // Menentukan elemen yang dijadikan normal yaitu .normal
-    var normalNavTop = $('.navigation--scroll').offset().top; 
-    var normalNav = function(){
-      var scrollTop = $(window).scrollTop();  
-      // Kondisi jika discroll maka .nav ditambahkan class normal dan sebaliknya      
-      if (scrollTop > normalNavTop) { 
-          $('.site__navigation').addClass('navigation--sticky')
-      } else {
-        $('.site__navigation').removeClass('navigation--sticky')
-      }
-    };
-
-    // Jalankan fungsi
-    // normalNav();
-    // $(window).scroll(function() {
-    //   normalNav();
-    // });
-
     // Detect change on element
     let detect = () => {
       var scrollTop = $(document).scrollTop();
@@ -143,4 +125,30 @@
     });
     scrollingListener();
   })
+
+
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.maxHeight){
+//       content.style.maxHeight = null;
+//     } else {
+//       content.style.maxHeight = content.scrollHeight + "px";
+//     } 
+//   });
+// }
+  $('.collapse__toggle').on('click', (e) => {
+    e.preventDefault();
+    let parent = $(e.currentTarget).closest('.collapse');
+    let content = parent.find('.collapse__content')[0];
+    if ( parent.hasClass('collapse--in') ) {
+      parent.removeClass('collapse--in');
+      content.style.maxHeight = null;
+    } else {
+      parent.addClass('collapse--in');
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+    
+})
 })(jQuery);
