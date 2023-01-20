@@ -69,6 +69,7 @@
     line-height: 24px;
     font-weight: 400;
     color: $black;
+    overflow-x: hidden;
     &__logo {
         a {
             display: inline-block;
@@ -99,6 +100,7 @@
             margin: 0 auto;
             font-size: 24px;
             line-height: 28px;
+            text-transform: none;
             li {
                 margin-left: 1em;
                 &:hover, &.active {
@@ -108,7 +110,6 @@
                     }
                 }
             }
-            text-transform: uppercase;
         }
         &--white,
         &.navigation--sticky {
@@ -407,6 +408,9 @@
             line-height: 35px;
             font-weight: normal;
             margin-left: 1em;
+            li {
+                padding-left: 1em;
+            }
         }
         .articles {
             z-index: 3;
@@ -460,7 +464,7 @@
             p {
                 font-weight: normal;
                 font-size: 25px;
-                line-height: 25px;
+                line-height: 35px;
                 margin-left: 0;
                 margin-right: 0;
             }
@@ -471,6 +475,9 @@
         min-height: 220px;
         margin-top: -50px;
         padding: 100px 0 75px 0;
+        .section__title {
+            font-weight: 400;
+        }
         .partners {
             list-style: none;
             align-items: center;
@@ -531,7 +538,7 @@
                 display: flex;
                 position: relative;
                 a {
-                    text-decoration: none;
+                    text-decoration: underline;
                     color: $black;
                 }
                 &__thumbnail {
@@ -558,6 +565,7 @@
                         font-size: 14px;
                         a {
                             color: $red;
+                            text-transform: capitalize;
                         }
                         margin-right: 0.25em;
                         &:not(:last-child)::after {
@@ -570,6 +578,9 @@
                     font-size: 25px;
                     line-height: 30px;
                     font-weight: normal;
+                    > p:first-child {
+                        margin-top: 0;
+                    }
                     p {
                         margin-left: 0;
                     }
@@ -614,7 +625,8 @@
                 top: 0;
                 left: 0;
                 width: 380px;
-                height: 800px;
+                height: auto;
+                // height: 800px;
                 // transform: translate(0px, -100px)
             }
         }
@@ -640,13 +652,14 @@
 
     #video {
         background-color: transparent;
-        margin-top: -320px;
+        margin-top: -220px;
+        padding-top: 0;
         &::after {
             content: " ";
             display: block;
             position: absolute;
             width: 100%;
-            height: calc(100% - 320px);
+            height: calc(100% - 220px);
             bottom: 0;
             left: 0;
             background-color: $white;

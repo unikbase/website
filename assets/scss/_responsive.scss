@@ -460,6 +460,16 @@
     .container {
         width: calc(100vw - 40px);
     }
+    #what-we-do {
+        .article__title {
+            br { display: none; }
+        }
+    }
+    #phone-app-animation {
+        .animation img {
+            width: 130%!important;
+        }
+    }
 }
 
 @media screen and (min-width: 977px) {
