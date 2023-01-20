@@ -33,6 +33,19 @@
         }
     }
     .site {
+        &.single-page {
+            .section > .container {
+                flex-direction: column;
+            }
+            .section__sub-title {
+                text-align: center;
+                width: 100%;
+            }
+            .articles {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
         .articles {
             p {
                 margin-left: 0;
@@ -232,6 +245,10 @@
                     height: 230px;
                     width: auto;
                 }
+                .image--fixed {
+                    right: 0;
+                    left: auto;
+                }
             }
         }
         #phone-app-animation {
@@ -364,7 +381,6 @@
             }
         }
 
-
         #blogs {
             // display: none;
             .posts {
@@ -380,6 +396,21 @@
                         > p:first-child {
                             margin-top: 0;
                         }
+                    }
+                }
+            }
+        }
+
+        #faq {
+            .list--number {
+                h3 {
+                    &::after,
+                    &::before {
+                        left: -2em;
+                    }
+
+                    &::after {
+                        width: calc(100% + 2em);
                     }
                 }
             }

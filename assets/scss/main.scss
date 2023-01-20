@@ -57,12 +57,6 @@
     }
 }
 
-.unikbase-logo-text {
-    font-family: 'Rubik', sans-serif;
-    fill: $white;
-    text-decoration: none;
-}
-
 .site {
     font-family: "Rubik", sans-serif;
     font-size: 18px;
@@ -77,6 +71,9 @@
         svg {
             height: 70px;
             width: auto;
+            .cls-2 {
+                fill: #fff;
+            }
         }
     }
 
@@ -120,7 +117,7 @@
                 display: block;
             }
             
-            .unikbase-logo-text {
+            .site__logo svg .cls-2 {
                 fill: $black;
             }
         }
@@ -133,9 +130,6 @@
             z-index: 999;
             .menu--mobile-float {
                 background-color: $white;
-            }
-            svg .cls-2 {
-                fill: $black;
             }
         }
         .hamburger {
@@ -603,6 +597,13 @@
             img {
                 width: 100%;
                 height: auto;
+            }
+            .image--fixed {
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                transform: scale(0.6) translate(-10%, 10%)!important;
+                transform-origin: left bottom;
             }
         }
     }
