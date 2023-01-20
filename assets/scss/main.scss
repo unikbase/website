@@ -64,10 +64,10 @@
 }
 
 .site {
-    font-family: "Archia", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 18px;
     line-height: 24px;
-    font-weight: 500;
+    font-weight: 400;
     color: $black;
     &__logo {
         a {
@@ -266,7 +266,7 @@
             .site__short-about {
                 font-size: 82px;
                 line-height: 94px;
-                font-weight: 500;
+                font-weight: 300;
             }
         }
         &--decoration {
@@ -305,7 +305,7 @@
         .section__title {
             font-size: 39px;
             text-align: center;
-            font-weight: 500;
+            font-weight: 400;
             margin-bottom: 100px;
         }
         .blocks {
@@ -329,7 +329,7 @@
                 &__title {
                     font-size: 23px;
                     line-height: 24px;
-                    font-weight: 500;
+                    font-weight: 400;
                     margin-bottom: 1em;
                 }
                 &__content {
@@ -389,7 +389,7 @@
                 font-size: 40px;
                 line-height: 50px;
                 margin-bottom: 70px;
-                font-weight: 500;
+                font-weight: 400;
             }
         }
     }
@@ -447,7 +447,7 @@
                 display: inline-block;
                 font-size: 30px;
                 line-height: 40px;
-                font-weight: 500;
+                font-weight: 400;
                 border-bottom: 2px solid $black; 
                 margin-bottom: 0.5em;
                 &:not(:first-child) {
