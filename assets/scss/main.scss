@@ -130,6 +130,8 @@
             z-index: 999;
             .menu--mobile-float {
                 background-color: $white;
+                display: flex;
+                align-items: flex-end;
             }
         }
         .hamburger {
@@ -403,7 +405,7 @@
             font-weight: normal;
             margin-left: 1em;
             li {
-                padding-left: 1em;
+                padding-left: 2em;
             }
         }
         .articles {
@@ -532,8 +534,8 @@
                 display: flex;
                 position: relative;
                 a {
-                    text-decoration: underline;
                     color: $black;
+                    text-decoration: none;
                 }
                 &__thumbnail {
                     width: 50%;
@@ -560,6 +562,7 @@
                         a {
                             color: $red;
                             text-transform: capitalize;
+                            text-decoration: underline;
                         }
                         margin-right: 0.25em;
                         &:not(:last-child)::after {
