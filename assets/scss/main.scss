@@ -399,13 +399,13 @@
         line-height: 40px;
         ul {
             list-style-type: initial;
-            list-style-position: inside;
+            list-style-position: outside;
             font-size: 25px;
             line-height: 35px;
             font-weight: normal;
-            margin-left: 1em;
+            margin-left: 2em;
             li {
-                padding-left: 2em;
+                padding-left: 1em;
             }
         }
         .articles {
