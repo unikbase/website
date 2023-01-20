@@ -120,12 +120,12 @@
         let end = startAnimation - distance;
         let moving = Math.abs(bounding.top - start);
 
-        if ( bounding.top >= end ) {
-          let update = moving/distance * (1-scale) + scale;
-          $(el).find('img').css({
-            transform: `scale(${update})`
-          })
-        }
+        let update = moving/distance * (1-scale) + scale;
+        update < 0 && (update = 0);
+        update > 1 && (update = 1);
+        $(el).find('img').css({
+          transform: `scale(${update})`
+        })
 
         // bounding.height
       })
