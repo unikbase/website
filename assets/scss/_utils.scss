@@ -107,3 +107,19 @@
         }
     }
 }
+
+.dropdown-menu {
+    position: relative; 
+    .handle {
+        cursor: pointer;
+    }
+    .menu {
+        display: none;
+        position: absolute;
+    }
+    &--open {
+        .menu {
+            display: block;
+        }
+    }
+}

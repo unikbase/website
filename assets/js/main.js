@@ -149,6 +149,29 @@
       parent.addClass('collapse--in');
         content.style.maxHeight = content.scrollHeight + "px";
     }
-    
-})
+      
+  })
+
+  $('.dropdown-menu .handle').on('click', (e) => {
+    e.preventDefault();
+    let target = $(e.currentTarget).parent();
+    target.toggleClass('dropdown-menu--open');
+  });
+  $(document).on('click', e => {
+    let target = e.target;
+    let openMenu = $('.dropdown-menu--open');
+    openMenu.each((i, el) => {
+      ($(el).has(target).length <= 0) && $(el).removeClass('dropdown-menu--open');
+    })
+  })
+  // Language menu handle
+  $('.dropdown-menu .menu--languages [data-lang]').on('click', e => {
+    let active = $(e.currentTarget);
+    active.parent().find('li').removeClass('active');
+    active.addClass('active');
+    let handle = active.closest('.dropdown-menu').find('.handle');
+    handle.text(active.text());
+    handle.data('active-lang', active.data('lang'));
+
+  })
 })(jQuery);

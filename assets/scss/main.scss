@@ -285,7 +285,86 @@
                 background-position: left center;
             }
         }
-        
+        .sign-in.dropdown-menu {
+            pointer-events: all;
+            margin-right: 1em;
+            .handle {
+                padding-right: 1em;
+                cursor: pointer;
+                text-transform: uppercase;
+                &:hover {
+                    text-decoration: underline;
+                    color: $red;
+                    text-decoration-color: $red;
+                }
+                &::after {
+                    content: " ";
+                    width: 0;
+                    height: 0;
+                    border-width: 3px 3px 0 3px;
+                    border-color: $white transparent transparent transparent;
+                    border-style: solid;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -2px;
+                }
+            }
+            .menu {
+                background-color: $white;
+                border-radius: 2px;
+                right: 1em;
+                top: calc(100% + 10px);
+                padding: 10px 0;
+                border: none;
+                &::after{
+                    content:''; /* Required to display content */
+                    position: absolute; /* Sets the position absolute to the top div */
+                    top: 0;
+                    right: 4px;/* position the little arrow */
+                    margin-left: -4px;
+                    margin-top:-4px; /* Set margin equal to border px */
+                    width: 0;
+                    z-index:1;
+                    height: 0;
+                    border-bottom: solid 6px #FFF; /* Creates the arrow pointing up, to change to a notch instead user border-top */
+                    border-left: solid 4px transparent; /* Creates triangle effect */
+                    border-right: solid 4px transparent; /* Creates triangle effect */
+                    border-radius: none;
+                }
+                
+                &, a {
+                    color: $black;
+                }
+                li {
+                    padding: 0 1em;
+                }
+                a {
+                    white-space: nowrap;
+                    line-height: 1.75em;
+                }
+            }
+        } 
+        .languages.dropdown-menu {
+            font-weight: 300;
+            .handle {
+                color: $red;
+                text-decoration: underline;
+                text-decoration-color: $red;
+                display: inline-block;
+                width: 2em;
+                text-align: right;
+            }
+            .menu {
+                right: 0;
+                li {
+                    display: block;
+                    &.active {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 
     &.shown-navigation {
