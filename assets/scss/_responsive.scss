@@ -220,9 +220,14 @@
                     &__except {
                         // display: none;
                     }
-                    &__thumbnail img {
-                        width: 49px;
-                        height: 69px;
+                    &__thumbnail {
+                        flex-basis: 120px;
+                        flex-shrink: 0;
+                        img {
+                            width: auto;
+                            height: 100px;
+                            margin-right: 0;
+                        }
                     }
                     &__content {
                         display: flex;
