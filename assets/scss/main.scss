@@ -769,6 +769,14 @@
             width: 626px;
             height: 352px;
             position: relative;
+            overflow: hidden;
+            .video__thumbnail {
+                img {
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
             .play-button {
                 width: 80px;
                 height: 80px;
