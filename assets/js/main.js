@@ -183,11 +183,17 @@
     //   `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`,
     //   { cache: "reload" }
     // )
-    const response = await fetch('assets/js/instagram.json');
-    const { data } = await response.json()
-    window.localStorage.setItem('instagram_unikbase', data);
+    try {
+      var scripts = document.getElementsByTagName("script"),
+      src = scripts[scripts.length-1].src;
+      const response = await fetch(src.replace('main.js', 'instagram.json'));
+      const { data } = await response.json()
+      window.localStorage.setItem('instagram_unikbase', data);
 
-    return data;
+      return data;
+    } catch (e) {
+      return [];
+    }
   }
 
   const generateInstgramPost = (item) => {
@@ -227,19 +233,20 @@
     if ( !wrapper  ) return;
 
     let data = await fetchInstgramPosts();
-    if ( data.length > 0 ) {
-      let placeholder = wrapper.querySelector('.instagram__slider--placeholder');
-      !!placeholder && (placeholder.parentElement.removeChild(placeholder));
-
-      let group = [];
-      for( let i = 0; i < data.length; i++ ) {
-        group.push(data[i]); 
-        if ( group.length === 12 ) {
-          generateSlider(group, wrapper); 
-          group = [];
-        }
-      }
+    if ( !data || data.length <= 0 ) {
+      document.getElementById('instagram').classList.add('hide');
     }
 
+    let placeholder = wrapper.querySelector('.instagram__slider--placeholder');
+    !!placeholder && (placeholder.parentElement.removeChild(placeholder));
+
+    let group = [];
+    for( let i = 0; i < data.length; i++ ) {
+      group.push(data[i]); 
+      if ( group.length === 12 ) {
+        generateSlider(group, wrapper); 
+        group = [];
+      }
+    }
   })
 })(jQuery);
