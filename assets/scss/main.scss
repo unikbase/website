@@ -255,15 +255,74 @@
                 text-decoration-color: $red;
                 display: inline-block;
                 width: 2em;
-                text-align: right;
+                line-height: 2em;
+                text-align: center;
             }
             .menu {
                 right: 0;
+                width: 100%;
+                text-align: center;
                 li {
                     display: block;
                     &.active {
                         display: none;
                     }
+                    a {
+                        line-height: 2em;
+                    }
+                }
+            }
+            // Decoration for corners
+            .handle::after,
+            .handle::before,
+            .menu::after,
+            .menu::before,
+            &::after,
+            &::before {
+                content: ' ';
+                width: 4px;
+                height: 4px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-width: 1px 0 0 1px;
+                border-color: $white;
+                border-style: solid;
+                display: block;
+            }
+            .handle::after {
+                left: auto;
+                right: 0;
+                border-width: 1px 1px 0 0;
+            }
+            .menu::after,
+            .menu::before {
+                display: none;
+            }
+
+            .menu::after,
+            &::after {
+                top: auto;
+                bottom: 0;
+                border-width: 0px 0px 1px 1px;
+            }
+            .menu::before,
+            &::before {
+                top: auto;
+                bottom: 0;
+                right: 0;
+                left: auto;
+                border-width: 0px 1px 1px 0px;
+            }
+            &--open {
+                &::after,
+                &::before {
+                    display: none;
+                }
+                
+                .menu::after,
+                .menu::before {
+                    display: block;
                 }
             }
         }

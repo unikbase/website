@@ -92,11 +92,6 @@
                     }
                 }
             }
-
-            &--white .container {
-                background-color: inherit;
-            }
-
             .menu--mobile-float {
                 position: absolute;
                 z-index: 99;
@@ -131,12 +126,6 @@
             .hamburger {
                 display: block;
                 margin-left: auto;
-            }
-            &--white {
-                .menu--mobile-float {
-                    margin-top: 10px;
-                    background-color: $white;
-                }
             }
             .navigation.margin--l {
                 display: flex;
@@ -176,16 +165,88 @@
                 }
                 &.languages {
                     flex-grow: 1;
+                    &::after,
+                    &::before {
+                        display: none;
+                    }
                     .menu {
+                        &::after,
+                        &::before {
+                            display: none;
+                        }
                         display: flex;
                         flex-direction: row;
                         justify-content: space-around;
                         li {
                             display: block!important;
+                            position: relative;
+                            width: 2em;
+                            line-height: 2em;
+                            text-align: center;
                             &.active a {
                                 color: $red;
                             }
                         }
+                        li::after,
+                        li a::after,
+                        li::before,
+                        li a::before {
+                            content: ' ';
+                            width: 4px;
+                            height: 4px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            border-width: 1px 0 0 1px;
+                            border-color: $white;
+                            border-style: solid;
+                            display: block;
+                        }
+                        li a::after {
+                            left: auto;
+                            right: 0;
+                            border-width: 1px 1px 0 0;
+                        }
+
+                        li::before {
+                            top: auto;
+                            bottom: 0;
+                            border-width: 0 0 1px 1px;
+                        }
+
+                        li a::before {
+                            top: auto;
+                            bottom: 0;
+                            left: auto;
+                            right: 0;
+                            border-width: 0 1px 1px 0px;
+                        }
+                        li.active {
+                            &::before,
+                            &::after,
+                            a::before,
+                            a::after {
+                                border-color: $red;
+                            }
+                        }
+                    }
+                }
+            }
+            &--white {
+                .container {
+                    background-color: inherit;
+                }
+                .menu--mobile-float {
+                    margin-top: 10px;
+                    background-color: $white;
+                }
+
+                .dropdown-menu.languages .menu li {
+                    &::before,
+                    &::after,
+                    a::before,
+                    a::after {
+                        border-color: $black;
                     }
                 }
             }
