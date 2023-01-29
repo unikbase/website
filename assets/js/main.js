@@ -178,12 +178,15 @@
 
   // Instgram feed
   const fetchInstgramPosts = async () => {
-    const accessToken = 'IGQVJXeW02XzFiaXZAEU3hmRmVoU0V2QXZAOLXRyYm1CREVpbkZAVanI1SDh0M0p6STZAVQ29WbDZALTlN2QWFvT1RCbUNETGxqTVlXYWJRMVA0OEdXZAFJRbXBYSkMxRVQ5QVVDY2F0YUt1bHN3YURYTThTSwZDZD'
-    const response = await fetch(
-      `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`,
-      { cache: "force-cache" }
-    )
+    const accessToken = ''
+    // const response = await fetch(
+    //   `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`,
+    //   { cache: "reload" }
+    // )
+    const response = await fetch('assets/js/instagram.json');
     const { data } = await response.json()
+    window.localStorage.setItem('instagram_unikbase', data);
+
     return data;
   }
 
