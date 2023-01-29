@@ -174,4 +174,69 @@
     handle.data('active-lang', active.data('lang'));
 
   })
+
+
+  // Instgram feed
+  const fetchInstgramPosts = async () => {
+    const accessToken = 'IGQVJXeW02XzFiaXZAEU3hmRmVoU0V2QXZAOLXRyYm1CREVpbkZAVanI1SDh0M0p6STZAVQ29WbDZALTlN2QWFvT1RCbUNETGxqTVlXYWJRMVA0OEdXZAFJRbXBYSkMxRVQ5QVVDY2F0YUt1bHN3YURYTThTSwZDZD'
+    const response = await fetch(
+      `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`,
+      { cache: "force-cache" }
+    )
+    const { data } = await response.json()
+    return data;
+  }
+
+  const generateInstgramPost = (item) => {
+    let el = document.createElement('div')
+    el.classList.add('instagram__post');
+    let anchor = document.createElement('a');
+    anchor.href = item.permalink;
+    anchor.target = '_blank';
+    anchor.setAttribute('rel', 'noopener');
+    anchor.setAttribute('title', item.caption || 'Instgram post');
+    let image = document.createElement('img');
+    image.setAttribute('src', item.media_url);
+    image.setAttribute('alt', item.caption || 'Instgram post');
+    el.setAttribute('data-id', item.id);
+
+    anchor.insertAdjacentElement('afterbegin', image);
+    el.insertAdjacentElement('beforeend', anchor);
+
+    return el;
+  }
+
+  const generateSlider = (items, wrapper) => {
+    if ( !wrapper ) return;
+    
+    // let container = document.createElement('div');
+    // container.classList.add('instagram__slider');
+    items.forEach(el => {
+      let item = generateInstgramPost(el);
+      wrapper.insertAdjacentElement('beforeend', item);
+    })
+    // wrapper.insertAdjacentElement('beforeend', container);
+
+  }
+
+  $(document).ready(async () => {
+    let wrapper = document.querySelector('#instagram .instagram__feed');
+    if ( !wrapper  ) return;
+
+    let data = await fetchInstgramPosts();
+    if ( data.length > 0 ) {
+      let placeholder = wrapper.querySelector('.instagram__slider--placeholder');
+      !!placeholder && (placeholder.parentElement.removeChild(placeholder));
+
+      let group = [];
+      for( let i = 0; i < data.length; i++ ) {
+        group.push(data[i]); 
+        if ( group.length === 12 ) {
+          generateSlider(group, wrapper); 
+          group = [];
+        }
+      }
+    }
+
+  })
 })(jQuery);

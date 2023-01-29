@@ -533,6 +533,13 @@
             }
         }
 
+        #instagram {
+            .instagram__post {
+                flex-basis: calc(100vw / 4);
+                height: calc(100vw / 4);
+            }
+        }
+
         &__footer {
             .widgets {
                 margin-bottom: 10px;

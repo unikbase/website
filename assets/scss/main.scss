@@ -730,6 +730,45 @@
         }
     }
 
+    #instagram {
+        padding-bottom: 0;
+        .instagram {
+            max-width: 100vw;
+            overflow-x: hidden;
+            margin-top: 2.5em;
+            &__feed {
+
+            }
+            &__slider {
+                width: 100vw;
+                overflow: hidden;
+                max-height: calc((100vw / 6)*2);
+                @extend .flex;
+                @extend .flex--start;
+                &--placeholder {
+                    .instagram__post {
+                        background-color: $gray;
+                    }
+                }
+            }
+            &__post {
+                flex-basis: calc(100vw / 6);
+                height: calc(100vw / 6);
+                overflow: hidden;
+                flex-shrink: 0;
+                flex-grow: 0;
+                a {
+                    display: block;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            
+        }
+    }
+
     #horse-animation {
         padding-left: 255px;
         .animation {
