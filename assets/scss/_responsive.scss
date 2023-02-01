@@ -263,6 +263,7 @@
             .blocks {
                 flex-direction: column;
                 .block {
+                    align-items: flex-start;
                     padding-top: 1em;
                     padding-bottom: 1em;
                     padding-left: 0;
@@ -282,11 +283,11 @@
                         // display: none;
                     }
                     &__thumbnail {
-                        flex-basis: 120px;
+                        flex-basis: 70px;
                         flex-shrink: 0;
                         img {
                             width: auto;
-                            height: 100px;
+                            height: 70px;
                             margin-right: 0;
                         }
                     }
@@ -296,8 +297,44 @@
                         align-items: flex-start;
                         justify-content: center;
                         flex-grow: 1;
+                        position: relative;
                         .block__title {
+                            line-height: 70px;
+                            padding-left: 2em;
                             margin-bottom: 0;
+                            cursor: pointer;
+                            width: 100%;
+                            &::after {
+                                content: ' ';
+                                z-index: 2;
+                                display: block;
+                                position: absolute;
+                                width: 10px;
+                                height: 18px;
+                                background-image: url(../images/SVG/collapse-arrow-down.svg);
+                                right: 0;
+                                top: 0;
+                                padding: 1.25em 0;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                cursor: pointer;
+                            }
+                        }
+                        .block__except { 
+                            margin-left: -70px;
+                            max-height: 0;
+                            overflow: hidden;
+                            transition: max-height 0.3s ease-in-out;
+                        }
+                        &.open {
+                            .block__title {
+                                &::after {
+                                    background-image: url(../images/SVG/collapse-arrow-up.svg);
+                                }
+                            }
+                            .block__except {
+                                max-height: none!important;
+                            }
                         }
                         .readmore {
                             display: none;

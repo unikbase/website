@@ -465,6 +465,9 @@
                     margin-right: 0;
                 }
                 &__thumbnail {
+                    picture {
+                        display: inline-block;
+                    }
                     img {
                         width: 120px;
                         margin-right: 36px;

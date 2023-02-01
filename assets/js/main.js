@@ -54,6 +54,12 @@
       } // End if
     });
 
+    // 4 steps 
+    $('#why-us .block .block__title').on('click', e => {
+      let target = $(e.currentTarget).closest('.block__content');
+      target.toggleClass('open');
+    })
+
     // Detect change on element
     let detect = () => {
       var scrollTop = $(document).scrollTop();
