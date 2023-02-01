@@ -659,13 +659,36 @@
 
 @media screen and (min-width: 801px) and (max-width:1280px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
-    #what-we-do ul li ,
-    .site #how-it-works .article p {
-        font-size: 18px!important;
-        line-height: 28px;
-    }
-    .site #phone-app-animation .animation {
-        height: 600px;
+    .site {
+        #what-we-do ul li ,
+        #how-it-works .article p {
+            font-size: 18px!important;
+            line-height: 28px;
+        }
+        #phone-app-animation .animation {
+            height: 600px;
+        }
+    
+        #why-us {
+            .blocks {
+                .block {
+                    align-items: flex-start;
+                    &__thumbnail {
+                        height: 70px;
+                        img {
+                            width: 70px!important;
+                        }
+                    }
+                    &__title {
+                        line-height: 70px;
+                    }
+                    &__except {
+                        margin-top: 2em;
+                        margin-left: -106px!important;
+                    }
+                }
+            }
+        }
     }
 }
 
