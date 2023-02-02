@@ -224,16 +224,27 @@
                 }
             }
             .menu {
-                background-color: $white;
                 border-radius: 2px;
                 right: 1em;
-                top: calc(100% + 10px);
-                padding: 10px 0;
+                top: 100%;
+                padding: 20px 0;
                 border: none;
+                li {
+                    line-height: 2em;
+                    background-color: $white;
+                    &:first-child {
+                        border-top-left-radius: 2px;
+                        border-top-right-radius: 2px;
+                    }
+                    &:last-child {
+                        border-bottom-left-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                    }
+                }
                 &::after{
                     content:''; /* Required to display content */
                     position: absolute; /* Sets the position absolute to the top div */
-                    top: 0;
+                    top: 18px;
                     right: 4px;/* position the little arrow */
                     margin-left: -4px;
                     margin-top:-4px; /* Set margin equal to border px */
@@ -497,6 +508,7 @@
                     line-height: 24px;
                     font-weight: 400;
                     margin-bottom: 1em;
+                    box-sizing: border-box;
                 }
                 &__content {
                     height: 100%;
@@ -759,7 +771,7 @@
             overflow-x: hidden;
             margin-top: 2.5em;
             &__feed {
-
+                justify-content: space-between;
             }
             &__slider {
                 width: 100vw;
@@ -774,7 +786,7 @@
                 }
             }
             &__post {
-                flex-basis: calc(100vw / 6);
+                flex-basis: calc(99.9vw / 6);
                 height: calc(100vw / 6);
                 overflow: hidden;
                 flex-shrink: 0;

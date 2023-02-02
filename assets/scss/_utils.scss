@@ -120,6 +120,7 @@
         display: none;
         position: absolute;
     }
+    &:hover,
     &--open {
         .menu {
             display: block;

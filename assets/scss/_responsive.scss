@@ -33,6 +33,11 @@
         }
     }
     .site {
+        .section {
+            .section__sub-title {
+                white-space: normal;
+            }
+        }
         &.single-page {
             .section > .container {
                 flex-direction: column;
