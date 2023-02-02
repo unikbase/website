@@ -192,7 +192,7 @@
     try {
       var scripts = document.getElementsByTagName("script"),
       src = scripts[scripts.length-1].src;
-      const response = await fetch(src.replace('main.js', 'instagram.json'));
+      const response = await fetch(src.replace('main.js', 'instagram.json?version=1.0.1'));
       const { data } = await response.json()
       window.localStorage.setItem('instagram_unikbase', data);
 
