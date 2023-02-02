@@ -62,6 +62,9 @@
             }
         }
         &__header {
+            .brand {
+              z-index: 99;  
+            }
             &--decoration .parralax {
                 background-position: center;
             }
@@ -149,7 +152,8 @@
                     }
                 }
                 &.sign-in {
-                    flex-basis: 70%;
+                    flex-shrink: 1;
+                    flex-grow: 1;
                     .menu {
                         background: none;
                         &, a {
@@ -161,11 +165,14 @@
                             padding-right: 0;
                             font-size: 18px;
                             line-height: 28px;
+                            text-decoration: underline;
+                            text-decoration-color: $red;
                         }
                     }
                 }
                 &.languages {
-                    flex-grow: 1;
+                    flex-grow: 0;
+                    flex-shrink: 0;
                     &::after,
                     &::before {
                         display: none;
@@ -184,8 +191,9 @@
                             width: 2em;
                             line-height: 2em;
                             text-align: center;
+                            margin-right: 12px;
                             &.active a {
-                                color: $red;
+                                color: $red!important;
                             }
                         }
                         li::after,
@@ -239,7 +247,7 @@
                 }
                 .menu--mobile-float {
                     margin-top: 10px;
-                    background-color: $white;
+                    background-color: inherit;
                 }
 
                 .dropdown-menu.languages .menu li {
@@ -248,6 +256,28 @@
                     a::before,
                     a::after {
                         border-color: $black;
+                    }
+                }
+            }
+        }
+
+        &.shown-navigation {
+            .site__navigation {
+                background-color: $black;
+                &--white {
+                    .site__logo svg .cls-2 {
+                        fill: $white;
+                    }
+                    &, .container {
+                        background-color: $black;
+                        color: $white;
+                    }
+                }
+                .menu--mobile-float {
+                    background-color: $black;
+                    color: $white;
+                    .navigation .menu li a {
+                        color: $white;
                     }
                 }
             }
@@ -461,7 +491,6 @@
                 }
             }
         }
-
 
         #how-it-works {
             font-size: 16px;
