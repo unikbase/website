@@ -679,15 +679,83 @@
 
 @media screen  and ( min-width: 769px ) {
 
-    #why-us {
-        // position: -webkit-sticky; /* Safari */
-        // position: sticky;
-        // top: -50vh;
-        // z-index: 1;
-    }
-    #what-we-do {
-        position: relative;
-        z-index: 2;
+
+    .site {
+        &__navigation {
+            &--white {
+                .menu--mobile-float {
+                    align-items: center;
+                }
+                .navigation {
+                    display: flex;
+                    flex-direction: column;
+                    .sign-in {
+                        order: 2;
+                        font-size: 0.9em;
+                        margin-right: 0;
+                        .handle {
+                            padding-right: 0;
+                            padding-left: 1em;
+                            &::after {
+                                right: auto;
+                                left: 0;
+                            }
+                        }
+                    }
+                    .languages.dropdown-menu {
+                        order: 1;
+                        .handle {
+                            display: none;
+                        }
+                        ul {
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            li {
+                                display: block!important;
+                                a {
+                                    font-weight: 400;
+                                    padding: 0 0.25em;
+                                    line-height: 1em;
+                                    &::after {
+                                        content: " ";
+                                        display: inline-block;
+                                        height: 0.75em;
+                                        width: 2px;
+                                        background-color: $black;
+                                        margin-left: 0.5em;
+                                    }
+                                }
+                                &:last-child {
+                                    a {
+                                        padding-right: 0;
+                                        &::after {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                                &.active {
+                                    &, a {
+                                        color: $red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #why-us {
+            // position: -webkit-sticky; /* Safari */
+            // position: sticky;
+            // top: -50vh;
+            // z-index: 1;
+        }
+        #what-we-do {
+            position: relative;
+            z-index: 2;
+        }
+        
     }
 }
 
