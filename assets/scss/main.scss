@@ -66,11 +66,12 @@
     overflow-x: hidden;
     &__logo {
         a {
-            display: inline-block;
+            display: block;
+            height: 70px;
         }
         svg {
-            height: 70px;
             width: auto;
+            height: 100%;
             .cls-2 {
                 fill: #fff;
             }
@@ -145,25 +146,49 @@
             margin-left: auto;
             z-index: 1;
             width: 24px;
-            height: 20px;
+            height: 24px;
             background: $black;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            /* Hamburger Line */
+            & > div {
+                position: relative;
+                flex: none;
+                width: 100%;
+                background: $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform-origin: center;
+                top: 50%;
+                height: 2px;
+                transform: translate(0, -50%);
+    
+                /* Hamburger Lines - Top & Bottom */
+                &::after,
+                &::before {
+                    content: '';
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    width: 100%;
+                    height: 2px;
+                    background: inherit;
+                    transition: transform 0.4s ease;
+                }
+    
+                &::after {
+                    transform: rotate(0deg) translate(0, 150%);
+                }
+                &::before {
+                    transform: rotate(0deg) translate(0, -250%);
+                }
+            }
         }
 
-        /* Hamburger Line */
-        .hamburger > div {
-            position: relative;
-            flex: none;
-            width: 100%;
-            height: 2px;
-            background: $white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-        }
+        
 
         // Menu Float on mobile
         .menu--mobile-float {
@@ -171,21 +196,7 @@
             flex-grow: 1;
             flex-shrink: 1;
         }
-        /* Hamburger Lines - Top & Bottom */
-        .hamburger > div::before {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            top: 6px;
-            width: 100%;
-            height: 2px;
-            background: inherit;
-        }
 
-        /* Moves Line Down */
-        .hamburger > div::after {
-            top: 12px;
-        }
 
         .sign-in.dropdown-menu {
             pointer-events: all;
@@ -349,9 +360,8 @@
             top: 0;
         }
         .site__navigation {
-            // background-color: $black;
-            padding-top: 51px;
-            padding-bottom: 51px;
+            padding-top: 36px;
+            padding-bottom: 36px;
             z-index: 3;
             position: absolute;
             top: 0;
@@ -435,9 +445,18 @@
     &.shown-navigation {
         .hamburger {
             > div {
-                transform: rotate(45deg);
+                background-color: transparent;
+                &::after,
                 &::before {
-                    transform: rotate(-90deg) translate(25%, -25%);
+                    transform-origin: center;
+                    background-color: $white;
+
+                }
+                &::after {
+                    transform: translate(0, -50%) rotate(45deg);
+                }
+                &::before {
+                    transform: translate(0, -50%) rotate(-45deg);
                 }
             }
         }
