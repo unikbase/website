@@ -34,9 +34,10 @@
     }
     .site {
         .section {
-            .section__sub-title {
+            &__sub-title {
                 white-space: normal;
                 font-weight: 500;
+                margin-bottom: 1em;
             }
         }
         &.single-page {
@@ -328,6 +329,7 @@
                         background-color: $white;
                         height: 2px;
                         width: 100%;
+                        left: 0;
                     }
                     &__except {
                         // display: none;
@@ -631,9 +633,13 @@
         }
 
         #instagram {
-            .instagram__post {
-                flex-basis: calc(100vw / 4);
-                height: calc(100vw / 4);
+            .instagram {
+                
+                margin-top: 0;
+                &__post {
+                    flex-basis: calc(100vw / 4);
+                    height: calc(100vw / 4);
+                }
             }
         }
 
