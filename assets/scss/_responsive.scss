@@ -690,7 +690,8 @@
                     align-items: flex-end;
                 }
                 svg {
-                    height: 6vw;
+                    height: 10vw;
+                    max-width: 50vw;
                 }
                 img {
                     height: 17px;
@@ -698,10 +699,16 @@
             }
 
             .socials {
+                flex-basis: auto;
+                flex-grow: 0;
+                flex-shrink: 0;
+                margin-left: auto;
                 .list {
                     justify-content: flex-end;
+                    flex-shrink: 0;
+                    flex-basis: 0;
                     li {
-                        margin-right: 8px;
+                        margin-right: 4px;
                         &:last-child {
                             margin-right: 0;
                         }
@@ -732,7 +739,7 @@
         &__navigation {
             &--white {
                 .menu--mobile-float {
-                    align-items: center;
+                    align-items: flex-end;
                 }
                 .navigation {
                     display: flex;
