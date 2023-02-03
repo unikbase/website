@@ -78,7 +78,8 @@
         }
         .site__short-about {
             font-size: 28px;
-            line-height: 38px;
+            font-size: 9vw;
+            line-height: 1.25em;
         }
         &__navigation {
             .container {
@@ -604,6 +605,7 @@
                     flex-direction: column;
                     &__thumbnail {
                         width: 100%;
+                        margin-bottom: 16px;
                     }
                     &__date {
                         margin-right: 12px;
@@ -611,6 +613,8 @@
                     &__content {
                         > p:first-child {
                             margin-top: 0;
+                            font-size: 18px;
+                            line-height: 28px;
                         }
                     }
                 }
@@ -679,13 +683,34 @@
                 order: 3;
             }
 
-            .site__logo img {
-                height: 17px;
+            .site__logo {
+                a {
+                    display: flex;
+                    height: 70px;
+                    align-items: flex-end;
+                }
+                svg {
+                    height: 6vw;
+                }
+                img {
+                    height: 17px;
+                }
             }
 
-            .socials img {
-                width: 17px;
-                height: 17px;
+            .socials {
+                .list {
+                    justify-content: flex-end;
+                    li {
+                        margin-right: 8px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                img {
+                    width: 17px;
+                    height: 17px;
+                }
             }
         }
     }
@@ -785,6 +810,19 @@
 @media screen and (min-width: 801px) and (max-width:1280px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     .site {
+        &__header {
+            .site__short-about {
+                font-size: 60px;
+                line-height: 70px;
+            }
+            &--slogan .navigation--scroll {
+                font-size: 18px;
+            }
+        }
+        &__navigation .main-navigation {
+            font-size: 20px!important;
+            line-height: 30px;
+        }
         #what-we-do ul li ,
         #how-it-works .article p {
             font-size: 18px!important;
