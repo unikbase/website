@@ -101,6 +101,7 @@
             text-transform: none;
             li {
                 margin-left: 1em;
+                line-height: 1em;
                 &:hover, &.active {
                     a { 
                         text-decoration: underline;
@@ -201,15 +202,16 @@
         .sign-in.dropdown-menu {
             pointer-events: all;
             margin-right: 1em;
+            line-height: 1em;
             .handle {
                 padding-right: 1em;
                 cursor: pointer;
                 text-transform: uppercase;
-                &:hover {
-                    text-decoration: underline;
-                    color: $red;
-                    text-decoration-color: $red;
-                }
+                // &:hover {
+                //     text-decoration: underline;
+                //     color: $red;
+                //     text-decoration-color: $red;
+                // }
                 &::after {
                     content: " ";
                     width: 0;
@@ -285,6 +287,7 @@
                 width: 100%;
                 text-align: center;
                 li {
+                    line-height: 1.75em;
                     display: block;
                     &.active {
                         display: none;
@@ -431,7 +434,7 @@
         
             .site__short-about {
                 font-size: 82px;
-                line-height: 94px;
+                line-height: 82px;
                 font-weight: 300;
             }
         }
@@ -581,7 +584,6 @@
             font-size: 25px;
             line-height: 35px;
             font-weight: normal;
-            margin-left: 2em;
             li {
                 padding-left: 1em;
             }
@@ -593,7 +595,6 @@
         .article {
             &:last-child ul {
                 list-style: none;
-                padding-left: 1em;
                 li {
                     margin-bottom: 1em;
                     padding-left: 2.125em;
@@ -805,6 +806,9 @@
 
     #horse-animation {
         padding-left: 255px;
+        ul {
+            margin-left: 2em;
+        }
         .animation {
             flex-grow: 1;
             flex-shrink: 0;

@@ -15,7 +15,7 @@
     
     .section {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 0px;
     }
     .shown-navigation {
         .site__navigation {
@@ -33,6 +33,9 @@
         }
     }
     .site {
+        &__logo a {
+            height: 44px;
+        }
         .section {
             &__sub-title {
                 white-space: normal;
@@ -266,13 +269,14 @@
                     padding-top: 70px;
                     background-color: inherit;
                 }
-
-                .dropdown-menu.languages .menu li {
-                    &::before,
-                    &::after,
-                    a::before,
-                    a::after {
-                        border-color: $black;
+                .dropdown-menu.languages {
+                    .menu li {
+                        &::before,
+                        &::after,
+                        a::before,
+                        a::after {
+                            border-color: $black;
+                        }
                     }
                 }
             }
@@ -446,6 +450,9 @@
             flex-direction: column;
             // space for horse image
             margin-bottom: 280px;
+            .article__content {
+                margin-bottom: 2em
+            }
             .animation {
                 // position: relative;
                 height: 230px;
@@ -492,8 +499,8 @@
 
         #partners {
             margin-top: 0;
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             min-height: auto;
             .section__title {
                 font-size: 18px;
@@ -562,8 +569,11 @@
             }
             .video__player {
                 width: 100%;
-                height: 191px;
+                height: 50vw;
                 overflow: hidden;
+            }
+            &::after {
+                content: none;
             }
         }
 
@@ -688,12 +698,11 @@
             .site__logo {
                 a {
                     display: flex;
-                    height: 70px;
                     align-items: flex-end;
                 }
                 svg {
                     height: 10vw;
-                    max-height: 70px;
+                    max-height: 44px;
                 }
                 img {
                     height: 17px;
@@ -710,7 +719,7 @@
                     flex-shrink: 0;
                     flex-basis: 0;
                     li {
-                        margin-right: 4px;
+                        margin-right: 12px;
                         &:last-child {
                             margin-right: 0;
                         }
@@ -734,9 +743,7 @@
     @include mobile();
 }
 
-@media screen  and ( min-width: 769px ) {
-
-
+@media screen and ( min-width: 769px ) {
     .site {
         &__navigation {
             &--white {
@@ -747,7 +754,6 @@
                     display: flex;
                     flex-direction: column;
                     .sign-in {
-                        order: 2;
                         font-size: 0.9em;
                         margin-right: 0;
                         .handle {
@@ -760,7 +766,6 @@
                         }
                     }
                     .languages.dropdown-menu {
-                        order: 1;
                         .handle {
                             display: none;
                         }
@@ -801,6 +806,17 @@
                     }
                 }
             }
+            .languages.dropdown-menu:hover {
+                &::after,
+                &::before {
+                    display: none;
+                }
+                
+                .menu::after,
+                .menu::before {
+                    display: block;
+                }
+            }
         }
         #why-us {
             // position: -webkit-sticky; /* Safari */
@@ -816,21 +832,60 @@
     }
 }
 
-@media screen and (min-width: 801px) and (max-width:1280px)  { 
+@media screen and ( min-width: 769px) and (max-width: 900px) {
+    .site {
+        &__logo a {
+            height: 60px;
+        }
+        &__footer {
+            .site__logo svg {
+                max-height: 60px;
+            }
+        }
+        &__header {
+            &--slogan {
+                .site__short-about {
+                    font-size: 52px;
+                    line-height: 52px;
+                }
+                .navigation--scroll {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width:1280px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     .site {
-        &__header {
-            .site__short-about {
-                font-size: 60px;
-                line-height: 70px;
+        &__logo a {
+            height: 60px;
+        }
+        &__footer {
+            .site__logo svg {
+                max-height: 60px;
             }
-            &--slogan .navigation--scroll {
-                font-size: 18px;
+        }
+        &__header {
+            &--slogan {
+                .site__short-about {
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+                .navigation--scroll {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
             }
         }
         &__navigation .main-navigation {
             font-size: 20px!important;
             line-height: 30px;
+        }
+        #why-us .blocks .block {
+            padding-right: 40px;
         }
         #what-we-do ul li ,
         #how-it-works .article p {
@@ -843,7 +898,7 @@
     }
 }
 
-@media screen and (min-width: 881px) and (max-width:1280px)  { 
+@media screen and (min-width: 901) and (max-width:1280px)  { 
     #why-us {
         .blocks {
             .block {
@@ -864,15 +919,14 @@
             }
         }
     }
-}
-    
+}  
 
 @media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
     .container {
         width: calc(100vw - 40px);
     }
 }
-@media screen and (min-width: 977px) and (max-width: 1366px) {
+@media screen and (min-width: 901px) and (max-width: 1366px) {
     .container {
         width: calc(100vw - 40px);
     }
@@ -888,8 +942,19 @@
     }
 }
 
-@media screen and (min-width: 977px) {
-
+@media screen and (min-width: 901px) {
+    .site {
+        &__navigation--white {
+            .navigation {
+                .sign-in {
+                    order: 2;
+                }
+                .menu--langauges {
+                    order: 1;
+                }
+            }
+        }
+    }
     .animation {
         &-wrap {
             img {
