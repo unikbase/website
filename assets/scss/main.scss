@@ -573,6 +573,11 @@
                 margin-bottom: 70px;
                 font-weight: 400;
             }
+            &__content {
+                .button--primary {
+                    margin-top: 12px;
+                }
+            }
         }
     }
 
