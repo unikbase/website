@@ -233,7 +233,8 @@
     anchor.setAttribute('rel', 'noopener');
     anchor.setAttribute('title', item.caption || 'Instgram post');
     let image = document.createElement('img');
-    image.setAttribute('src', item.media_url);
+
+    image.setAttribute('src', `${window._current_lang?'../':''}${item.media_url}` );
     image.setAttribute('alt', item.caption || 'Instgram post');
     el.setAttribute('data-id', item.id);
 

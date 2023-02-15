@@ -16,13 +16,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="../assets/css/main.min.css" />
   <link rel="shortcut icon" href="../assets/images/SVG/favicon.svg" type="image/x-icon">
+   <script type="text/javascript">
+    window._current_lang = 'fr';
+
+    var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage)
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let urlLang = params.lang; // "some_value"
+
+    console.log("urlLang:%s,userLang:%s",urlLang,userLang)
+    if(!urlLang=="en" && userLang.indexOf("fr") > -1) {
+        //window.location.replace("/fr/index.html");
+    }
+
+    </script>
 </head>
 <body class="site site-homepage">
     <header class="site__header flex flex--column">
         <div class="brand flex flex--end w-100">
             <div class="container">
                 <div class="site__logo">
-                    <a href="index.html" title="UnikBase">
+                    <a href="index.html" title="Unikbase">
                         <svg id="logo_unikbase" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.17 102.05">
                             <path class="cls-2"  fill="#081d24" d="m95.7,65.04c.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4.27.27.4.62.4,1.07v18.57c0,7.59,3.31,11.38,9.92,11.38,3.2,0,5.74-1.01,7.62-3.03s2.83-4.8,2.83-8.36v-18.57c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v31.69c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-3.13c-1.33,1.73-2.85,3.04-4.56,3.93-1.71.89-3.89,1.33-6.56,1.33-4.35,0-7.66-1.38-9.92-4.13-2.26-2.75-3.39-6.35-3.39-10.79v-18.91c0-.44.13-.8.4-1.07Z"/>
                             <path class="cls-2"  fill="#081d24" d="m163.01,98.86c-.27.27-.62.4-1.06.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-18.58c0-3.59-.88-6.39-2.63-8.39-1.75-2-4.27-3-7.56-3s-5.75,1.01-7.66,3.03c-1.91,2.02-2.86,4.81-2.86,8.36v18.58c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4s-.4-.62-.4-1.07v-31.69c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v3.13c1.33-1.73,2.85-3.04,4.56-3.93,1.71-.89,3.92-1.33,6.62-1.33,4.35,0,7.7,1.39,10.05,4.16,2.35,2.77,3.53,6.36,3.53,10.75v18.91c0,.44-.13.8-.4,1.07Z"/>
@@ -48,32 +63,32 @@
                 <div class="menu--mobile-float">
                     <div class="navigation main-navigation menutext flex">
                         <ul class="menu menu--horizontal">
-                            <li class=""><a href="#what-we-do" title="What we do">Solution</a></li>
-                            <li class=""><a href="#how-it-works" title="How it works">Comment ca marche ?</a></li>
-                            <li class=""><a href="#about-us" title="About us">Équipe</a></li>
-                            <li class=""><a href="#footer" rel="noopener" title="Contact">Connect</a></li>
+                            <li class=""><a href="#what-we-do" title="What we do">What we do</a></li>
+                            <li class=""><a href="#how-it-works" title="How it works">How it works</a></li>
+                            <li class=""><a href="#about-us" title="About us">About us</a></li>
+                            <li class=""><a href="#footer" rel="noopener" title="Contact">Contact</a></li>
                         </ul>
                     </div>
         
                     <div class="navigation flex margin--l">
                         <div class="dropdown-menu sign-in">
-                            <span class="handle">Sign in</span>
+                            <span class="handle">SE CONNECTER</span>
                             <ul class="menu menu--vertical text--align-right">
                                 <!-- <li class="d-mobile logo">
                                     <a href="" title="">
                                         <img src="" alt="" class="logo--image">
                                     </a>
                                 </li> -->
-                            <li class=""><a href="#" target="_blank" rel="noopener" title="Operator Sign in">Accès Opérateur</a></li>
-                            <li class=""><a href="https://collector.unikbase.com" target="_blank" rel="noopener" title="Collector Sign In">Accès Collectionneur</a></li>
+                                <li class=""><a href="#" target="_blank" rel="noopener" title="Operator Sign in">Operator Sign In</a></li>
+                                <li class=""><a href="#" target="_blank" rel="noopener" title="Collector Sign In">Collector Sign In</a></li>
                             </ul>
                         </div>
 
                         <div class="dropdown-menu languages">
                             <span data-active-lang="fr" class="handle">FR</span>
                             <ul class="menu menu--languages">
-                                <li data-lang="en"><a href="../index.html?lang=en" alt=""><i class="icon icon--global"></i>EN</a></li>
-                                <li data-lang="fr" class="active" ><a href="#" alt=""><i class="icon icon--global"></i>FR</a></li>
+                                <li data-lang="en" ><a href="../index.html" alt=""><i class="icon icon--global"></i>EN</a></li>
+                                <li data-lang="fr" class="active"><a href="./fr/index.html" alt=""><i class="icon icon--global"></i>FR</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,10 +103,10 @@
 
             <div class="navigation navigation--scroll menutext flex hide-mobile">
                 <ul class="menu menu--horizontal">
-                    <li class=""><a href="#what-we-do" title="What we do">Solution</a></li>
-                    <li class=""><a href="#how-it-works" title="How it works">Comment ca marche ?</a></li>
-                    <li class=""><a href="#about-us" title="About us">Équipe</a></li>
-                    <li class=""><a href="#footer" rel="noopener" title="Contact">Connect</a></li>
+                    <li class=""><a href="#what-we-do" title="Solution">Solution</a></li>
+                    <li class=""><a href="#how-it-works" title="Fonctionnement">Technologie</a></li>
+                    <li class=""><a href="#about-us" title="Équipe">Équipe</a></li>
+                    <li class=""><a href="#footer" rel="noopener" title="Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -99,18 +114,27 @@
 
     <div class="site__header--decoration" >
         <div class="parralax">
-            <video id="video-player" width="100%" height="100%" controls muted autoplay>
+            <video id="header-background-video" width="100%" height="100%" muted autoplay loop>
                 <source src="https://media.githubusercontent.com/media/unikbase/website/development/assets/videos/UnikbaseV7_1.webm" type="video/webm">
-                Votre navigateur ne supporte pas la balise video.
+                Your browser does not support the video tag.
             </video>
+            <div data-target="header-background-video" class="video__handles flex flex--space-between">
+                <div class="handle play">
+                    <svg width="10px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                    <svg class="default" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>
+                </div>
+                <div class="handle sound">
+                    <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"/></svg>
+                    <svg class="default" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>
+                </div>
+            </div>
         </div>
     </div>
 
     <section id="why-us" class="section section--bg-gray">
         <div class="container">
-            <h2 class="section__title text--underline">
-                Nous fabriquons le double numérique des objets de valeur.<br>
-                Nos jumeaux sont aujourd'hui le moyen d'accès le plus simple à quantité de services jusqu'ici difficiles d'accès pour tracer, protéger, valoriser et échanger en confiance.
+            <h2 class="section__title text--underline">We make digital twins of real-life valuables.<br>
+                Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.
             </h2>
 
             <div class="row row--wrap blocks">
@@ -121,10 +145,10 @@
                             <img src="../assets/images/SVG/illustration-horse.svg" alt="Buy">
                         </picture>
                     </div>
-                    <div class="block__content">
-                        <h3 class="block__title">1. Achat </h3>
+                    <div class="block__content open">
+                        <h3 class="block__title">1. Buy </h3>
                         <div class="block__except">
-                            <p>Marie achète en ligne un bien physique d'occasion : une œuvre d'art, une montre, un sac à main...</p>
+                            <p>Mary buys a second hand item online, such as a piece of art, a watch, a handbag, ...</p>
                         </div>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
@@ -140,13 +164,7 @@
                         <h3 class="block__title">2. Scan
                         </h3>
                         <div class="block__except">
-                            <p>De son côté, le marchand en ligne utilise la solution Unikbase:
-                                <ul>
-                                    <li>Pour marquer l'objet réel via une technologie de marquage indélébile, inaltérable et invisible, reconnue et utilisée par les autorités policières et judiciaires.</li>
-                                    <li>Scanner l'objet en 3D et en créer un jumeau numérique biométrique.</li>
-                                    <li>Encapsuler tous types de données dans ce jumeau : photos, factures, preuves d'authenticité, rapports d'état...</li>
-                                </ul>
-                            </p> 
+                            <p>At the warehouse, the online merchant uses the Unikbase solution to tag the item with an indelible, unalterable, and invisible marking technology. They also 3D-scan the item and create a biometric digital twin of it, including data such as photos, invoices, proof of authenticity, and condition reports.</p> 
                         </div>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
@@ -159,9 +177,9 @@
                         </picture>
                     </div>
                     <div class="block__content">
-                        <h3 class="block__title">3. Possession</h3>
+                        <h3 class="block__title">3. Own</h3>
                         <div class="block__except">
-                            <p>Marie possède maintenant un passeport numérique qui accompagne l'objet qu'elle a acheté, une preuve de correspondance unique qui permet d'utiliser des services et des applications liés à l'objet.</p>
+                            <p>Mary now owns the item and its accompanying digital passport, which serves as proof of the item's uniqueness and enables access to various services and applications related to the item.</p>
                         </div>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
@@ -174,8 +192,8 @@
                         </picture>
                     </div>
                     <div class="block__content">
-                        <h3 class="block__title">4. Utilisation</h3>
-                        <p class="block__except">Le jumeau numérique est un passeport dynamique qui sera enrichi de données supplémentaires au cours de la vie de l'objet : restauration, amélioration, prêt, détérioration... Si Marie décide de le vendre, le jumeau numérique sera transféré au nouveau propriétaire.</p>
+                        <h3 class="block__title">4. Use</h3>
+                        <p class="block__except">The digital twin is dynamic and can be updated with additional data throughout the item's life, such as information on restoration, improvement, lending, and damage. If Mary decides to sell the item, the digital twin will be transferred to the new owner.</p>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
                 </div>
@@ -187,7 +205,7 @@
         <div class="container flex flex--end">
             <div class="brand">
                 <div class="site__logo">
-                    <a href="index.html" title="UnikBase">
+                    <a href="index.html" title="Unikbase">
                         <svg id="logo_unikbase" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.17 102.05">
                             <path class="cls-2"  fill="#081d24" d="m95.7,65.04c.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4.27.27.4.62.4,1.07v18.57c0,7.59,3.31,11.38,9.92,11.38,3.2,0,5.74-1.01,7.62-3.03s2.83-4.8,2.83-8.36v-18.57c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v31.69c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-3.13c-1.33,1.73-2.85,3.04-4.56,3.93-1.71.89-3.89,1.33-6.56,1.33-4.35,0-7.66-1.38-9.92-4.13-2.26-2.75-3.39-6.35-3.39-10.79v-18.91c0-.44.13-.8.4-1.07Z"/>
                             <path class="cls-2"  fill="#081d24" d="m163.01,98.86c-.27.27-.62.4-1.06.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-18.58c0-3.59-.88-6.39-2.63-8.39-1.75-2-4.27-3-7.56-3s-5.75,1.01-7.66,3.03c-1.91,2.02-2.86,4.81-2.86,8.36v18.58c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4s-.4-.62-.4-1.07v-31.69c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v3.13c1.33-1.73,2.85-3.04,4.56-3.93,1.71-.89,3.92-1.33,6.62-1.33,4.35,0,7.7,1.39,10.05,4.16,2.35,2.77,3.53,6.36,3.53,10.75v18.91c0,.44-.13.8-.4,1.07Z"/>
@@ -210,27 +228,27 @@
             <div class="menu--mobile-float">
                 <div class="navigation main-navigation menutext flex">
                     <ul class="menu menu--horizontal">
-                        <li class=""><a href="#what-we-do" title="SOLUTION">SOLUTION</a></li>
-                        <li class=""><a href="#how-it-works" title="COMMENT ÇA MARCHE">COMMENT ÇA MARCHE</a></li>
-                        <li class=""><a href="#about-us" title="ÉQUIPE">ÉQUIPE</a></li>
-                        <li class=""><a href="#footer" rel="noopener" title="CONNECT">CONNECT</a></li>
+                        <li class=""><a href="#what-we-do" title="Solution">Solution</a></li>
+                        <li class=""><a href="#how-it-works" title="Fonctionnement">Technologie</a></li>
+                        <li class=""><a href="#about-us" title="Équipe">Équipe</a></li>
+                        <li class=""><a href="#footer" rel="noopener" title="Contact">Contact</a></li>
                     </ul>
                 </div>
     
-                <div class="navigation flex margin--l">
+                <div class="navigation flex margin--l flex--end">
                     <div class="dropdown-menu sign-in">
-                        <span class="handle">Sign in</span>
+                        <span class="handle">SE CONNECTER</span>
                         <ul class="menu menu--vertical text--align-right">
-                            <li class=""><a href="#" target="_blank" rel="noopener" title="Operator Sign in">Accès Opérateur</a></li>
-                            <li class=""><a href="https://collector.unikbase.com" target="_blank" rel="noopener" title="Collector Sign In">Accès Collectionneur</a></li>
+                            <li class=""><a href="#" target="_blank" rel="noopener" title="Operator Sign in">Operator Sign In</a></li>
+                            <li class=""><a href="#" target="_blank" rel="noopener" title="Collector Sign In">Collector Sign In</a></li>
                         </ul>
                     </div>
 
                     <div class="dropdown-menu languages">
                         <span data-active-lang="fr" class="handle">FR</span>
                         <ul class="menu menu--languages">
-                            <li data-lang="en"><a href="../index.html" alt=""><i class="icon icon--global"></i>EN</a></li>
-                            <li data-lang="fr" class="active" ><a href="#" alt=""><i class="icon icon--global"></i>FR</a></li>
+                            <li data-lang="en" ><a href="#" alt=""><i class="icon icon--global"></i>EN</a></li>
+                            <li data-lang="fr" class="active"><a href="#" alt=""><i class="icon icon--global"></i>FR</a></li>
                         </ul>
                     </div>
                 </div>
@@ -240,26 +258,20 @@
 
     <section id="what-we-do" class="section section--bg-white">
         <div class="container flex flex--no-wrap flex--start">
-            <h4 class="section__sub-title">La solution Unikbase</h4>
+            <h4 class="section__sub-title">What we do</h4>
             <div class="articles section--bg-gray">
                 <div class="article">
-                    <h3 class="article__title">Nous créons des <span class="highlight">jumeaux numériques</span> pour identifier, 
-                        <br>authentifier et augmenter la valeur<br> des <span class="highlight">objets les plus précieux</span>.</h3>
+                    <h3 class="article__title">Nous créons des <span class="highlight">jumeaux numériques</span> pour identifier, authentifier et augmenter la valeur des des <span class="highlight">objets les plus précieux</span>.</h3>
 
                     <div id="horse-animation" class="flex flex--no-wrap flex--reverse flex--start">
                         <div class="article__content">
-                            <p class="text--underline">Nous embarquons notre technologie dans le processus marchand de nos partenaires : maisons de ventes aux enchères, revendeurs d'objets d'occasion, marketplaces, marques de luxe... </p>
+                            <p class="text--underline">Nous embarquons notre technologie dans le process marchand de nos partenaires : maisons de ventes aux enchères, revendeurs d'objets d'occasion, marketplaces, marques de luxe... </p>
     
                             <p>Nous nous occupons de tout de bout-en-bout:</p>
                             <ul>
-                                <li>Maintenance du jumeau numérique:
-                                <br>hébergement, protection, portefeuille…</li>
-                                
-                                <li>Outils permettant à nos partenaires d'administrer <br>
-                                    le double digital et la relation avec son détenteur <br>
-                                    et toute autre tierce partie.<br>
-                                <li>Services: assurance de l’objet, <br>
-                                    garantie d'un prêt, location...</li>
+                                <li>Maintenance du jumeau numérique: hébergement, protection, portefeuille.</li>
+                                <li>Outils permettant à nos partenaires d'administrer le double digital et la relation avec son détenteur et toute autre tierce partie.</li>
+                                <li>Services: assurance de l'objet, garantie d'un prêt, location...</li>
                             </ul>
                         </div>
     
@@ -277,8 +289,9 @@
                         <div class="article__content">
                             <h3 class="article__title">Un jumeau numérique, à quoi ça sert ?</h3>
                             <ul>
-                                <li>Une protection contre le vol grâce à un marquage unique, invisible et indélébile : En cas de vol, votre objet peut être authentifié de façon sûre par les forces de police et les autorités judiciaires, via la technologie Track & Trace développée par notre partenaire Olnica.</li>
-                                <li>Un passeport numérique hébergé sur un dossier privé et ultra sécurisé basé sur la blockchain, qui peut être partagé avec tout tiers selon les besoins : 3D-scan, photos, description, facture originale, preuve de propriété, transactions précédentes... : le tout compilé dans un fichier unique, confidentiel, infalsifiable et non duplicable.</li>
+                                <li>Une protection contre le vol grâce à un marquage unique, invisible et indélébile: En cas de vol, votre objet peut être authentifié de façon sûre par les forces de police et les autorités judiciaires, via la technologie Track & Trace©.</li>
+                                <li>Un passeport numérique hébergé sur un dossier privé et ultra sécurisé basé sur la blockchain, qui peut être partagé avec tout tiers selon les besoins: 3D-scan, photos, description, facture originale, preuve de propriété, transactions précédentes... Le tout compilé dans un fichier unique, confidentiel, infalsifiable et non duplicable.
+                                </li>
                             </ul>
                         </div>
                         <div class="article__thumbnail animation">
@@ -300,22 +313,19 @@
 
     <section id="how-it-works" class="section section--bg-white">
         <div class="container flex flex--no-wrap flex--start">
-            <h4 class="section__sub-title">Comment ça marche ?</h4> 
+            <h4 class="section__sub-title">FONCTIONNEMENT</h4> 
             <div class="articles section--bg-gray">
                 <div class="article">
-                    <h3 class="article__title">La technologie Unikbase est développée <br>sur la base d'une IP propriétaire combinant :</h3>
+                    <h3 class="article__title">La technologie Unikbase est développée sur la base d'une IP propriétaire combinant:</h3>
 
                     <div id="secure-animation" class="flex flex--no-wrap flex--reverse">
                         <div class="article__content">
                             <h4>La technologie Track & Trace</h4>
-                            <p>le taggant Unikbase (développé par Olnica) est l'un des plus performants au monde. Développé à partir de terres rares, c'est un composé chimique avec un code unique associé à votre marque.</p>
-                            <p>Inviolable et indétectable à l'œil nu.</p>
+                            <p>Le taggant Unikbase, développé par Olnica, est l'un des plus performants au monde. Développé à partir de terres rares, c'est un composé chimique avec un code unique associé à votre marque. Inviolable et indétectable à l'œil nu.</p>
     
                             <h4>... couplé à un registre blockchain</h4>
-                            <p>un jeton numérique hébergé <a href="https://www.liquichain.io/">Liquichain</a>, une blockchain privée compatible avec la blockchain Ethereum<br>
-                            
+                            <p>Un jeton numérique hébergé sur une blockchain privée compatible avec la blockchain Ethereum</p>
                             <a href="https://www.liquichain.io/assets/Liquichain_LitePaper_-_May_2022.pdf" title="Why digital twins are going to change the rules of ownership"  target="_blank" rel="noopener" class="button button--primary">→ En savoir plus</a>
-                            </p>
     
                         </div>
     
@@ -345,8 +355,8 @@
                         <div class="play-button"><img src="../assets/images/SVG/icon-play.svg" alt="player button"></div>
                         <div class="video__content">
                             <video id="video-player" width="100%" height="100%" controls muted>
-                                <source src="https://media.githubusercontent.com/media/unikbase/website/development/assets/videos/frog-video.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la balise video.
+                                <source src="https://media.githubusercontent.com/media/unikbase/website/development/assets/videos/frog-video.mov" type="video/mp4">
+                                Your browser does not support the video tag.
                             </video>
                         </div>
                     </div>
@@ -360,9 +370,7 @@
             <h4 class="section__sub-title">ÉQUIPE</h4> 
             <div class="articles section--bg-dark">
                 <div class="article">
-                    <h3 class="article__title">Unikbase a été créée en 2022 par des professionnels <br>
-                        du <span class="text--underline">retail art et mode, de la logistique, de la technologie, de la cybersécurité et de la blockchain</span>,
-                        dans le but de rendre les services liés aux jumeaux numériques accessibles à tous.</h3>
+                    <h3 class="article__title">Unikbase a été créée en 2022 par des professionnels du <span class="text--underline">retail art et mode, de la logistique, de la technologie, de la cybersécurité et de la blockchain,</span> dans le but de rendre les services liés aux jumeaux numériques accessibles à tous.</h3>
                 </div>
             </div>
         </div>
@@ -374,16 +382,16 @@
                 <!-- <h3 class="section__title">As seen in</h3> -->
                 <ul class="flex flex--horizontal flex--space-between posts">
                     <li>
-                        <img src="../assets/images/SVG/logo-businessinsider.svg" alt="UnikBase on Businessinsider" class="logo">
-                        <a href="#" target="_blank" rel="noopener" class="readmore">Lire</a>
+                        <img src="../assets/images/SVG/logo-businessinsider.svg" alt="Unikbase on Businessinsider" class="logo">
+                        <a href="#" target="_blank" rel="noopener" class="readmore">Read more</a>
                     </li>
                     <li>
-                        <img src="../assets/images/SVG/logo-artnet.svg" alt="UnikBase on Artnet"  class="logo">
-                        <a href="#" target="_blank" rel="noopener" class="readmore">Lire</a>
+                        <img src="../assets/images/SVG/logo-artnet.svg" alt="Unikbase on Artnet"  class="logo">
+                        <a href="#" target="_blank" rel="noopener" class="readmore">Read more</a>
                     </li>
                     <li>
-                        <img src="../assets/images/SVG/logo-techcrunch.svg" alt="UnikBase on Techcrunch"  class="logo">
-                        <a href="#" target="_blank" rel="noopener" class="readmore">Lire</a>
+                        <img src="../assets/images/SVG/logo-techcrunch.svg" alt="Unikbase on Techcrunch"  class="logo">
+                        <a href="#" target="_blank" rel="noopener" class="readmore">Read more</a>
                     </li>
                 </ul>
             </div>
@@ -403,11 +411,11 @@
                         <div class="post__summary">
                             <div class="post__date"><span class="month">01</span><span class="date">16</span></div>
                             <div class="post__content">
-                                <p><a href="https://medium.com/@unikbase/why-digital-twins-are-going-to-change-the-rules-of-ownership-cfb6e46377a3" class="link" title="Why digital twins are going to change the rules of ownership" target="_blank" rel="noopener">Why digital twins are going to change the rules of ownership</a></p>
+                                <p><a href="https://medium.com/@unikbase/why-digital-twins-are-going-to-change-the-rules-of-ownership-cfb6e46377a3" class="link" title="Pourquoi les jumeaux numériques vont changer les règles de propriété." target="_blank" rel="noopener">Pourquoi les jumeaux numériques vont changer les règles de propriété.</a></p>
                                 <ul class="post__tags">
-                                    <li><a href="javascript:void()" title="Auctions">valuables</a></li>
+                                    <li><a href="javascript:void()" title="Auctions">Objets de valeur</a></li>
                                     <li><a href="javascript:void()" title="Handbags">authentification</a></li>
-                                    <li><a href="javascript:void()" title="Digital Twin">blockchain Twin</a></li>
+                                    <li><a href="javascript:void()" title="Digital Twin">jumeau blockchain</a></li>
                                 </ul> 
                             </div>
                         </div>
@@ -471,7 +479,7 @@
                     <div class="col">
                         <div class="widget">
                             <ul class="menu list">
-                                <li><a href="mailto:jobs@unikbase.com" target="_blank" rel="noopener" title="Jobs">Jobs</a></li>
+                                <li><a href="mailto:jobs@unikbase.com" target="_blank" rel="noopener" title="Work with us">Work with us</a></li>
                                 <li><a href="mailto:press@unikbase.com" target="_blank" rel="noopener" title="Press">Press</a></li>
                                 <li><a href="https://medium.com/@unikbase" target="_blank" rel="noopener" title="Blog">Blog</a></li>
                                 <li><a href="FAQ.html" title="FAQ">FAQ</a></li>
@@ -482,8 +490,8 @@
                     <div class="col">
                         <div class="widget">
                             <ul class="menu menu-term list">
-                                <li><a href="privacy-policy.html" title="Confidentialité">Confidentialité</a></li>
-                                <li><a href="terms-conditions.html" title="Conditions Générales de Vente">Conditions Générales de Vente</a></li>
+                                <li><a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                <li><a href="terms-conditions.html" title="Terms & Conditions">Terms & Conditions</a></li>
                                 <!-- <li><a href="#cookie-policy" title="Cookie Policy">Cookie Policy</a></li> -->
                             </ul>
                         </div>
@@ -495,7 +503,7 @@
         <div class="container flex flex--horizontal flex--end flex--space-between">
             <div class="brand">
                 <div class="site__logo">
-                    <a href="index.html" title="UnikBase">
+                    <a href="index.html" title="Unikbase">
                         <svg id="logo_unikbase" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.17 102.05">
                             <path class="cls-2"  fill="#081d24" d="m95.7,65.04c.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4.27.27.4.62.4,1.07v18.57c0,7.59,3.31,11.38,9.92,11.38,3.2,0,5.74-1.01,7.62-3.03s2.83-4.8,2.83-8.36v-18.57c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v31.69c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-3.13c-1.33,1.73-2.85,3.04-4.56,3.93-1.71.89-3.89,1.33-6.56,1.33-4.35,0-7.66-1.38-9.92-4.13-2.26-2.75-3.39-6.35-3.39-10.79v-18.91c0-.44.13-.8.4-1.07Z"/>
                             <path class="cls-2"  fill="#081d24" d="m163.01,98.86c-.27.27-.62.4-1.06.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-18.58c0-3.59-.88-6.39-2.63-8.39-1.75-2-4.27-3-7.56-3s-5.75,1.01-7.66,3.03c-1.91,2.02-2.86,4.81-2.86,8.36v18.58c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4s-.4-.62-.4-1.07v-31.69c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v3.13c1.33-1.73,2.85-3.04,4.56-3.93,1.71-.89,3.92-1.33,6.62-1.33,4.35,0,7.7,1.39,10.05,4.16,2.35,2.77,3.53,6.36,3.53,10.75v18.91c0,.44-.13.8-.4,1.07Z"/>
