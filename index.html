@@ -16,6 +16,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="assets/css/main.min.css" />
   <link rel="shortcut icon" href="assets/images/SVG/favicon.svg" type="image/x-icon">
+   <script type="text/javascript">
+    var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage)
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let urlLang = params.lang; // "some_value"
+
+    console.log("urlLang:%s,userLang:%s",urlLang,userLang)
+    if(!urlLang=="en" && userLang.indexOf("fr") > -1) {
+        //window.location.replace("/fr/index.html");
+    }
+
+    </script>
 </head>
 <body class="site site-homepage">
     <header class="site__header flex flex--column">
@@ -73,7 +86,7 @@
                             <span data-active-lang="en" class="handle">EN</span>
                             <ul class="menu menu--languages">
                                 <li data-lang="en" class="active" ><a href="#" alt=""><i class="icon icon--global"></i>EN</a></li>
-                                <li data-lang="fr" ><a href="#" alt=""><i class="icon icon--global"></i>FR</a></li>
+                                <li data-lang="fr" ><a href="./fr/index.html" alt=""><i class="icon icon--global"></i>FR</a></li>
                             </ul>
                         </div>
                     </div>
@@ -98,13 +111,12 @@
     </div>
 
     <div class="site__header--decoration" >
-        <!-- <div class="parralax" style="background-image: url('assets/images/parallax/Layer\ -1.png');"></div>
-        <div class="parralax" style="background-image: url('assets/images/parallax/Layer\ -2.png');"></div> -->
-        <div class="parralax" style="background-image: url('assets/images/parallax/image-header1.webp');"></div>
-        <div class="parralax" style="background-image: url('assets/images/parallax/image-header2.webp');"></div>
-        <div class="parralax" style="background-image: url('assets/images/parallax/image-header3.webp');"></div>
-        <div class="parralax" style="background-image: url('assets/images/parallax/image-header4.webp');"></div>
-        <div class="parralax" style="background-image: url('assets/images/parallax/image-header5.webp');"></div>
+        <div class="parralax">
+            <video id="video-player" width="100%" height="100%" controls muted autoplay>
+                <source src="https://media.githubusercontent.com/media/unikbase/website/development/assets/videos/UnikbaseV7_1.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 
     <section id="why-us" class="section section--bg-gray">
@@ -301,7 +313,7 @@
                             <p>Unikbase taggant, developed by Olnica, is one of the best in the world. Developed from rare earths, it is a chemical compound with a unique code associated with your brand. Tamper-proof and undetectable to the naked eye.</p>
     
                             <h4>With a blockchain ledger</h4>
-                            <p>A digital token hosted on a private blockchain with Ethereum bridging capability. </p>
+                            <p>A digital token hosted on <a href="https://www.liquichain.io/">Liquichain</a>, a private blockchain with Ethereum bridging capability. </p>
                             <a href="https://www.liquichain.io/assets/Liquichain_LitePaper_-_May_2022.pdf" title="Why digital twins are going to change the rules of ownership"  target="_blank" rel="noopener" class="button button--primary">→ Learn more</a>
     
                         </div>
