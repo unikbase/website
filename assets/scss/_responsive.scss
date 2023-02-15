@@ -700,11 +700,11 @@
                 h3 {
                     &::after,
                     &::before {
-                        left: -2em;
+                        left: 0;
                     }
 
                     &::after {
-                        width: calc(100% + 2em);
+                        width: 100%;
                     }
                 }
             }
