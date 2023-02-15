@@ -404,7 +404,7 @@
             height: 60vh;
             width: 100%;
             padding-bottom: 65px;
-            z-index: 1;
+            z-index: 2;
             margin-bottom: 100vh;
 
             .navigation {
@@ -445,7 +445,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: -1;
+            z-index: 1;
             // .parralax {
             //     width: 100%;
             //     height: 100vh;
