@@ -401,7 +401,7 @@
             a:hover {
                 text-decoration: underline;
             }
-            height: 80vh;
+            height: 60vh;
             width: 100%;
             padding-bottom: 65px;
             z-index: 1;
@@ -446,12 +446,36 @@
             top: 0;
             left: 0;
             z-index: -1;
+            // .parralax {
+            //     width: 100%;
+            //     height: 100vh;
+            //     background-repeat: no-repeat;
+            //     background-size: cover;
+            //     background-position: left center;
+            // }
+
             .parralax {
+                position: absolute;
+                top: 0;
+                bottom: 0;
                 width: 100%;
-                height: 100vh;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: left center;
+                height: 100vh; 
+                overflow: hidden;
+                video {
+                    /* Make video to at least 100% wide and tall */
+                    min-width: 100%; 
+                    min-height: 100%; 
+                  
+                    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+                    width: auto;
+                    height: auto;
+                  
+                    /* Center the video */
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
             }
         }
     }

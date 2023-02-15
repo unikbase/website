@@ -121,8 +121,24 @@
             .brand {
               z-index: 99;  
             }
-            &--decoration .parralax {
-                background-position: center;
+            &--slogan {
+                height: 60vh;
+                margin-bottom: 0;
+            }
+            &--decoration {
+                position: relative;
+                // height: 40vh;
+                .parralax {
+                    height: 100%;
+                    position: relative;
+                    video {
+                        width: 100%;
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        transform: none;
+                    }
+                }
             }
         }
         .site__short-about {
