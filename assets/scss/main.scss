@@ -401,7 +401,7 @@
             a:hover {
                 text-decoration: underline;
             }
-            height: 60vh;
+            height: 80vh;
             width: 100%;
             padding-bottom: 65px;
             z-index: 2;
@@ -463,21 +463,55 @@
                 height: 100vh; 
                 overflow: hidden;
                 video {
+                    cursor: pointer;
                     /* Make video to at least 100% wide and tall */
-                    // min-width: 100%; 
-                    // min-height: 100%; 
+                    min-width: 100%; 
+                    min-height: 100%; 
                   
                     /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-                    width: 100%;
-                    height: 100%;
+                    width: auto;
+                    height: auto;
                   
                     /* Center the video */
                     position: absolute;
-                    top: 0;
-                    left: 0;
-                    // top: 50%;
-                    // left: 50%;
-                    // transform: translate(-50%,-50%);
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+                .video__handles {
+                    position: absolute;
+                    right: 24px;
+                    bottom: 24px;
+                    width: auto;
+                    .handle {
+                        position: relative;
+                        cursor: pointer;
+                        opacity: 0.3;
+                        width: 30px;
+                        height: 30px;
+                        margin-left: 8px;
+                        border-radius: 50%;
+                        background-color: rgba($color: #fff, $alpha: 0.7);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        svg {
+                            fill: rgba($color: $black, $alpha: 0.3);
+                            width: 16px;
+                            display: none;
+                            &.default {
+                                display: block;
+                            }
+                        }
+                        &:hover {
+                            opacity: 1;
+                        }
+                        &.play {
+                            svg {
+                                width: 10px;
+                            }
+                        }
+                    }
                 }
             }
         }

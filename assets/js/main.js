@@ -23,13 +23,35 @@
   // }
 (($) => {
   'use strict';
-  let video = document.getElementById('video-player');
+  const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
   $(document).ready(() => {
+    let backgroundVideo = document.getElementById('header-background-video');
+    let sideVideo = document.getElementById('video-player');
+    
     $('.play-button').on('click', () => {
       $('.video__content').fadeIn(() => {
-        video.play();
+        sideVideo.play();
       })
     });
+    $('.video__handles .handle').on('click', (e) => {
+      e.preventDefault();
+      let currentTarget = $(e.currentTarget)
+      let button = currentTarget.closest('.handle');
+      let target = currentTarget.closest('.video__handles');
+      
+      if ( !target ) return;
+      let currentVideo = document.getElementById(target.data('target'));
+      if ( !currentVideo ) return;
+      if ( button.hasClass('play') ) {
+        !!isVideoPlaying(currentVideo) ? currentVideo.pause() : currentVideo.play();
+      }
+      if ( button.hasClass('sound') ) {
+        currentVideo.muted = !currentVideo.muted;
+      }
+      button.find('svg').toggleClass('default');
+    })
+
+
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
 
