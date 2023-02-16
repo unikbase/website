@@ -57,11 +57,11 @@
   // Main process when document ready
   let backgroundVideo = document.getElementById('header-background-video');
   let sideVideo = document.getElementById('video-player');
-  updateAutoplay(backgroundVideo);
-
-  $(document).on('resize', () => {
-    updateAutoplay(backgroundVideo);
-  })
+  
+  // Trigger autoplay
+  backgroundVideo.oncanplay = () => {
+    backgroundVideo.play();
+  }
 
   $(document).ready(() => {
     backgroundVideo.onpause = () => {
