@@ -1,33 +1,29 @@
 
   // Handle youtube video player 
-  
-  // function onYouTubeIframeAPIReady () {
-  //   // iframeId parameter should match your Iframe's id attribute
-  //   window.unikbaseVideo = new YT.Player('video-player', {
-  //     width: 140,
-  //     height: 105,
-  //     videoId: 'Polqwhz1StI',
-  //     playerVars: {
-  //       rel: 0, 
-  //       showinfo: 0, 
-  //       ecver: 2, 
-  //       modestbranding:  1, 
-  //       loop: 1
-  //     },
-  //     events: {
-  //       'onReady': function (event) {
-  //         event.target.setVolume(0);
-  //       }
-  //     }
-  //   });
-  // }
 (($) => {
   'use strict';
   const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+  const isIos = () => {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
   const updateAutoplay = (video) => {
     let screenWidth = $(window).width();
-    if ( screenWidth >= 900 ) {
+
+    if ( !isIos() || screenWidth >= 900 ) {
+      $(video).parent().addClass('autoplay');
       video.autoplay = 'autoplay';
+    } else {
+      $(video).parent().removeClass('autoplay');
+      video.autoplay = 'false';
     }
   }
   // Lazy load video

@@ -137,32 +137,34 @@
                         left: 0;
                         transform: none;
                     }
-                    .video__handles {
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        top: 0;
-                        left: 0;
-                        right: auto;
-                        bottom: auto;
-                        opacity: 0.3;
-                        &:hover {
-                            opacity: 1;
-                        }
-                        .play {
+                    &:not(.autoplay) {
+                        .video__handles {
+                            display: block;
                             position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            width: 40px;
-                            height: 40px;
-                            opacity: 0.7;
-                        }
-                        .sound {
-                            position: absolute;
-                            right: 24px;
-                            bottom: 24px;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            right: auto;
+                            bottom: auto;
+                            opacity: 0.3;
+                            &:hover {
+                                opacity: 1;
+                            }
+                            .play {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 40px;
+                                height: 40px;
+                                opacity: 0.7;
+                            }
+                            .sound {
+                                position: absolute;
+                                right: 24px;
+                                bottom: 24px;
+                            }
                         }
                     }
                 }
