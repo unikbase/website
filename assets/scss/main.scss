@@ -486,17 +486,16 @@
                     .handle {
                         position: relative;
                         cursor: pointer;
-                        opacity: 0.3;
                         width: 30px;
                         height: 30px;
                         margin-left: 8px;
                         border-radius: 50%;
-                        background-color: rgba($color: #fff, $alpha: 0.7);
+                        background-color: rgba($color: $red, $alpha: 0.5);
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         svg {
-                            fill: rgba($color: $black, $alpha: 0.3);
+                            fill: rgba($color: $white, $alpha: 0.7);
                             width: 16px;
                             display: none;
                             &.default {
@@ -504,7 +503,7 @@
                             }
                         }
                         &:hover {
-                            opacity: 1;
+                            background-color: rgba($color: $red, $alpha: 0.7);
                         }
                         &.play {
                             svg {
