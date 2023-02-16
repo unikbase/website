@@ -24,10 +24,56 @@
 (($) => {
   'use strict';
   const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+  const updateAutoplay = (video) => {
+    let screenWidth = $(window).width();
+    if ( screenWidth >= 900 ) {
+      video.autoplay = 'autoplay';
+    }
+  }
+  // Lazy load video
+  document.addEventListener("DOMContentLoaded", function() {
+    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+    if ("IntersectionObserver" in window) {
+      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(video) {
+          if (video.isIntersecting) {
+            for (var source in video.target.children) {
+              var videoSource = video.target.children[source];
+              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = videoSource.dataset.src;
+              }
+            }
+
+            video.target.load();
+            video.target.classList.remove("lazy");
+            lazyVideoObserver.unobserve(video.target);
+          }
+        });
+      });
+
+      lazyVideos.forEach(function(lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+      });
+    }
+  });
+  // Main process when document ready
+  let backgroundVideo = document.getElementById('header-background-video');
+  let sideVideo = document.getElementById('video-player');
+  updateAutoplay(backgroundVideo);
+
+  $(document).on('resize', () => {
+    updateAutoplay(backgroundVideo);
+  })
+
   $(document).ready(() => {
-    let backgroundVideo = document.getElementById('header-background-video');
-    let sideVideo = document.getElementById('video-player');
-    
+    backgroundVideo.onpause = () => {
+      $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
+    }
+    backgroundVideo.onplay = () => {
+      $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
+    }
+
     $('.play-button').on('click', () => {
       $('.video__content').fadeIn(() => {
         sideVideo.play();
@@ -47,8 +93,8 @@
       }
       if ( button.hasClass('sound') ) {
         currentVideo.muted = !currentVideo.muted;
+        button.find('svg').toggleClass('default');
       }
-      button.find('svg').toggleClass('default');
     })
 
 
