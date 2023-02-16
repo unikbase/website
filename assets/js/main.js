@@ -1,32 +1,7 @@
-
-  // Handle youtube video player 
+// Handle youtube video player 
 (($) => {
   'use strict';
-  const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
-  const isIos = () => {
-    return [
-      'iPad Simulator',
-      'iPhone Simulator',
-      'iPod Simulator',
-      'iPad',
-      'iPhone',
-      'iPod'
-    ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-  }
-  const updateAutoplay = (video) => {
-    if ( !video ) return;
-    let screenWidth = $(window).width();
-
-    if ( !isIos() || screenWidth >= 900 ) {
-      $(video).parent().addClass('autoplay');
-      video.autoplay = 'autoplay';
-    } else {
-      $(video).parent().removeClass('autoplay');
-      video.autoplay = 'false';
-    }
-  }
+  
   // Lazy load video
   document.addEventListener("DOMContentLoaded", function() {
     var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
@@ -60,43 +35,44 @@
   // Main process when document ready
   let backgroundVideo = document.getElementById('header-background-video');
   let sideVideo = document.getElementById('video-player');
-  
-  // // Trigger autoplay
-  // backgroundVideo.oncanplay = () => {
-  //   backgroundVideo.play();
-  // }
 
   $(document).ready(() => {
-    // backgroundVideo.onpause = () => {
-    //   $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
-    // }
-    // backgroundVideo.onplay = () => {
-    //   $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
-    // }
 
     $('.play-button').on('click', () => {
       $('.video__content').fadeIn(() => {
         sideVideo.play();
       })
     });
-    $('.video__handles .handle').on('click', (e) => {
-      e.preventDefault();
-      let currentTarget = $(e.currentTarget)
-      let button = currentTarget.closest('.handle');
-      let target = currentTarget.closest('.video__handles');
-      
-      if ( !target ) return;
-      let currentVideo = document.getElementById(target.data('target'));
-      if ( !currentVideo ) return;
-      if ( button.hasClass('play') ) {
-        !!isVideoPlaying(currentVideo) ? currentVideo.pause() : currentVideo.play();
-      }
-      if ( button.hasClass('sound') ) {
-        currentVideo.muted = !currentVideo.muted;
-        button.find('svg').toggleClass('default');
-      }
-    })
 
+    if ( typeof Vimeo !== 'undefined' ) {
+      let vimeoPlayer = new Vimeo.Player(backgroundVideo)
+      // vimeoPlayer.setVolume(0.5);
+      $(document).on('click', '.video__handles .handle.sound', (e) => {
+        e.preventDefault();
+        let currentTarget = $(e.currentTarget)
+        let button = currentTarget.closest('.handle');
+        if ( !button ) return;
+        button.toggleClass('unmuted');
+        button.find('svg').toggleClass('default');
+        vimeoPlayer.setMuted(!button.hasClass('unmuted'))
+      });
+
+
+      let modalVideo = document.getElementById('unikbase-video');
+      let modalPlayer;
+      !!modalVideo && (modalPlayer = new Vimeo.Player(modalVideo));
+      $(document).on('click', '.video-modal .wrapper', (event) => {
+        event.preventDefault();
+        $('.video-modal').removeClass('show');
+        modalPlayer && modalPlayer.pause();
+        vimeoPlayer && vimeoPlayer.play();
+      });
+      $(document).on('click', '.video__handles .handle.play', (e) => {
+        event.preventDefault();
+        $('.video-modal').addClass('show');
+        vimeoPlayer && vimeoPlayer.pause();
+      })
+    }
 
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {

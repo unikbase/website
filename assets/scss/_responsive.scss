@@ -125,7 +125,13 @@
                 height: 80vh;
                 // margin-bottom: 0;
             }
-            // &--decoration {
+            &--decoration {
+                .video__handles {
+                    .handle.play {
+                        display: block!important;
+                    }
+                }
+            }
             //     position: relative;
             //     .parralax {
             //         height: 100%;

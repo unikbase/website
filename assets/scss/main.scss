@@ -64,6 +64,33 @@
     font-weight: 400;
     color: $black;
     overflow-x: hidden;
+
+    .video {
+        &-modal {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: 999;
+            background-color: rgba($color: $black, $alpha: 0.7);
+            .wrapper {
+                width: 100%;
+                height: 100%;
+            }
+            iframe {
+                width: calc(100vw - 48px);
+                height: 360px;
+                transform: translate(0, -50%);
+                position: absolute;
+                top: 50%;
+                left: 24px;
+            }
+            &.show {
+                display: block;
+            }
+        }
+    }
     &__logo {
         a {
             display: block;
@@ -509,9 +536,12 @@
                 }
                 .video__handles {
                     position: absolute;
-                    right: 24px;
                     bottom: 24px;
-                    width: auto;
+                    left: 0;
+                    right: 0;
+                    width: 80%;
+                    width: calc(100% - 48px);
+                    padding: 0 24px;
                     .handle {
                         position: relative;
                         cursor: pointer;
@@ -519,10 +549,11 @@
                         height: 30px;
                         margin-left: 8px;
                         border-radius: 50%;
-                        background-color: rgba($color: $red, $alpha: 0.5);
+                        background-color: rgba($color: $red, $alpha: 1);
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        margin-left: auto;
                         svg {
                             fill: rgba($color: $white, $alpha: 0.7);
                             width: 16px;
@@ -535,8 +566,33 @@
                             background-color: rgba($color: $red, $alpha: 0.7);
                         }
                         &.play {
+                            display: none;
+                            color: $white;
+                            width: auto;
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            height: auto;
+                            line-height: 30px;
+                            padding: 0 20px 0 10px;
+                            border-radius: 15px;
+                            left: 0;
+                            margin-left: 0;
+                            right:auto;
                             svg {
                                 width: 10px;
+                            }
+                            &::before {
+                                content: " ";
+                                margin-right: 4px;
+                                display: inline-block;
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 5px 0 5px 5px;
+                                border-color: transparent transparent transparent $white;
+                                line-height: 0px;
+                                _border-color: #ffffff #ffffff #ffffff #ffffff;
+                                _filter: progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');
                             }
                         }
                     }
