@@ -38,6 +38,9 @@
             for (var source in video.target.children) {
               var videoSource = video.target.children[source];
               if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                if ( !isIos() && videoSource.classList.contains('mobile') ) {
+                  continue;
+                } 
                 videoSource.src = videoSource.dataset.src;
               }
             }
