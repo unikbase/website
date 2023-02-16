@@ -16,6 +16,7 @@
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
   const updateAutoplay = (video) => {
+    if ( !video ) return;
     let screenWidth = $(window).width();
 
     if ( !isIos() || screenWidth >= 900 ) {
