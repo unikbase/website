@@ -61,18 +61,18 @@
   let backgroundVideo = document.getElementById('header-background-video');
   let sideVideo = document.getElementById('video-player');
   
-  // Trigger autoplay
-  backgroundVideo.oncanplay = () => {
-    backgroundVideo.play();
-  }
+  // // Trigger autoplay
+  // backgroundVideo.oncanplay = () => {
+  //   backgroundVideo.play();
+  // }
 
   $(document).ready(() => {
-    backgroundVideo.onpause = () => {
-      $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
-    }
-    backgroundVideo.onplay = () => {
-      $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
-    }
+    // backgroundVideo.onpause = () => {
+    //   $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
+    // }
+    // backgroundVideo.onplay = () => {
+    //   $(backgroundVideo).parent().find('.play.handle svg').toggleClass('default');
+    // }
 
     $('.play-button').on('click', () => {
       $('.video__content').fadeIn(() => {
