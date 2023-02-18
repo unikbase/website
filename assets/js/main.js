@@ -46,6 +46,10 @@
 
     if ( typeof Vimeo !== 'undefined' ) {
       let vimeoPlayer = new Vimeo.Player(backgroundVideo)
+      vimeoPlayer.on('play', () => {
+        $('.video-background .video-placeholder').fadeOut();
+      })
+      
       // vimeoPlayer.setVolume(0.5);
       $(document).on('click', '.video__handles .handle.sound', (e) => {
         e.preventDefault();
