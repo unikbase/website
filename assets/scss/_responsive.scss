@@ -789,16 +789,16 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
     @include mobile();
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+@media only screen and (min-width: 900px) and (max-width: 1280px) and (orientation: portrait) {
     /* CSS */
     @include mobile();
 }
 
-@media screen and ( min-width: 769px ) {
+@media screen and ( min-width: 901px ) {
     .site {
         &__navigation {
             &--white {
@@ -887,7 +887,7 @@
     }
 }
 
-@media screen and ( min-width: 769px) and (max-width: 900px) {
+@media screen and ( min-width: 901px) and (max-width: 900px) {
     .site {
         .brand {
             margin: 8px auto;
@@ -979,9 +979,9 @@
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+@media screen and (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
     .container {
-        width: calc(100vw - 40px);
+        width: calc(100vw - 80px);
     }
 }
 @media screen and (min-width: 901px) and (max-width: 1366px) {
@@ -1036,4 +1036,3 @@
         }
     }
 }
-

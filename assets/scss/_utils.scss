@@ -9,6 +9,12 @@
         margin-right: auto;
     }
 }
+.w {
+    &--full {
+        width: 100%;
+        max-width: none;
+    }
+}
 .text {
     &--align-right {
         text-align: right;
