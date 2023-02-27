@@ -909,6 +909,7 @@
                             color: $red;
                             text-transform: capitalize;
                             text-decoration: underline;
+                            cursor: default;
                         }
                         margin-right: 0.25em;
                         &:not(:last-child)::after {
