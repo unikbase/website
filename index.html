@@ -9,6 +9,8 @@
   <meta name="og:sitename" content ="Unikbase">
   <meta name="og:description" content="We make digital twins of real-life valuables. Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.">
   <meta name="og:type" content="website">
+  <meta name="og:image" content="assets/images/cover.png">
+  <meta name="og:image:type" content="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +25,6 @@
     });
     let urlLang = params.lang; // "some_value"
 
-    console.log("urlLang:%s,userLang:%s",urlLang,userLang)
     if(!urlLang=="en" && userLang.indexOf("fr") > -1) {
         //window.location.replace("/fr/index.html");
     }
