@@ -725,11 +725,14 @@
         width: calc(80% - 20px);
         margin-left: auto;
         .article {
-            margin-bottom: 100px;
+            margin-bottom: 220px;
+            @media screen and (min-width: 900px) and (max-width: 1330px) {
+                margin-bottom: 110px;
+            }
             &__title {
                 font-size: 40px;
                 line-height: 50px;
-                margin-bottom: 70px;
+                margin-bottom: 50px;
                 font-weight: 400;
             }
             &__content {
