@@ -887,33 +887,33 @@
     }
 }
 
-@media screen and ( min-width: 901px) and (max-width: 900px) {
-    .site {
-        .brand {
-            margin: 8px auto;
-        }
-        &__logo a {
-            height: 60px;
-        }
-        &__footer {
-            .site__logo svg {
-                max-height: 60px;
-            }
-        }
-        &__header {
-            &--slogan {
-                .site__short-about {
-                    font-size: 52px;
-                    line-height: 52px;
-                }
-                .navigation--scroll {
-                    font-size: 18px;
-                    line-height: 28px;
-                }
-            }
-        }
-    }
-}
+// @media screen and ( min-width: 901px) and (max-width: 900px) {
+//     .site {
+//         .brand {
+//             margin: 8px auto;
+//         }
+//         &__logo a {
+//             height: 60px;
+//         }
+//         &__footer {
+//             .site__logo svg {
+//                 max-height: 60px;
+//             }
+//         }
+//         &__header {
+//             &--slogan {
+//                 .site__short-about {
+//                     font-size: 52px;
+//                     line-height: 52px;
+//                 }
+//                 .navigation--scroll {
+//                     font-size: 18px;
+//                     line-height: 28px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 @media screen and (min-width: 901px) and (max-width:1500px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
@@ -972,8 +972,8 @@
             line-height: 30px;
         }
         .articles .article__title {
-            font-size: 32px;
-            line-height: 42px;
+            font-size: 26px;
+            line-height: 36px;
         }
         #what-we-do ul li ,
         #how-it-works .article {
