@@ -976,7 +976,7 @@
         ul {
             margin-left: 2em;
         }
-        @media screen and (min-width: 900px) {
+        @media screen and (min-width: 1000px) and (orientation: portrait) {
             .article__content {
                 display: flex;
                 flex-direction: column;
