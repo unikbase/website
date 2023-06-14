@@ -52,8 +52,8 @@
                 width: 100%;
             }
             .articles {
-                margin-left: 0;
-                width: 100%;
+                width: 100vw;
+                margin-left: -40px!important;
                 padding-left: 30px;
                 padding-right: 30px;
                 .article {
@@ -103,6 +103,10 @@
             }
         }
         .articles {
+            width: 100vw;
+            margin-left: -40px!important;
+            padding-left: 30px;
+            padding-right: 30px;
             p {
                 margin-left: 0;
                 margin-right: 0;
@@ -484,9 +488,6 @@
                 flex-direction: column;
             }
             .articles {
-                margin-left: -5vw;
-                width: 100vw;
-                padding: 5vw;
                 padding-bottom: 0;
                 overflow: hidden;
             }
@@ -504,7 +505,8 @@
             // space for horse image
             margin-bottom: 280px;
             .article__content {
-                margin-bottom: 2em
+                margin-bottom: 2em;
+                min-height: min-content!important;
             }
             .animation {
                 // position: relative;
@@ -584,9 +586,6 @@
                 flex-direction: column;
             }
             .articles {
-                margin-left: -5vw;
-                width: 100vw;
-                padding: 5vw;
                 padding-bottom: 0;
                 .article {
                     h4 {
@@ -635,11 +634,6 @@
             padding-bottom: 0;
             > .flex {
                 flex-direction: column;
-            }
-            .articles {
-                margin-left: -5vw;
-                width: 100vw;
-                padding: 5vw;
             }
         }
 
@@ -798,6 +792,20 @@
     @include mobile();
 }
 
+@media only screen and (min-width: 900px) and (max-width: 1280px) and (orientation: landscape) {
+    #how-it-works,
+    #about-us {
+        padding-top: 0px;
+    } 
+}
+
+@media only screen and (min-width: 1280px) {
+    #how-it-works,
+    #about-us {
+        padding-top: 0px;
+    } 
+}
+
 @media only screen and (min-width: 901px) and (max-width: 1024px) {
 
     .site #video a {
@@ -910,33 +918,6 @@
         }
     }
 }
-// @media screen and ( min-width: 901px) and (max-width: 900px) {
-//     .site {
-//         .brand {
-//             margin: 8px auto;
-//         }
-//         &__logo a {
-//             height: 60px;
-//         }
-//         &__footer {
-//             .site__logo svg {
-//                 max-height: 60px;
-//             }
-//         }
-//         &__header {
-//             &--slogan {
-//                 .site__short-about {
-//                     font-size: 52px;
-//                     line-height: 52px;
-//                 }
-//                 .navigation--scroll {
-//                     font-size: 18px;
-//                     line-height: 28px;
-//                 }
-//             }
-//         }
-//     }
-// }
 
 @media only screen and (min-width: 901px) and (max-width:1500px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
@@ -1071,5 +1052,13 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    #how-it-works,
+    #about-us {
+        padding-top: 0px;
     }
 }
