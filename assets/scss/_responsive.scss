@@ -21,6 +21,27 @@
         .site__navigation {
             .navigation {
                 display: block;
+                .sub-menu {
+                    position: relative;
+                    padding-top: 0;
+                    li {
+                        border-radius: 0;
+                        padding-left: 0;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        a {
+                            text-transform: uppercase;
+                            background-color: transparent;
+                            border-radius: 0;
+                            color: $white!important;
+                            width: 100%;
+                            padding-left: 0;
+                        }
+                    }
+                }
+                li.has-submenu:hover > a::after{
+                    text-decoration: none;
+                }
             }
         }
         .menu--mobile-float {
@@ -187,7 +208,7 @@
                             line-height: 34px;
                             &:hover,
                             &.active {
-                                &, a {
+                                > a {
                                     color: $red!important;
                                     text-decoration: none!important;
                                 }
