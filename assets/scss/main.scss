@@ -1295,19 +1295,131 @@
             }
         }
         &__content {
+            z-index: 3;
+            padding-bottom: 0;
             h3 {
                 font-weight: 400;
+                margin-bottom: 1em;
             }
             p {
                 margin-left: 0;
             }
             &--overview p {
                 max-width: 600px;
+                margin-bottom: 40px;
             }
             &--details {
                 padding: 40px;
                 h3 {
                     color: $red;
+                }
+                .divider {
+                    height: 2px;
+                    background-color: #FFF;
+                    width: 100%;
+                    margin-top: 80px; 
+                }
+                .illustration {
+                    pointer-events: none;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    img {
+                        height: 428px;
+                        width: auto;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        translate: 0 calc(-50% - 60px);
+                    }
+                }
+                .list {
+                    .collapse {
+                        padding-left: 0;
+                        margin-bottom: 0;
+                        border-bottom: 1px solid $black;
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                        h3 {
+                            color: $black;
+                            padding: 12px 0;
+                            &::before {
+                                display: inline;
+                                position: relative;
+                                font-weight: normal;
+                            }
+                        }
+                        &__toggle {
+                            padding: 0;
+                            background-image: none;
+                            &::before {
+                                display: block;
+                                content: "+";
+                            }
+                        }
+                        &__content {
+                            padding-right: 40px;
+                        }
+                        &.collapse--in {
+
+                            .collapse__toggle::before {
+                                content: "-";
+                            }
+                            .collapse__content {
+                                padding-bottom: 12px;
+                            }
+                        }
+                    }
+                    margin-bottom: 2em;
+                }
+                .row {
+                    .col {
+                        flex-grow: 0;
+                        &:first-child {
+                            width: 60%;
+                            flex-basis: 60%;
+                        }
+                        &:nth-child(2) {
+                            width: 40%;
+                            flex-basis: 40%;
+                        }
+                    }
+                }
+                &:first-child {
+                    .illustration {
+                        img {
+                            height: 220%;
+                            max-height: 600px;
+                            translate: 0 calc(-50%);
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    .row {
+                        justify-content: flex-end;
+                        .col {
+                            &:nth-child(1) {
+                                flex-grow: 1;
+                            }
+                            &:nth-child(2) {
+                                flex-basis: auto; 
+                                width: auto;
+                                margin-right: 40px;
+                            }
+                        }
+                        .illustration {
+                            width: 230px;
+                            height: auto;
+                            img {
+                                height: 468px;
+                                width: 100%;
+                                height: auto;
+                                top: 0;
+                                translate: 0 0;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1340,6 +1452,8 @@
         }
     }
     #lifetime {
+        padding-top: 200px;
+        margin-top: -100px;
         p {
             margin-left: 0;
             max-width: 600px;
