@@ -110,9 +110,6 @@
             color: $white;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
-        }
         width: 100%;
         top: 0;
         z-index: 99;
@@ -130,9 +127,11 @@
                 margin-left: 1em;
                 line-height: 1em;
                 &:hover, &.active {
-                    a { 
-                        text-decoration: underline;
-                        text-decoration-color: $red;
+                    > a { 
+                        &, &::after {
+                            text-decoration: underline;
+                            text-decoration-color: $red;
+                        }
                     }
                 }
             }
@@ -166,6 +165,15 @@
             .sign-in.dropdown-menu {
                 .handle::after {
                     border-color: $black transparent transparent transparent!important;
+                }
+            }
+            .menu li .sub-menu {
+                padding-top: 24px;
+                right: auto;
+                left: 50%;
+                transform: translate(-50%, 0);
+                a {
+                    background-color: $white;
                 }
             }
         }
@@ -217,15 +225,12 @@
             }
         }
 
-        
-
         // Menu Float on mobile
         .menu--mobile-float {
             @extend .flex;
             flex-grow: 1;
             flex-shrink: 1;
         }
-
 
         .sign-in.dropdown-menu {
             pointer-events: all;
@@ -422,6 +427,11 @@
             align-items: flex-end;
             top: 0;
             box-sizing: border-box;
+            height: 80vh;
+            width: 100%;
+            z-index: 2;
+            margin-bottom: 100vh;
+            padding-bottom: 40px;
             &, a {
                 color: $white;
                 text-decoration: none;
@@ -429,18 +439,13 @@
             a:hover {
                 text-decoration: underline;
             }
-            height: 80vh;
-            width: 100%;
-            padding-bottom: 65px;
-            z-index: 2;
-            margin-bottom: 100vh;
 
             .navigation {
                 &--scroll {
                     font-size: 24px;
                     line-height: 28px;
                     li {
-                        margin-left: 1.5em;
+                        margin-left: 40px;
                     }
                 }
                 &--sticky {
