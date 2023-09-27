@@ -363,7 +363,39 @@
                 }
             }
         }
-
+        
+        .industries {
+            &__content {
+                &--details {
+                    .row {
+                        flex-direction: column!important;
+                        .col {
+                            padding-right: 0!important;
+                            width: 100%!important;
+                            flex-basis: 100%!important;
+                        }
+                    }
+                    .divider {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+                    .illustration {
+                        height: auto;
+                        width: auto!important;
+                        margin: 0 auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            position: relative;
+                            height: 250px!important;
+                            width: auto!important;
+                            translate: none!important;
+                        }
+                    }
+                }
+            }
+        }
         #why-us {
             top: -120%;
             .section {
@@ -533,9 +565,6 @@
         #phone-app-animation {
             background: #fff;
             width: 100vw;
-            .article__content {
-                padding: 5vw;
-            }
             .article__thumbnail {
                 width: 100vw;
                 top: -280px;
