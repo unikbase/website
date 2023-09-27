@@ -63,7 +63,7 @@
     li {
         position: relative;
         &.has-submenu {
-            a::after {
+            > a::after {
                 content: "+";
                 display: inline-block;
             }
