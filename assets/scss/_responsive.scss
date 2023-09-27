@@ -532,7 +532,6 @@
         }
         #phone-app-animation {
             background: #fff;
-            margin-left: -5vw;
             width: 100vw;
             .article__content {
                 padding: 5vw;
@@ -630,11 +629,17 @@
             }
         }
 
+        #industries,
+        #benefits,
         #about-us {
             padding-bottom: 0;
             > .flex {
                 flex-direction: column;
             }
+        }
+
+        #benefits {
+            padding-top: 0;
         }
 
         #press {
@@ -794,14 +799,16 @@
 
 @media only screen and (min-width: 900px) and (max-width: 1280px) and (orientation: landscape) {
     #how-it-works,
-    #about-us {
+    #benefits {
         padding-top: 0px;
     } 
+    #what-we-do {
+        padding-bottom: 40px;
+    }
 }
 
 @media only screen and (min-width: 1280px) {
-    #how-it-works,
-    #about-us {
+    #how-it-works {
         padding-top: 0px;
     } 
 }
@@ -899,6 +906,9 @@
         #what-we-do {
             position: relative;
             z-index: 2;
+            .articles {
+                padding: 0;
+            }
         }
         
         #horse-animation {
@@ -907,14 +917,6 @@
                 flex-direction: column;
                 min-height: 515px;
             }
-        }
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    #phone-app-animation {
-        .animation {
-            margin-top: -7em;
         }
     }
 }
@@ -990,9 +992,6 @@
                 line-height: 38px;
             }
         }
-        #phone-app-animation .animation {
-            height: 600px;
-        }
     }
 }
 
@@ -1056,9 +1055,11 @@
 }
 
 @media only screen and (min-width: 1280px) {
-
     #how-it-works,
-    #about-us {
+    #benefits {
         padding-top: 0px;
+    }
+    #what-we-do {
+        padding-bottom: 40px;
     }
 }

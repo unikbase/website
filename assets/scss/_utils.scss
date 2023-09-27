@@ -191,3 +191,35 @@
         }
     }
 }
+
+
+.collapse {
+    position: relative;
+    &__content {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+    &__toggle {
+        z-index: 2;
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 18px;
+        background-image: url(../images/SVG/collapse-arrow-down.svg);
+        right: 0;
+        top: 0;
+        padding: 1.25em 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+    &--in {
+        .collapse__content {
+            max-height: none;
+        }
+        .collapse__toggle {
+            background-image: url(../images/SVG/collapse-arrow-up.svg);
+        }
+    }
+}
