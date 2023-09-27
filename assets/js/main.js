@@ -250,7 +250,7 @@
     }
   }
 
-  const generateInstgramPost = (item) => {
+  const generateInstgramPost = (item, siteUrl) => {
     let el = document.createElement('div')
     el.classList.add('instagram__post');
     let anchor = document.createElement('a');
@@ -260,11 +260,12 @@
     anchor.setAttribute('title', item.caption || 'Instgram post');
     let image = document.createElement('img');
 
-		let sourcePath = window.location.pathname.indexOf('index.html') < 0 ?'../':'';
+		let sourcePath = window.location.pathname.indexOf('index.html') < 0 ?'..':'';
 		if ( !!window._current_lang ) {
-			sourcePath += '../'	
+			sourcePath += '/..'	
 		}
-    image.setAttribute('src', `./${sourcePath}${item.media_url}` );
+		
+    image.setAttribute('src', `${siteUrl}/${sourcePath}/${item.media_url}` );
     image.setAttribute('alt', item.caption || 'Instgram post');
     el.setAttribute('data-id', item.id);
 
@@ -274,13 +275,21 @@
     return el;
   }
 
+	const getSiteUrl = () => {
+
+		const url = new URL(window.location.href);
+		let path = url.pathname.split("/");
+		path.pop();
+		url.pathname = path.join("/")
+		return url.href;
+	}
   const generateSlider = (items, wrapper) => {
     if ( !wrapper ) return;
-    
+		const siteUrl = getSiteUrl();
     // let container = document.createElement('div');
     // container.classList.add('instagram__slider');
     items.forEach(el => {
-      let item = generateInstgramPost(el);
+      let item = generateInstgramPost(el, siteUrl);
       wrapper.insertAdjacentElement('beforeend', item);
     })
     // wrapper.insertAdjacentElement('beforeend', container);
