@@ -260,7 +260,11 @@
     anchor.setAttribute('title', item.caption || 'Instgram post');
     let image = document.createElement('img');
 
-    image.setAttribute('src', `./../${item.media_url}` );
+		let sourcePath = window.location.pathname.indexOf('index.html') < 0 ?'../':'';
+		if ( !!window._current_lang ) {
+			sourcePath += '../'	
+		}
+    image.setAttribute('src', `./${sourcePath}${item.media_url}` );
     image.setAttribute('alt', item.caption || 'Instgram post');
     el.setAttribute('data-id', item.id);
 
