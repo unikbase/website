@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta property="og:sitename" content ="Unikbase">
+    <meta property="og:sitename" content ="Unikbase">
 	<meta property="og:description" content="We make digital twins of real-life valuables. Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://unikbase.com/assets/images/site-share.png">
 	<meta property="og:image:secure_url" content="https://unikbase.com/assets/images/site-share.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Unlocking collectibles - Unikbase">
+  	<meta property="og:image:type" content="image/png">
+  	<meta property="og:image:alt" content="Unlocking collectibles - Unikbase">
+	<meta property="og:title" content="Unlocking collectibles - Unikbase">
+	<meta property="og:url" content="https://unikbase.com/">
+	<meta name="twitter:image" content="https://unikbase.com/assets/images/site-share.png">
+    <meta name="twitter:description" content="We make digital twins of real-life valuables. Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.">
+    <meta name="twitter:title" content="Unlocking collectibles - Unikbase">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta name="twitter:image" content="https://unikbase.com/assets/images/site-share.png">
-    <meta name="twitter:description" content="We make digital twins of real-life valuables. Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.">
-    <meta name="twitter:title" content="Unlocking collectibles - Unikbase">
+    <title>Unlocking collectibles - Unikbase</title>
+    <meta name="og:sitename" content ="Unikbase">
+    <meta name="og:description" content="We make digital twins of real-life valuables. Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.">
+    <meta name="og:type" content="website">
 
-  <title>Unlocking collectibles - Unikbase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/main.min.css?version=155514062023" />
+    <link rel="icon" href="../assets/images/fav.png" type="image/png">
+    <script type="text/javascript">
+        window._current_lang = 'fr';
+        var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage)
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+        let urlLang = params.lang; // "some_value"
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../assets/css/main.min.css?version=155514062023" />
-  <link rel="icon" href="../assets/images/fav.png" type="image/png">
-   <script type="text/javascript">
-    window._current_lang = 'fr';
-
-    var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage)
-    const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-    });
-    let urlLang = params.lang; // "some_value"
-
-    console.log("urlLang:%s,userLang:%s",urlLang,userLang)
-    if(!urlLang=="en" && userLang.indexOf("fr") > -1) {
-        //window.location.replace("/fr/index.html");
-    }
-
+        if(!urlLang=="en" && userLang.indexOf("fr") > -1) {
+            //window.location.replace("/fr/index.html");
+        }
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PHXVXQP');</script>
-    <!-- End Google Tag Manager -->
+        
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PHXVXQP');
+    </script>
+        <!-- End Google Tag Manager -->
 </head>
 <body class="site site-homepage">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHXVXQP"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
     <header class="site__header flex flex--column">
         <div class="brand flex flex--end w-100">
             <div class="container">
@@ -86,7 +88,16 @@
                     <div class="navigation main-navigation menutext flex">
                         <ul class="menu menu--horizontal">
                             <li class=""><a href="#what-we-do" title="Solution">Solution</a></li>
-                            <li class=""><a href="#how-it-works" title="Fonctionnement">Technologie</a></li>
+                            <li><a href="#benefits" title="Advantages">Advantages</a></li>
+                            <li class="has-submenu">
+                                <a href="#industries" title="Industries">Industries <i class="fa fa-plus"></i></a>
+                                <ul class="sub-menu">
+                                    <li><a href="./industries/furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
+                                    <li><a href="./industries/fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
+                                    <li><a href="./industries/collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
+                                    <li><a href="./industries/artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
+                                </ul>
+                            </li>
                             <li class=""><a href="#about-us" title="Équipe">Équipe</a></li>
                             <li class=""><a href="#footer" rel="noopener" title="Contact">Contact</a></li>
                         </ul>
@@ -94,23 +105,18 @@
         
                     <div class="navigation flex margin--l">
                         <div class="dropdown-menu sign-in">
-                            <span class="handle">SE CONNECTER</span>
+                            <span class="handle">Sign in</span>
                             <ul class="menu menu--vertical text--align-right">
-                                <!-- <li class="d-mobile logo">
-                                    <a href="" title="">
-                                        <img src="" alt="" class="logo--image">
-                                    </a>
-                                </li> -->
-                                <li class=""><a href="https://collector.unikbase.com" target="_blank" rel="noopener" title="Operator Sign in">Connexion opérateur</a></li>
-                                <li class=""><a href="https://collector.unikbase.com" target="_blank" rel="noopener" title="Collector Sign In">Connexion collecteur</a></li>
+                                <li class=""><a href="https://collector.unikbase.com" target="_blank" rel="noopener" title="Operator Sign in">Operator Sign In</a></li>
+                                <li class=""><a href="https://collector.unikbase.com" target="_blank" rel="noopener" title="Collector Sign In">Collector Sign In</a></li>
                             </ul>
                         </div>
 
                         <div class="dropdown-menu languages">
-                            <span data-active-lang="fr" class="handle">FR</span>
+                            <span data-active-lang="en" class="handle">EN</span>
                             <ul class="menu menu--languages">
-                                <li data-lang="en" ><a href="../index.html" alt=""><i class="icon icon--global"></i>EN</a></li>
-                                <li data-lang="fr" class="active"><a href="./fr/index.html" alt=""><i class="icon icon--global"></i>FR</a></li>
+                                <li data-lang="en" class="active" ><a href="#" alt=""><i class="icon icon--global"></i>EN</a></li>
+                                <li data-lang="fr" ><a href="./fr/index.html" alt=""><i class="icon icon--global"></i>FR</a></li>
                             </ul>
                         </div>
                     </div>
@@ -126,7 +132,16 @@
             <div class="navigation navigation--scroll menutext flex hide-mobile">
                 <ul class="menu menu--horizontal">
                     <li class=""><a href="#what-we-do" title="Solution">Solution</a></li>
-                    <li class=""><a href="#how-it-works" title="Fonctionnement">Technologie</a></li>
+                    <li><a href="#benefits" title="Advantages">Advantages</a></li>
+                    <li class="has-submenu">
+                        <a href="#industries" title="Industries">Industries <i class="fa fa-plus"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="./industries/furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
+                            <li><a href="./industries/fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
+                            <li><a href="./industries/collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
+                            <li><a href="./industries/artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
+                        </ul>
+                    </li>
                     <li class=""><a href="#about-us" title="Équipe">Équipe</a></li>
                     <li class=""><a href="#footer" rel="noopener" title="Contact">Contact</a></li>
                 </ul>
@@ -138,11 +153,11 @@
         <div class="parralax">
             <div class="video-background">
                 <div class="video-placeholder"></div>
-				<iframe id="header-background-video" class="" src="https://player.vimeo.com/video/812095815?h=a13e656752&autopause=1&autoplay=1&background=1&loop=1&muted=1&playsinline=1&transparent=1&texttrack=false" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen  title="UnikbaseV7_1_cut.webm"></iframe>
+                <iframe id="header-background-video" class="" src="https://player.vimeo.com/video/812095815?h=a13e656752&autopause=1&autoplay=1&background=1&loop=1&muted=1&playsinline=1&transparent=1&texttrack=false" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen  title="UnikbaseV7_1_cut.webm"></iframe>
             </div>
             
             <div data-target="header-background-video" class="video__handles flex flex--space-between">
-                <div class="handle play">Voir la vidéo</div>
+                <div class="handle play"> Watch video </div>
                 <div class="handle sound">
                     <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"/></svg>
                     <svg class="default" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>
@@ -151,9 +166,10 @@
         </div>
     </div>
 
-    <section id="why-us" class="section section--bg-gray">
+    <section id="why-us" class="section section--bg-gray hide">
         <div class="container">
-            <h2 class="section__title text--underline">Nous fabriquons le double numérique des objets de valeur. <br>Nos jumeaux sont aujourd'hui le moyen d'accès le plus simple à quantité de services jusqu'ici difficiles d'accès pour tracer, protéger, valoriser et échanger en confiance.
+            <h2 class="section__title text--underline">We make digital twins of real-life valuables.<br>
+                Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.
             </h2>
 
             <div class="row row--wrap blocks">
@@ -165,9 +181,9 @@
                         </picture>
                     </div>
                     <div class="block__content open">
-                        <h3 class="block__title">1. Acheter </h3>
+                        <h3 class="block__title">1. Buy </h3>
                         <div class="block__except">
-                            <p>Marie achète en ligne un bien physique d'occasion : une œuvre d'art, une montre, un sac à main...</p>
+                            <p>Mary buys a second hand item online, such as a piece of art, a watch, a handbag, ...</p>
                         </div>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
@@ -180,10 +196,10 @@
                         </picture>
                     </div>
                     <div class="block__content">
-                        <h3 class="block__title">2. Scanner
+                        <h3 class="block__title">2. Scan
                         </h3>
                         <div class="block__except">
-                            <p>Le marchand en ligne utilise Unikbase pour marquer l'objet réel avec une technologie de marquage indélébile et invisible, scanner l'objet en 3D pour créer un jumeau numérique biométrique, et stocker toutes les données associées dans ce jumeau.</p>
+                            <p>At the warehouse, the online merchant uses the Unikbase solution to tag the item with an indelible, unalterable, and invisible marking technology. They also 3D-scan the item and create a biometric digital twin of it, including data such as photos, invoices, proof of authenticity, and condition reports.</p> 
                         </div>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
@@ -196,9 +212,9 @@
                         </picture>
                     </div>
                     <div class="block__content">
-                        <h3 class="block__title">3. Posséder</h3>
+                        <h3 class="block__title">3. Own</h3>
                         <div class="block__except">
-                            <p>Marie possède maintenant un passeport numérique qui accompagne l'objet qu'elle a acheté, une preuve de correspondance unique qui permet d'utiliser des services et des applications liés à l'objet</p>
+                            <p>Mary now owns the item and its accompanying digital passport, which serves as proof of the item's uniqueness and enables access to various services and applications related to the item.</p>
                         </div>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
@@ -211,8 +227,8 @@
                         </picture>
                     </div>
                     <div class="block__content">
-                        <h3 class="block__title">4. Utiliser</h3>
-                        <p class="block__except">Le jumeau numérique est un passeport dynamique qui sera enrichi de données supplémentaires au cours de la vie de l’objet : restauration, amélioration, prêt, détérioration... Si Marie décide de le vendre, le jumeau numérique sera transféré au nouveau pro- priétaire.</p>
+                        <h3 class="block__title">4. Use</h3>
+                        <p class="block__except">The digital twin is dynamic and can be updated with additional data throughout the item's life, such as information on restoration, improvement, lending, and damage. If Mary decides to sell the item, the digital twin will be transferred to the new owner.</p>
                         <!-- <a href="#" class="readmore">Lorem ipsum</a> -->
                     </div>
                 </div>
@@ -248,26 +264,35 @@
                 <div class="navigation main-navigation menutext flex">
                     <ul class="menu menu--horizontal">
                         <li class=""><a href="#what-we-do" title="Solution">Solution</a></li>
-                        <li class=""><a href="#how-it-works" title="Fonctionnement">Technologie</a></li>
+                        <li><a href="#benefits" title="Advantages">Advantages</a></li>
+                        <li class="has-submenu">
+                            <a href="#industries" title="Industries">Industries <i class="fa fa-plus"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="./industries/furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
+                                <li><a href="./industries/fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
+                                <li><a href="./industries/collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
+                                <li><a href="./industries/artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
+                            </ul>
+                        </li>
                         <li class=""><a href="#about-us" title="Équipe">Équipe</a></li>
                         <li class=""><a href="#footer" rel="noopener" title="Contact">Contact</a></li>
                     </ul>
                 </div>
     
-                <div class="navigation flex margin--l flex--end">
+                <div class="navigation flex margin--l">
                     <div class="dropdown-menu sign-in">
-                        <span class="handle">SE CONNECTER</span>
+                        <span class="handle">Sign in</span>
                         <ul class="menu menu--vertical text--align-right">
-                            <li class=""><a href="#" target="_blank" rel="noopener" title="Operator Sign in">Connexion opérateur</a></li>
-                            <li class=""><a href="#" target="_blank" rel="noopener" title="Collector Sign In">Connexion collecteur</a></li>
+                            <li class=""><a href="#" target="_blank" rel="noopener" title="Operator Sign in">Operator Sign In</a></li>
+                            <li class=""><a href="#" target="_blank" rel="noopener" title="Collector Sign In">Collector Sign In</a></li>
                         </ul>
                     </div>
 
                     <div class="dropdown-menu languages">
-                        <span data-active-lang="fr" class="handle">FR</span>
+                        <span data-active-lang="en" class="handle">EN</span>
                         <ul class="menu menu--languages">
-                            <li data-lang="en" ><a href="../index.html" alt=""><i class="icon icon--global"></i>EN</a></li>
-                            <li data-lang="fr" class="active"><a href="#" alt=""><i class="icon icon--global"></i>FR</a></li>
+                            <li data-lang="en" class="active" ><a href="#" alt=""><i class="icon icon--global"></i>EN</a></li>
+                            <li data-lang="fr" ><a href="./fr/index.html" alt=""><i class="icon icon--global"></i>FR</a></li>
                         </ul>
                     </div>
                 </div>
@@ -277,119 +302,132 @@
 
     <section id="what-we-do" class="section section--bg-white">
         <div class="container flex flex--no-wrap flex--start">
-            <h4 class="section__sub-title">SOLUTION</h4>
-            <div class="articles section--bg-gray">
-                <div class="article">
-                    <h3 class="article__title">Nous créons des <span class="highlight">jumeaux numériques</span> pour identifier, authentifier et augmenter la valeur des des <span class="highlight">objets les plus précieux</span>.</h3>
-
-                    <div id="horse-animation" class="flex flex--no-wrap flex--reverse flex--start">
-                        <div class="article__content">
-                            <p class="text--underline">Nous embarquons notre technologie dans le process marchand de nos partenaires : maisons de ventes aux enchères, revendeurs d'objets d'occasion, marketplaces, marques de luxe... </p>
-    
-                            <p>Nous nous occupons de tout de bout-en-bout:</p>
-                            <ul>
-                                <li>Maintenance du jumeau numérique: hébergement, protection, portefeuille.</li>
-                                <li>Outils permettant à nos partenaires d'administrer le double digital et la relation avec son détenteur et toute autre tierce partie.</li>
-                                <li>Services: assurance de l'objet, garantie d'un prêt, location...</li>
-                            </ul>
-                        </div>
-    
-                        <div class="article__thumbnail animation">
-                            <div class="animation-wrap animation-wrap--bottom-left">
-                                <img src="../assets/images/image-horse-colour.webp" class="image--responsive" alt="horse">
-                            </div>
-                            <img src="../assets/images/image-horse-bw.png" class="image--fixed" alt="horse">
-                        </div>
-                    </div>
-                </div>
-
+            <h4 class="section__sub-title">Solutio</h4>
+            <div class="articles">
                 <div id="phone-app-animation" class="article">
-                    <div class="flex flex--no-wrap flex--horizontal flex--start">
-                        <div class="article__content">
-                            <h3 class="article__title">Un jumeau numérique, à quoi ça sert ?</h3>
+                    <h3 class="article__title">Unikbase crée le<span class="highlight">passeport digital</span> <br> des <span class="highlight">objets physiques devaleur.</span>.</h3>
+
+                    <div class="flex flex--no-wrap flex--start">
+                        <div class="article__content" style="width: 480px;">
+                            <h4>Qu'est-ce-qu'un Passeport Digital?</h4>
+
+                            <p style="margin: 0">Il s'agit d'un <span class="highlight">objet numérique unique</span> qui contient deux types d'informations:</p>
+    
                             <ul>
-                                <li>Une protection contre le vol grâce à un marquage unique, invisible et indélébile: En cas de vol, votre objet peut être authentifié de façon sûre par les forces de police et les autorités judiciaires, via la technologie Track & Trace©.</li>
-                                <li>Un passeport numérique hébergé sur un dossier privé et ultra sécurisé basé sur la blockchain, qui peut être partagé avec tout tiers selon les besoins: 3D-scan, photos, description, facture originale, preuve de propriété, transactions précédentes... Le tout compilé dans un fichier unique, confidentiel, infalsifiable et non duplicable.
-                                </li>
+                                <li>Des informations utiles se rapportant à un objet physique: <br> rapport d'authenticité, certificat de propriété, rapport d'état, photos, etc.</li>
+                                
+                                <li>La preuve de son lien unique et inaltérable avec l'objet physique auquelil se rattache.</li>
                             </ul>
                         </div>
                         <div class="article__thumbnail animation">
                             <div class="animation-wrap animation-wrap--bottom-right">
-                                <img src="../assets/images/image-horse-phone.webp" alt="horse phone">
+                                <img src="../assets/images/image-artboard-phone.png" alt="horse phone">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="partners" class="section section--bg-dark">
-            <div class="container">
-                <div class="wrap--80 margin--l flex flex--center">
-                </div>
-            </div>
-        </div>
     </section>
 
-    <section id="how-it-works" class="section section--bg-white">
+    <section id="benefits" class="section section--bg-white">
         <div class="container flex flex--no-wrap flex--start">
-            <h4 class="section__sub-title">FONCTIONNEMENT</h4> 
+            <h4 class="section__sub-title">Advantages</h4>
             <div class="articles section--bg-gray">
                 <div class="article">
-                    <h3 class="article__title">La technologie Unikbase est développée sur la base d'une IP propriétaire combinant:</h3>
-
-                    <div id="secure-animation" class="flex flex--no-wrap flex--reverse">
+                    <div class="flex flex--no-wrap flex--horizontal flex--start">
                         <div class="article__content">
-                            <h4>La technologie Track & Trace</h4>
-                            <p>Le taggant Unikbase, développé par Olnica, est l'un des plus performants au monde. Développé à partir de terres rares, c'est un composé chimique avec un code unique associé à votre marque. Inviolable et indétectable à l'œil nu.</p>
-    
-                            <h4>... couplé à un registre blockchain</h4>
-                            <p>Un jeton numérique hébergé sur une blockchain privée compatible avec la blockchain Ethereum</p>
-                            <a href="https://www.liquichain.io/assets/Liquichain_LitePaper_-_May_2022.pdf" title="Why digital twins are going to change the rules of ownership"  target="_blank" rel="noopener" class="button button--primary">→ En savoir plus</a>
-    
-                        </div>
-    
-        
-                        <div class="article__thumbnail animation">
-                            <div class="animation-wrap">
-                                <img src="../assets/images/illustration-secure_1.webp" class="image--responsive" alt="horse">
-                            </div>
+                            <h3 class="article__title">Pourquoi un passeport numérique ?</h3>
+                            
+                            <ul class="list">
+                                <li class="collapse">
+                                    <h3>Conserver, longtemps et de façon fiable</h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        <b>Un passeport numérique sécurisé plutôt que des papiers. Le propriétaire a le contrôle </b> des informations, ainsi qu'un tiers de confiance s'il le souhaite.
+                                    </div>
+                                    <div class="collapse__icon">
+                                        <img src="../assets/images/SVG/icon-why-digital-passport-keylock.svg" alt="Long-lasting, Reliable Storage">
+                                    </div>
+                                </li>
+
+                                <li class="collapse">
+                                    <h3>Enhanced Proof of Authenticity</h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        Validate ownership of a genuine item with confidence. Our process includes sourcing and time-stamping information, with trusted third parties like artists, marketplaces, and experts recording documents in the passport. This linkage remains in place 
+                                        indefinitely, ensuring the authenticity of each unique object.
+                                    </div>
+                                    <div class="collapse__icon">
+                                        <img src="../assets/images/SVG/icon-why-digital-passport-badge.svg" alt="Enhanced proof of authenticity">
+                                    </div>
+                                </li>
+
+                                <li class="collapse">
+                                    <h3>Rassure</h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        Rétablir la confiance dans un marché des objets de valeurs aujourd’hui ébranlé par les sujets de vol et de contre façon, notamment sur Internet.
+                                    </div>
+                                    <div class="collapse__icon">
+                                        <img src="../assets/images/SVG/icon-why-digital-passport-reassure.svg" alt="Reassure">
+                                    </div>
+                                </li>
+                                <li class="collapse">
+                                    <h3>Accéder à des services</h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        Le passeport sert de support à des services, comme de l'assurance mais aussi des services proposés par l'opérateur du double (invitations, offres, etc).
+                                    </div>
+                                    <div class="collapse__icon">
+                                        <img src="../assets/images/SVG/icon-why-digital-passport-access-service.svg" alt="Access to Service">
+                                    </div>
+                                </li>
+                                <li class="collapse">
+                                    <h3>Valoriser et échanger</h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        Au moment de revendre son bien, le propriétaire transmet simplement son passeport à l'opérateur de son choix, qui s'en sert pour commercialiser l'objet.
+                                    </div>
+                                    <div class="collapse__icon">
+                                        <img src="../assets/images/SVG/icon-why-digital-passport-exchange.svg" alt="Value and Exchange">
+                                    </div>
+                                </li>
+                                
+                            </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-    <div id="video" class="section section--bg-transparent">
-        <div class="container">
-            <div class="wrap--80 margin--l">
-                <div class="flex flex--no-wrap">
-                    <a href="https://olnica.com/track-and-trace-system/" target="_blank" rel="noopener" title="Track & Trace©">Track & Trace©</a>
-                    <div class="video__player">
-                        <div class="video__thumbnail">
-                            <img src="../assets/images/video-placeholder.webp" class="image--responsive" alt="olnica">
-                        </div>
-                        <div class="play-button"><img src="../assets/images/SVG/icon-play.svg" alt="player button"></div>
-                        <div class="video__content">
-                            <video id="video-player" width="100%" height="100%" controls muted playsinline>
-                                <source src="https://media.githubusercontent.com/media/unikbase/website/development/assets/videos/frog-video.mov" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </div>
+    <section id="industries" class="section section--bg-dark">
+        <div class="container flex flex--no-wrap flex--start">
+            <h4 class="section__sub-title">Industries</h4>
+            <div class="articles margin--l flex flex--center" style="padding: 0;">
+                <ul class="list industries">
+                    <li style="background-image: url(../assets/images/SVG/illustration-furniture.svg);"><a href="./industries/furniture-designers-manufacturers.html" title="Furniture Designers & Manufacturers">Concepteurs & <br>  
+                        Fabricants de Meubles<span>&gt;</span></a></li>
+                    <li style="background-image: url(../assets/images/SVG/illustration-accessories.svg);"><a href="/industies/fashion-accessories.html" title="Mode & 
+                        Accessoires >">Mode &<br>  
+                        Accessoires<span>&gt;</span></a></li>
+                    <li style="background-image: url(../assets/images/SVG/illustration-collectibles.svg);"><a href="./industries/collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections &<br> 
+                        Plateformes d'Enchères<span>&gt;</span></a></li>
+                    <li style="background-image: url(../assets/images/SVG/illustration-art.svg);"><a href="./industries/artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art >">Artistes, Galeries &<br> 
+                        Marchés de l'Art <span>&gt;</span></a></li>
+                </ul>
             </div>
         </div>
-    </div>
+    </section>
 
     <section id="about-us" class="section section--bg-white">
         <div class="container flex flex--no-wrap flex--start">
-            <h4 class="section__sub-title">ÉQUIPE</h4> 
-            <div class="articles section--bg-dark">
+            <h4 class="section__sub-title">Equipe</h4> 
+            <div class="articles section--bg-gray" style="padding: 40px 80px 0 40px">
                 <div class="article">
-                    <h3 class="article__title">Unikbase a été créée en 2022 par des professionnels du <span class="text--underline">retail art et mode, de la logistique, de la technologie, de la cybersécurité et de la blockchain,</span> dans le but de rendre les services liés aux jumeaux numériques accessibles à tous.</h3>
+                    <h3 class="article__title">Unikbase a été créée en 2022 par des professionnels du <span class="text--underline">retail art et mode, de la logistique, de la technologie, de la cybersécurité et de la blockchain</span>, dans le but de rendre les services liés aux jumeaux numériques 
+                        accessibles à tous.</h3>
                 </div>
             </div>
         </div>
@@ -471,7 +509,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="post">
                         <div class="post__thumbnail">
                             <img src="../assets/images/blog-thumbnail.png" alt="Post title" class="image image--responsive">

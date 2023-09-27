@@ -19,7 +19,7 @@
 	<meta name="twitter:image" content="https://unikbase.com/assets/images/site-share.png">
     <meta name="twitter:description" content="We make digital twins of real-life valuables. Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.">
     <meta name="twitter:title" content="Unlocking collectibles - Unikbase">
-  <title>Furniture Designers & Manufacturers  - Unikbase</title>
+  <title>Collections & Plateformes d'Enchères - Unikbase</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,22 +27,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="../../assets/css/main.min.css" />
   <link rel="icon" href="../../assets/images/fav.png" type="image/png">
-
   <script type="text/javascript">
     window._current_lang = 'fr';
-
     var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage)
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
     });
     let urlLang = params.lang; // "some_value"
 
-    console.log("urlLang:%s,userLang:%s",urlLang,userLang)
     if(!urlLang=="en" && userLang.indexOf("fr") > -1) {
         //window.location.replace("/fr/index.html");
     }
-
-    </script>
+</script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -82,21 +78,20 @@
 
             <div class="menu--mobile-float">
                 <div class="navigation main-navigation menutext flex">
-                    <!-- english version -->
                     <ul class="menu menu--horizontal">
-                        <li class=""><a href="#what-we-do" title="What we do">What we do</a></li>
-                        <li><a href="#benefits" title="Benefits">Benefits</a></li>
+                        <li class=""><a href="../index.html?" title="Solution">Solution</a></li>
+                        <li><a href="../index.html?#benefits" title="Advantages">Advantages</a></li>
                         <li class="has-submenu">
-                            <a href="#industries" title="Industries">Industries <i class="fa fa-plus"></i></a>
+                            <a href="../index.html?#industries" title="Industries">Industries <i class="fa fa-plus"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="./industries/furniture-designers-manufacturers.html" title="Furniture Designers & Manufacturers">Furniture Designers & Manufacturers</a></li>
-                                <li><a href="/industies/fashion-accessories.html" title="Fashion & Accessories">Fashion & Accessories</a></li>
-                                <li><a href="./industries/collectibles-auction-platforms.html" title="Collectibles & Auction Platforms">Collectibles & Auction Platforms</a></li>
-                                <li><a href="./industries/artists-galleries-art-marketplaces.html" title="Artists, Galleries & Art Marketplaces">Artists, Galleries & Art Marketplaces</a></li>
+                                <li><a href="./furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
+                                <li><a href="./fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
+                                <li><a href="./collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
+                                <li><a href="./artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
                             </ul>
                         </li>
-                        <li class=""><a href="#about-us" title="About us">About us</a></li>
-                        <li class=""><a href="#footer" rel="noopener" title="Contact">Contact</a></li>
+                        <li class=""><a href="../index.html?#about-us" title="Équipe">Équipe</a></li>
+                        <li class=""><a href="../index.html?#footer" rel="noopener" title="Contact">Contact</a></li>
                     </ul>
                 </div>
     
@@ -129,79 +124,109 @@
 
     <div class="section section--bg-dark section--hero">
         <div class="container" style="background-image: url(../../assets/images/SVG/illustration-furniture.svg);">
-            <div class="hero__content">
-                <h1><span class="underline">Furniture Designers</span> & <br> <span class="underline">Manufacturers</span> </h1>
-                <p>The flip side of the craze for design icons is that counterfeiting is exploding,  especially on the Internet. In the absence of technical solutions and sufficiently stringent legislation, the furniture design ecosystem is struggling to fight back.</p>
-                <p>The patented Unikbase technology enables designers, furniture brands and marketplaces to create a digital passports of authenticity and ownership in just a few clicks, whose correspondence with the object cannot be called into question.</p>
-                <p>The Unikbase solution fits seamlessly into your operational workflow and product management software.</p>
-            </div>
-            <div class="hero__actions">
-                <a class="prev"></a>
-                <a class="next"></a>
+            <div class="flex flex--end">
+                <div class="hero__content">
+                    <h1><span class="underline">Concepteurs</span> & <br> <span class="underline">Fabricants de Meubles</span> </h1>
+                    <p>Revers de l'engouement pour les pièces phare du design, la contrefaçon explose,afortiori sur Internet. Faute de solutions techniques et d'une législation suffisamment sévère, les éditeurs peinent à riposter.</p>
+                    <p>La technologie brevetée Unikbase permet aux designers, aux marques de mobilier, et au marketplaces de créer en quelques clicks un certificat digital d'authenticité et de propriété, dont la correspondance avec l'objet ne peut-être remise en question.</p>
+                    <p>La solution Unikbase s'imbrique très facilement dans votre workflow opérationnel et dans votre logiciel de gestion produit.</p>
+                </div>
+                <div class="hero__actions">
+                    <a href="./artists-galleries-art-marketplaces.html" class="prev" title="Artists, Galleries & Art Marketplaces"><i class="icon icon-prev"></i></a>
+                    <a href="./fashion-accessories.html" class="next" title="Fashion & Accessories"><i class="icon icon-next"></i></a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="section section--bg-white industries__content">
+    <div class="section section--bg-transparent industries__content">
         <div class="container">
             <div class="industries__content--overview">
-                <h3 class="section__title">How it works?</h3>
-                <p>When it's time to ship the furniture from your workshop, whether you're a designer, manufacturer, or marketplace operator, simply utilize the Unikbase application on your smartphone to create a digital passport for the item.</p>
+                <h3 class="section__title">Comment ça marche?</h3>
+                <p>Au moment de son examen, l'expert muni d'un simple téléphone portable utilise l'application Unikbase pour créer le passeport digital de l'article.</p>
             </div> 
 
-            <div class="industries__content--details section--bg-gray">
-                <h3 class="section__title">Generating the Digital Passport</h3>
-                <p>Digital passports are created in just <strong>a few clicks</strong> on the Unikbase web platform.</p>
-                <p>The Operator (designer, publisher, marketplace...) can <strong>automatically transfer</strong> all the information about the project available in its own databases (dimensions, photos, invoice...).</p>
-                <p>In just few minutes, all passports will be available in his porfolio.</p>
-            </div>
+            <div class="wrapper">
+                <div class="industries__content--details section--bg-gray">
+                    <div class="row">
+                        <div class="col" style="padding-right: 5ch;">
+                            <h3 class="section__title">Générer le passeport du meuble</h3>
+                            <div class="content">
+                                <p>D'abord, il prend quelques photographies du meuble, renseigne ses dimensions, son prix de vente, la date de sa mise sur le marché, etc.</p>
+                                <p>Dans l'application mobile, tous types de documents utiles peuvent être très simplement envoyés vers le passeport: facture d'achat, certificat original d'authenticité, rapport de condition en sortie d'usine...</p>
+                                <p>L'upload dans le passeport (données sur l'objet et sur la transac tion) peut être entièrement automatisé, sur la base d'un simple fichier excel par exemple.</p>
 
-
-            <div class="industries__content--details section--bg-gray">
-                <h3 class="section__title">Making the furniture</h3>
-                <p>Unikbase offers three identit yregistration and control technologies:</p>
-
+                                <div class="divider"></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="illustration">
+                                <img src="../../assets/images/illustration-industrie-desktop-1.png" alt="Generating the Digital Passprt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <ul class="list list--number">
-                    <li class="collapse">
-                        <h3>Long-lasting, Reliable Storage</h3>
-                        <div class="collapse__toggle"></div>
-                        <div class="collapse__content">
-                            A secure Digital Passport rather than paper. The owner has control over the information, as well as a trusted third party if desired.
+                <div class="industries__content--details section--bg-gray">
+                    <h3 class="section__title">Marquer l'objet</h3>
+                    <p>Unikbase offers three identit yregistration and control technologies:</p>
+                    <div class="row" style="flex-direction: row-reverse; margin-top: 40px;">
+                        <div class="col" style="padding-right: 5ch;">
+                            <ul class="list list--number">
+                                <li class="collapse">
+                                    <h3>Marquage digital
+                                    </h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        A secure Digital Passport rather than paper. The owner has control over the information, as well as a trusted third party if desired.
+                                    </div>
+                                </li>
+    
+                                <li class="collapse">
+                                    <h3>Marquage par puce</h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        Validate ownership of a genuine item with confidence. Our process includes sourcing and time-stamping information, with trusted third parties like artists, marketplaces, and experts recording documents in the passport. This linkage remains in place 
+                                        indefinitely, ensuring the authenticity of each unique object.
+                                    </div>
+                                </li>
+    
+                                <li class="collapse">
+                                    <h3>Marquage physique</h3>
+                                    <div class="collapse__toggle"></div>
+                                    <div class="collapse__content">
+                                        L'opérateur marque le meuble d'une encre invisible et inaltérable dont la formule a été créée uniquement pour lui, véritable signature ADN. La formule chimique de cette encre unique et inaltérable est automa tiquement renseignée dans le passeport. Seul son propriétaire en a connaissance.
+                                    </div>
+                                </li>
+                            </ul>
+    
+                            <p>Ces éléments de preuve sont enregistrés dans le passeport. que seul son détenteur pourra partager depuis l'application Unikbase:</p>
+                            <ul class="list">
+                                <li><strong>pour prouver qu'il est le propriétaire du meuble</strong></li>
+                                <li><strong>pour certifier de l'authenticité du meuble</strong></li>
+                                <li><strong>pour déclarer une perte, un vol....</strong></li>
+                            </ul>
                         </div>
-                    </li>
+                        <div class="col">
+                            <div class="illustration">
+                                <img src="../../assets/images/illustration-industrie-mobile-1.png" alt="Making the furniture" style="top: 0;left: 0;translate: 0 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <li class="collapse">
-                        <h3>Enhanced Proof of Authenticity</h3>
-                        <div class="collapse__toggle"></div>
-                        <div class="collapse__content">
-                            Validate ownership of a genuine item with confidence. Our process includes sourcing and time-stamping information, with trusted third parties like artists, marketplaces, and experts recording documents in the passport. This linkage remains in place 
-                            indefinitely, ensuring the authenticity of each unique object.
-                        </div>
-                    </li>
-
-                    <li class="collapse">
-                        <h3>Reassure</h3>
-                        <div class="collapse__toggle"></div>
-                        <div class="collapse__content">
-                            Re-establish confidence in a market for valuables today shaken by theft and 
-                            counterfeiting, particularly on the Internet.
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
 
     <section id="lifetime" class="section section--bg-dark">
         <div class="container">
-            <h3 class="section__title">
-                For a Lifetime!
-            </h3>
             <div class="row flex flex--justify-center">
                 <div class="col">
-                    <p>The passport can continually be updated by the owner throughout 
-                        the furniture's life, whether it's damaged, repaired, appraised at a new value, loaned, or sold to a new owner.</p>
+                    <h3 class="section__title">
+                        Pour la vie!
+                    </h3>
+                    <p>Le passeport pourra bien sûr être enrichi par son propriétaire taut au long de la vie du meuble: s'il est abimé, réparé, expertisé ă un nouveau prix, prêté, vendu à un nouveau propriétaire...</p>
                 </div>
                 <img class="logo" src="../../assets/images/SVG/icon-unikbase-gray.svg" alt="Unikbse">
             </div>
@@ -210,26 +235,28 @@
 
     <div class="section section--bg-gray industries__about">
         <div class="container">
-            <h3 class="section__title border-corners">A great vector of <span class="highlight">trust</span> between <span class="highlight">the brand</span> and <span class="highlight">its customers</span>.</h3>
-            <p>The Unikbase solution is adaptable as a "white label"for manufacturers and marketplaces, seamlessly integrating int oyour CRM and inventory management software.The interface, customized with your brand's colors, allows you to efficiently manage passports for your customers and connect with them directly via the mobile app, offering updates or new editions, for instance.</p>
+            <h3 class="section__title border-corners">Unformidable vecteur de  <span class="highlight">confiance</span> entre <span class="highlight">l'éditeur</span> et ses <span class="highlight">clients</span>.</h3>
+            <p>La solution Unikbase s'adapte en "marque blanche" à l'éditeur, c'est à dire qu'elle vient se loger facilement dans votre logiciel de CRM, et de gestion de stocks. L'interface, aux couleurs de la marque, vous permet d'administrer très simplement les passeports pour vos clients, et de les contacter directement depuis l'application mobile (par exemple, pour leur proposer de nouvelles éditions).</p>
 
-            <p>Should an owner decide to sell their furniture, you'll receive instant notification and can initiate  a conversation with the new owner.</p>
+            <p>Si le propriétaire vend son meuble, vous en serez immédiatement informé, et vous pourrez engager le dialogue avec le nouveau propriétaire.</p>
         </div>
     </div>
 
     <section id="industries" class="section section--bg-dark">
         <div class="container flex flex--column">
-            <h3 class="section__title">Other Industries</h3>
+            <h3 class="section__title">Autres Industries</h3>
             <ul class="list industries industries--others">
-                <li style="background-image: url(../../assets//images/SVG/illustration-accessories.svg);"><a href="/industies/fashion-accessories.html" title="Fashion & Accessories">Fashion & <br> Accessories <span>&gt;</span></a></li>
-                <li style="background-image: url(../../assets//images/SVG/illustration-collectibles.svg);"><a href="./industries/collectibles-auction-platforms.html" title="Collectibles & Auction Platforms">Collectibles & <br> Auction Platforms <span>&gt;</span></a></li>
-                <li style="background-image: url(../../assets//images/SVG/illustration-art.svg);"><a href="./industries/artists-galleries-art-marketplaces.html" title="Artists, Galleries & Art Marketplaces">Artists, Galleries & <br> Art Marketplaces <span>&gt;</span></a></li>
+                <li style="background-image: url(../../assets//images/SVG/illustration-accessories.svg);"><a href="/industies/fashion-accessories.html" title="Fashion & Accessories">Mode &<br> Accessoires <span>&gt;</span></a></li>
+                <li style="background-image: url(../../assets//images/SVG/illustration-collectibles.svg);"><a href="./collectibles-auction-platforms.html" title="Collectibles & Auction Platforms">Collections &<br> Plateformes d'Enchères <span>&gt;</span></a></li>
+                <li style="background-image: url(../../assets//images/SVG/illustration-art.svg);"><a href="./artists-galleries-art-marketplaces.html" title="Artists, Galleries & Art Marketplaces">Artistes, Galeries &<br> 
+                    Marchés de l'Art<span>&gt;</span></a></li>
             </ul>
         </div>
     </section>
 
-    <section id="instagram" class="section section--bg-white" style="padding-top: 0;">
-        <div class="instagram" style="margin-top: 0px;">
+    <section id="instagram" class="section section--bg-white">
+
+        <div class="instagram">
             <div class="instagram__feed flex flex--start">
                 <div class="instagram__slider instagram__slider--placeholder">
                     <div class="instagram__post">
@@ -260,6 +287,7 @@
             </div>
         </div>
     </section>
+
     <footer id="footer" class="site__footer section--bg-dark">
         <div class="widgets">
             <div class="container">
@@ -269,7 +297,7 @@
                             <h4 class="widget__title">Unikbase</h4>
                             <p>
                                 <!-- T: <span class="phone">+06 (0)0000000</span> <br> -->
-                                <span class="address">320 rue Saint-Honoré 75001 Paris, France</span> <br>
+                                <span class="address">320 rue Saint-Honoré <br>75001 Paris, France</span> <br>
                                 <span  class="email"><a href="mailto:hello@unikbase.com" target="_blank" rel="noopener">hello@unikbase.com</a></span>
                             </p>
                         </div>
@@ -277,10 +305,10 @@
                     <div class="col">
                         <div class="widget">
                             <ul class="menu list">
-                                <li><a href="mailto:jobs@unikbase.com" target="_blank" rel="noopener" title="Work with us">Work with us</a></li>
-                                <li><a href="mailto:press@unikbase.com" target="_blank" rel="noopener" title="Press">Press</a></li>
+                                <li><a href="mailto:jobs@unikbase.com" target="_blank" rel="noopener" title="Jobs">Jobs</a></li>
+                                <li><a href="mailto:press@unikbase.com" target="_blank" rel="noopener" title="Presse">Presse</a></li>
                                 <li><a href="https://medium.com/@unikbase" target="_blank" rel="noopener" title="Blog">Blog</a></li>
-                                <li><a href="../FAQ.html" title="FAQ">FAQ</a></li>
+                                <li><a href="FAQ.html" title="FAQ">FAQ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -288,9 +316,9 @@
                     <div class="col">
                         <div class="widget">
                             <ul class="menu menu-term list">
-                                <li><a href="../privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
-                                <li><a href="../terms-conditions.html" title="Terms & Conditions">Terms & Conditions</a></li>
-                                <!-- <li><a href="index.html#cookie-policy" title="Cookie Policy">Cookie Policy</a></li> -->
+                                <li><a href="privacy-policy.html" title="Confidentialité">Confidentialité</a></li>
+                                <li><a href="terms-conditions.html" title="Conditions Générales de Vente">Conditions Générales de Vente</a></li>
+                                <!-- <li><a href="#cookie-policy" title="Cookie Policy">Cookie Policy</a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -298,10 +326,10 @@
             </div>
         </div>
 
-        <div class="container flex flex--horizontal flex--space-between">
+        <div class="container flex flex--horizontal flex--end flex--space-between">
             <div class="brand">
                 <div class="site__logo">
-                    <a href="../index.html" title="UnikBase">
+                    <a href="index.html" title="Unikbase">
                         <svg id="logo_unikbase" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.17 102.05">
                             <path class="cls-2"  fill="#081d24" d="m95.7,65.04c.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4.27.27.4.62.4,1.07v18.57c0,7.59,3.31,11.38,9.92,11.38,3.2,0,5.74-1.01,7.62-3.03s2.83-4.8,2.83-8.36v-18.57c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v31.69c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-3.13c-1.33,1.73-2.85,3.04-4.56,3.93-1.71.89-3.89,1.33-6.56,1.33-4.35,0-7.66-1.38-9.92-4.13-2.26-2.75-3.39-6.35-3.39-10.79v-18.91c0-.44.13-.8.4-1.07Z"/>
                             <path class="cls-2"  fill="#081d24" d="m163.01,98.86c-.27.27-.62.4-1.06.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-18.58c0-3.59-.88-6.39-2.63-8.39-1.75-2-4.27-3-7.56-3s-5.75,1.01-7.66,3.03c-1.91,2.02-2.86,4.81-2.86,8.36v18.58c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4s-.4-.62-.4-1.07v-31.69c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v3.13c1.33-1.73,2.85-3.04,4.56-3.93,1.71-.89,3.92-1.33,6.62-1.33,4.35,0,7.7,1.39,10.05,4.16,2.35,2.77,3.53,6.36,3.53,10.75v18.91c0,.44-.13.8-.4,1.07Z"/>
@@ -318,17 +346,17 @@
                 </div>
             </div>
 
-            <div class="copy-right">© unikbase, 2023</div>
-
             <div class="socials">
                 <ul class="list list--vertical flex--center flex--space-between">
                     <!-- <li><a target="_blank" href="https://facebook.com" title="Unikbase on Facebook"><img src="../../assets/images/SVG/icon-facebook.svg" alt="unikbase on facebook"></a></li> -->
-                    <li><a target="_blank" rel="noopener" href="https://medium.com/@unikbase" title="Unikbase on medium"><img src="../../assets/images/SVG/medium.svg" alt="unikbase on medium"></a></li>
+                    <li><a target="_blank" rel="noopener" href="https://medium.com/@unikbase" title="Unikbase on medium"><img src="../../assets/images/SVG/icon-medium.svg" alt="unikbase on medium"></a></li>
                     <li><a target="_blank" rel="noopener" href="https://www.instagram.com/unikbase/" title="Unikbase on Instagram"><img src="../../assets/images/SVG/icon-instagram.svg" alt="unikbase on instagram"></a></li>
                     <li><a target="_blank" rel="noopener" href="https://twitter.com/unikbase_off" title="Unikbase on twitter"><img src="../../assets/images/SVG/icon-twitter.svg" alt="unikbase on twitter"></a></li>
                     <li><a target="_blank" rel="noopener" href=" https://www.linkedin.com/company/unikbase/" title="Unikbase on linkedin"><img src="../../assets/images/SVG/icon-linkedin.svg" alt="unikbase on linkedin"></a></li>
                 </ul>
             </div>
+
+            <div class="copy-right">© unikbase, 2023</div>
         </div>
     </footer>
 
