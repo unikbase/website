@@ -55,6 +55,33 @@
     p {
         margin: 0.5em;
     }
+    &--hero {
+        padding: 0;
+        .container {
+            padding: 100px 0;
+            background-size: auto 80%;
+            background-repeat: no-repeat;
+            background-position: 90% center;
+        }
+        h1 {
+            font-weight: normal;
+        }
+        .hero__content {
+            max-width: 600px;
+            white-space: wrap;
+            h1 {
+                font-size: 30px;
+                line-height: 1.5em;
+                margin-bottom: 40px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 1.5em;
+                margin-left: 0;
+                margin-bottom: 1.5em;
+            }
+        }
+    }
 }
 
 .site {
@@ -1245,6 +1272,44 @@
                     }
                 }
             }
+            &--others {
+                margin-top: 40px;
+                max-width: 70%;
+                li {
+                    width: 30%;
+                    flex-basis: 30%;
+                    align-items: flex-end;
+                    background-position: 75% bottom;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+    .industries {
+        &__about {
+            .section__title {
+                text-align: center;
+                padding: 1em;
+                @include border-corners(#ffffff, 4px, 20px);
+                margin-bottom: 1.5em;
+            }
+        }
+        &__content {
+            h3 {
+                font-weight: 400;
+            }
+            p {
+                margin-left: 0;
+            }
+            &--overview p {
+                max-width: 600px;
+            }
+            &--details {
+                padding: 40px;
+                h3 {
+                    color: $red;
+                }
+            }
         }
     }
 
@@ -1272,6 +1337,17 @@
                     left: -200px;
                 }
             }
+        }
+    }
+    #lifetime {
+        p {
+            margin-left: 0;
+            max-width: 600px;
+        }
+        .logo {
+            width: 180px;
+            height: 180px;
+            margin-right: 80px;
         }
     }
 

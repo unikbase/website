@@ -29,6 +29,24 @@
 .highlight {
     color: $red;
 }
+.underline {
+    text-decoration: underline;
+    text-decoration-color: $red;
+    text-underline-offset: 5px;
+}
+
+@mixin border-corners ($color, $lineWidth, $lineHeight) {
+    background: linear-gradient($color, $color) top left, 
+                linear-gradient($color, $color) top left,
+                linear-gradient($color, $color) top right,
+                linear-gradient($color, $color) top right,
+                linear-gradient($color, $color) bottom left,
+                linear-gradient($color, $color) bottom left,
+                linear-gradient($color, $color) bottom right,
+                linear-gradient($color, $color) bottom right;
+    background-size: $lineWidth $lineHeight, $lineHeight $lineWidth;
+    background-repeat: no-repeat;
+}
 
 .sticky {
     position: -webkit-sticky; /* Safari */
