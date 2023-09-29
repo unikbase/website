@@ -175,6 +175,11 @@
     }
 }
 
+.list--disc {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
 .list--number {
     list-style: none;
     li {

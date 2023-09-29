@@ -194,6 +194,7 @@
             text-transform: none;
             li {
                 margin-left: 1em;
+                margin-right: 1em;
                 line-height: 1em;
                 &:hover, &.active {
                     > a { 
@@ -1394,6 +1395,7 @@
                         }
                         &__toggle {
                             padding: 0;
+                            top: 12px;
                             background-image: none;
                             &::before {
                                 display: block;
