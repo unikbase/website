@@ -144,8 +144,8 @@
     let scale = 0.3;
 
 
-		const minScale = 0.9;
-		const maxScale = 1.2;
+		const minScale = 0.8;
+		const maxScale = 1;
     function scrollingHandle(up = true) {
       let startAnimation = window.innerHeight || document.documentElement.clientHeight;
       let endAnimation = (window.innerHeight || document.documentElement.clientHeight)/2 - 50;
