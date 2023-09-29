@@ -882,6 +882,7 @@
                 .navigation {
                     display: flex;
                     flex-direction: column;
+                    align-items: flex-end;
                     .sign-in {
                         font-size: 0.9em;
                         margin-right: 0;

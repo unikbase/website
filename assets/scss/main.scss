@@ -815,11 +815,11 @@
     }
 
     #what-we-do {
-        font-size: 26px;
-        line-height: 36px;
         p {
-            font-size: 20px;
-            line-height: 1.5em;
+            margin-left: 0;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 1em;
         }
         ul {
             list-style-type: initial;
@@ -827,25 +827,25 @@
             font-size: 16px;
             line-height: 26px;
             font-weight: normal;
-            li {
-                list-style-position: inside;
-            }
+            padding-left: 1.25em;
         }
         .articles {
             z-index: 3;
             position: relative;
+            font-size: 26px;
+            line-height: 1.5em;
             h4 {
-                font-size: 28px;
+                font-size: 26px;
+                line-height: 1.5em;
                 font-weight: normal;
                 margin-bottom: 1em;
             }
             .article__title {
-                width: 520px;
                 max-width: 60%;
                 font-weight: 400;
+                font-size: 40px;
+                line-height: 1.25em;
                 margin-bottom: 1em;
-                font-size: 32px;
-                line-height: 1.5em;
             }
         }
     }
@@ -963,6 +963,7 @@
                 &__date {
                     margin-right: 24px;
                     display: flex;
+                    align-items: center;
                     flex-direction: column;
                     font-weight: 500;
                     .date {
@@ -974,6 +975,7 @@
                     .month {
                         font-size: 22px;
                         line-height: 1em;
+                        text-align: justify;
                     }
                 }
                 &__tags {
