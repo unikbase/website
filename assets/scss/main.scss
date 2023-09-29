@@ -961,18 +961,27 @@
                     flex-direction: row;
                 }
                 &__date {
-                    margin-right: 50px;
+                    margin-right: 24px;
                     display: flex;
                     flex-direction: column;
-                    font-size: 25px;
-                    font-weight: 600;
-                    line-height: 30px;
+                    font-weight: 500;
+                    .date {
+                        font-size: 45px;
+                        line-height: 1em;    
+                        text-align: center;
+                        letter-spacing: 1px;
+                    }
+                    .month {
+                        font-size: 22px;
+                        line-height: 1em;
+                    }
                 }
                 &__tags {
                     li {
-                        display: inline-block;
+                        display: block;
                         float: left;
-                        font-size: 14px;
+                        font-size: 12px;
+                        line-height: 1.5em;
                         a {
                             color: $red;
                             text-transform: capitalize;
@@ -987,14 +996,16 @@
                     }
                 }
                 &__content {
-                    font-size: 25px;
-                    line-height: 30px;
                     font-weight: normal;
                     > p:first-child {
                         margin-top: 0;
                     }
                     p {
                         margin-left: 0;
+                    }
+                    a {
+                        font-size: 18px;
+                        line-height: 1.5em;
                     }
                 }
             }
