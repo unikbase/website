@@ -1249,7 +1249,7 @@
                 font-weight: 400;
                 margin-bottom: 0.5em;
             }
-            .list li {
+            > .list > li {
                 border-bottom: 2px solid $red;
                 &:last-child {
                     border-bottom: 0;
