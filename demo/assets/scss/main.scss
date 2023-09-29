@@ -841,7 +841,6 @@
                 margin-bottom: 1em;
             }
             .article__title {
-                max-width: 60%;
                 font-weight: 400;
                 font-size: 40px;
                 line-height: 1.25em;
@@ -982,13 +981,13 @@
                     li {
                         display: block;
                         float: left;
-                        font-size: 12px;
-                        line-height: 1.5em;
                         a {
                             color: $red;
                             text-transform: capitalize;
                             text-decoration: underline;
                             cursor: default;
+                            font-size: 12px;
+                            line-height: 1.5em;
                         }
                         margin-right: 0.25em;
                         &:not(:last-child)::after {
@@ -1008,6 +1007,9 @@
                     a {
                         font-size: 18px;
                         line-height: 1.5em;
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
