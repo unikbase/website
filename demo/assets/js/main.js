@@ -144,6 +144,8 @@
     let scale = 0.3;
 
 
+		const minScale = 0.9;
+		const maxScale = 1.2;
     function scrollingHandle(up = true) {
       let startAnimation = window.innerHeight || document.documentElement.clientHeight;
       let endAnimation = (window.innerHeight || document.documentElement.clientHeight)/2 - 50;
@@ -157,8 +159,8 @@
         let moving = Math.abs(bounding.top - start);
 
         let update = moving/distance * (1-scale) + scale;
-        update < 0 && (update = 0);
-        update > 1 && (update = 1);
+        update < minScale && (update = minScale);
+        update > maxScale && (update = maxScale);
         $(el).find('img').css({
           transform: `scale(${update})`
         })

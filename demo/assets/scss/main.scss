@@ -1087,6 +1087,7 @@
                 margin-top: 0;
                 height: calc(150% + 150px);
                 translate: 0 calc(-65% + 150px);
+                transform: scale(1);
             }
         }
     }
@@ -1246,13 +1247,14 @@
                 cursor: pointer;
                 &__toggle {
                     padding: 0;
-                    top: 50%;
-                    transform: translate(0, -50%);
+                    top: 20px;
                     background-image: none;
                     &::after {
                         display: inline-block;
                         content: "+";
                     }
+                    height: 24px;
+                    line-height: 24px;
                 }
                 &__icon {
                     position: absolute;
@@ -1268,8 +1270,6 @@
                 }
                 &--in {
                     .collapse__toggle {
-                        bottom: 20px;
-                        top: auto;
                         transform: none;
                         &:after {
                             content: "-"
