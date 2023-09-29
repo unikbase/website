@@ -175,6 +175,14 @@
     }
 }
 
+.list--inline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    li {
+        padding: 0 0.5em;
+    }
+}
 .list--disc {
     list-style-type: disc;
     list-style-position: inside;
