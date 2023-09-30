@@ -125,7 +125,9 @@
         }
     }
 }
-
+html {
+    overflow-x: hidden;
+}
 .site {
     font-family: "Rubik", sans-serif;
     font-size: 18px;
@@ -244,6 +246,7 @@
                 transform: translate(-50%, 0);
                 a {
                     background-color: $white;
+                    box-shadow: 2px 2px 4px rgba($color: $black, $alpha: 0.7);
                 }
             }
         }
@@ -815,6 +818,7 @@
     }
 
     #what-we-do {
+        z-index: 3;
         p {
             margin-left: 0;
             margin-top: 0;
@@ -824,10 +828,8 @@
         ul {
             list-style-type: initial;
             list-style-position: outside;
-            font-size: 16px;
-            line-height: 26px;
             font-weight: normal;
-            padding-left: 1.25em;
+            padding-left: 1em;
         }
         .articles {
             z-index: 3;
@@ -840,11 +842,21 @@
                 font-weight: normal;
                 margin-bottom: 1em;
             }
-            .article__title {
-                font-weight: 400;
-                font-size: 40px;
-                line-height: 1.25em;
-                margin-bottom: 1em;
+            .article {
+                &__title {
+                    font-weight: 400;
+                    font-size: 40px;
+                    line-height: 1.25em;
+                    margin-bottom: 1em;
+                }
+                &__content ul li {
+                    font-size: 16px;
+                    line-height: 25px;
+                    span {
+                        position: relative;
+                        left: 1em;
+                    }
+                }
             }
         }
     }
@@ -1060,7 +1072,7 @@
         ul {
             margin-left: 2em;
         }
-        .animation {
+        .animation.scale-up {
             flex-grow: 1;
             flex-shrink: 0;
             position: absolute;
@@ -1086,24 +1098,28 @@
     #phone-app-animation {
         margin-bottom: 0;
         .article__content {
-            padding-right: 70px;
+            flex-basis: calc(100% - 480px);
+            min-width: 480px;
+            padding-right: 40px;
+            flex-shrink: 0;
+            flex-grow: 0;
         }
         .animation {
+            position: initial;
             pointer-events: none;
-            flex-grow: 1;
-            flex-shrink: 0;
-            position: absolute;
-            right: 0;
-            height: 100%;
-            img {
+            flex-shrink: 1;
+            &-wrap {
                 position: absolute;
-                top: 50%;
-                right: 0;
-                width: auto;
-                margin-top: 0;
-                height: calc(150% + 150px);
-                translate: 0 calc(-65% + 150px);
-                transform: scale(1);
+                height: 100%;
+                img {
+                    position: absolute;
+                    left: 0;
+                    width: auto;
+                    margin-top: 0;
+                    height: calc(100% + 180px);
+                    translate: 70% 0;
+                    // transform: scale(1);
+                }
             }
         }
     }
@@ -1232,7 +1248,8 @@
     }
 
     #benefits {
-        z-index: 1;
+        z-index: 2;
+        padding-bottom: 0;
         .section__sub-title {
             padding-top: 42px;
         }
@@ -1300,6 +1317,9 @@
     }
 
     #industries {
+        margin-top: -50px;
+        z-index: 1;
+        padding-bottom: 20px;
         .industries {
             width: 100%;
             display: flex;
@@ -1313,7 +1333,7 @@
                 align-items: flex-end;
                 width: 40%;
                 flex-basis: 40%;
-                aspect-ratio: 2/1;
+                aspect-ratio: 2/1.2;
                 height: auto;
                 background-repeat: no-repeat;
                 background-size: auto 100%;
