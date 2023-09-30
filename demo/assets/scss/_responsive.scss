@@ -566,7 +566,6 @@
             }
             .articles {
                 padding-bottom: 0;
-                overflow: hidden;
             }
             #phone-app-animation {
                 ul {
@@ -610,19 +609,6 @@
         #phone-app-animation {
             background: #fff;
             width: 100vw;
-            .article__thumbnail {
-                width: 100vw;
-                top: -280px;
-                left: 55%;
-                position: absolute;
-                margin-left: 20px;
-            }
-            .animation {
-                img {
-                    height: 300px;
-                    width: auto;
-                }
-            }
         }
 
         #partners {
@@ -988,7 +974,6 @@
         }
         #what-we-do {
             position: relative;
-            z-index: 2;
             .articles {
                 padding: 0;
             }
@@ -1109,7 +1094,7 @@
             }
         }
     }
-    .animation {
+    .animation.scale-up {
         &-wrap {
             img {
                 transform: scale(0.3);

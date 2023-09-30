@@ -142,14 +142,13 @@
     })
 
     let scale = 0.3;
-
-
+		let translate = 0.7;
 		const minScale = 0.8;
 		const maxScale = 1;
     function scrollingHandle(up = true) {
       let startAnimation = window.innerHeight || document.documentElement.clientHeight;
       let endAnimation = (window.innerHeight || document.documentElement.clientHeight)/2 - 50;
-      $('.animation').each((i, el) => {
+      $('.animation.scale-up').each((i, el) => {
         let bounding = el.getBoundingClientRect();
         if ( bounding.top > startAnimation ) return;
         let distance = startAnimation - endAnimation;
@@ -167,6 +166,22 @@
 
         // bounding.height
       })
+			$('.animation.fly-in').each((i, el) => {
+
+        let bounding = el.getBoundingClientRect();
+        if ( bounding.top > startAnimation ) return;
+				// When element move to midle of screen, the animation need to be done already
+        let distance = startAnimation - endAnimation;
+        let moving = Math.abs(bounding.top - startAnimation);
+
+        let update = moving/distance * 40 + 30;
+				update 
+				
+				update = update < 30 ? 30 : update > 100 ? 100 : update;
+				$(el).find('img').css({
+          translate: `${100 - update}% 0`
+        })
+			})
     }
 
     let lastScrollTop = 0;
