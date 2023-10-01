@@ -177,7 +177,7 @@
         let update = moving/distance * 40 + 30;
 				update 
 				
-				update = update < 30 ? 30 : update > 100 ? 100 : update;
+				update = update < 30 ? 30 : update > 92 ? 92 : update;
 				$(el).find('img').css({
           translate: `${100 - update}% 0`
         })
