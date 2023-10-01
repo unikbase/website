@@ -21,6 +21,32 @@
         .site__navigation {
             .navigation {
                 display: block;
+                .sub-menu {
+                    margin-top: 12px;
+                    margin-bottom: 12px;
+                    position: relative;
+                    padding-top: 0;
+                    li {
+                        border-radius: 0;
+                        padding-left: 0;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        margin-right: 0;
+                        a {
+                            text-transform: uppercase;
+                            background-color: transparent;
+                            border-radius: 0;
+                            color: $white!important;
+                            width: 100%;
+                            padding-left: 0;
+                            white-space: normal;
+                            line-height: 1.25em;
+                        }
+                    }
+                }
+                li.has-submenu:hover > a::after{
+                    text-decoration: none;
+                }
             }
         }
         .menu--mobile-float {
@@ -41,6 +67,12 @@
                 white-space: normal;
                 font-weight: 500;
                 margin-bottom: 1em;
+            }
+            &--hero {
+                .container {
+                    background-size: contain;
+                    background-position: right 90%;
+                }
             }
         }
         &.single-page {
@@ -187,7 +219,7 @@
                             line-height: 34px;
                             &:hover,
                             &.active {
-                                &, a {
+                                > a {
                                     color: $red!important;
                                     text-decoration: none!important;
                                 }
@@ -363,7 +395,52 @@
                 }
             }
         }
-
+        
+        .industries {
+            &__content {
+                &--details {
+                    .row {
+                        flex-direction: column!important;
+                        .col {
+                            padding-right: 0!important;
+                            width: 100%!important;
+                            flex-basis: 100%!important;
+                        }
+                    }
+                    .divider {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+                    .illustration {
+                        height: auto;
+                        width: auto!important;
+                        margin: 0 auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            position: relative;
+                            height: auto!important;
+                            width: 100vw!important;
+                            translate: none!important;
+                        }
+                    }
+                }
+            }
+        }
+        #industries .industries {
+            &--others {
+                flex-direction: column;
+                max-width: 100%;
+                li {
+                    width: 300px;
+                    height: 100px;
+                    max-width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 40px;
+                }
+            }
+        }
         #why-us {
             top: -120%;
             .section {
@@ -489,7 +566,6 @@
             }
             .articles {
                 padding-bottom: 0;
-                overflow: hidden;
             }
             #phone-app-animation {
                 ul {
@@ -532,24 +608,7 @@
         }
         #phone-app-animation {
             background: #fff;
-            margin-left: -5vw;
             width: 100vw;
-            .article__content {
-                padding: 5vw;
-            }
-            .article__thumbnail {
-                width: 100vw;
-                top: -280px;
-                left: 55%;
-                position: absolute;
-                margin-left: 20px;
-            }
-            .animation {
-                img {
-                    height: 300px;
-                    width: auto;
-                }
-            }
         }
 
         #partners {
@@ -630,10 +689,27 @@
             }
         }
 
+        #industries,
+        #benefits,
         #about-us {
             padding-bottom: 0;
             > .flex {
                 flex-direction: column;
+            }
+        }
+
+        #benefits {
+            padding-top: 0;
+        }
+
+        #lifetime {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            .container .row {
+                flex-direction: column;
+                img {
+                    margin-right: auto;
+                }
             }
         }
 
@@ -735,6 +811,14 @@
                 margin-bottom: 50px;
                 flex-basis: 100%;
                 border-top: 2px solid $red;
+                display: flex;
+                flex-direction: column-reverse;
+                .list {
+                    flex-direction: column;
+                    li {
+                        padding: 0;
+                    }
+                }
             }
 
             .brand {
@@ -794,14 +878,16 @@
 
 @media only screen and (min-width: 900px) and (max-width: 1280px) and (orientation: landscape) {
     #how-it-works,
-    #about-us {
+    #benefits {
         padding-top: 0px;
     } 
+    #what-we-do {
+        padding-bottom: 40px;
+    }
 }
 
 @media only screen and (min-width: 1280px) {
-    #how-it-works,
-    #about-us {
+    #how-it-works {
         padding-top: 0px;
     } 
 }
@@ -825,6 +911,7 @@
                 .navigation {
                     display: flex;
                     flex-direction: column;
+                    align-items: flex-end;
                     .sign-in {
                         font-size: 0.9em;
                         margin-right: 0;
@@ -898,7 +985,9 @@
         }
         #what-we-do {
             position: relative;
-            z-index: 2;
+            .articles {
+                padding: 0;
+            }
         }
         
         #horse-animation {
@@ -907,14 +996,6 @@
                 flex-direction: column;
                 min-height: 515px;
             }
-        }
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    #phone-app-animation {
-        .animation {
-            margin-top: -7em;
         }
     }
 }
@@ -990,20 +1071,17 @@
                 line-height: 38px;
             }
         }
-        #phone-app-animation .animation {
-            height: 600px;
-        }
     }
 }
 
 
 @media only screen and (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
-    .container {
+    .container:not(.container--small) {
         width: calc(100vw - 80px);
     }
 }
 @media only screen and (min-width: 901px) and (max-width: 1366px) {
-    .container {
+    .container:not(.container--small) {
         width: calc(100vw - 40px);
     }
     #what-we-do {
@@ -1027,7 +1105,7 @@
             }
         }
     }
-    .animation {
+    .animation.scale-up {
         &-wrap {
             img {
                 transform: scale(0.3);
@@ -1056,9 +1134,11 @@
 }
 
 @media only screen and (min-width: 1280px) {
-
     #how-it-works,
-    #about-us {
+    #benefits {
         padding-top: 0px;
+    }
+    #what-we-do {
+        padding-bottom: 40px;
     }
 }

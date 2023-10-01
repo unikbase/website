@@ -142,12 +142,13 @@
     })
 
     let scale = 0.3;
-
-
+		let translate = 0.7;
+		const minScale = 0.8;
+		const maxScale = 1;
     function scrollingHandle(up = true) {
       let startAnimation = window.innerHeight || document.documentElement.clientHeight;
       let endAnimation = (window.innerHeight || document.documentElement.clientHeight)/2 - 50;
-      $('.animation').each((i, el) => {
+      $('.animation.scale-up').each((i, el) => {
         let bounding = el.getBoundingClientRect();
         if ( bounding.top > startAnimation ) return;
         let distance = startAnimation - endAnimation;
@@ -157,14 +158,30 @@
         let moving = Math.abs(bounding.top - start);
 
         let update = moving/distance * (1-scale) + scale;
-        update < 0 && (update = 0);
-        update > 1 && (update = 1);
+        update < minScale && (update = minScale);
+        update > maxScale && (update = maxScale);
         $(el).find('img').css({
           transform: `scale(${update})`
         })
 
         // bounding.height
       })
+			$('.animation.fly-in').each((i, el) => {
+
+        let bounding = el.getBoundingClientRect();
+        if ( bounding.top > startAnimation ) return;
+				// When element move to midle of screen, the animation need to be done already
+        let distance = startAnimation - endAnimation;
+        let moving = Math.abs(bounding.top - startAnimation);
+
+        let update = moving/distance * 40 + 30;
+				update 
+				
+				update = update < 30 ? 30 : update > 92 ? 92 : update;
+				$(el).find('img').css({
+          translate: `${100 - update}% 0`
+        })
+			})
     }
 
     let lastScrollTop = 0;
@@ -250,7 +267,7 @@
     }
   }
 
-  const generateInstgramPost = (item) => {
+  const generateInstgramPost = (item, siteUrl) => {
     let el = document.createElement('div')
     el.classList.add('instagram__post');
     let anchor = document.createElement('a');
@@ -260,7 +277,12 @@
     anchor.setAttribute('title', item.caption || 'Instgram post');
     let image = document.createElement('img');
 
-    image.setAttribute('src', `${window._current_lang?'../':''}${item.media_url}` );
+		let sourcePath = window.location.pathname.indexOf('index.html') < 0 ?'/..':'';
+		if ( !!window._current_lang ) {
+			sourcePath += '/..'	
+		}
+		
+    image.setAttribute('src', `${siteUrl}${sourcePath}/${item.media_url}` );
     image.setAttribute('alt', item.caption || 'Instgram post');
     el.setAttribute('data-id', item.id);
 
@@ -270,13 +292,21 @@
     return el;
   }
 
+	const getSiteUrl = () => {
+
+		const url = new URL(window.location.href);
+		let path = url.pathname.split("/");
+		path.pop();
+		url.pathname = path.join("/")
+		return url.href.replace(/#(.+)$/, '');
+	}
   const generateSlider = (items, wrapper) => {
     if ( !wrapper ) return;
-    
+		const siteUrl = getSiteUrl();
     // let container = document.createElement('div');
     // container.classList.add('instagram__slider');
     items.forEach(el => {
-      let item = generateInstgramPost(el);
+      let item = generateInstgramPost(el, siteUrl);
       wrapper.insertAdjacentElement('beforeend', item);
     })
     // wrapper.insertAdjacentElement('beforeend', container);

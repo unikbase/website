@@ -8,28 +8,37 @@
 	<meta property="og:image:secure_url" content="https://unikbase.com/assets/images/site-share.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Unlocking collectibles - Unikbase">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Unlocking collectibles - Unikbase">
+	<meta property="og:title" content="FAQ - Unikbase">
+	<meta property="og:url" content="https://unikbase.com/FAQ.html">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
 	<meta name="twitter:image" content="https://unikbase.com/assets/images/site-share.png">
     <meta name="twitter:description" content="We make digital twins of real-life valuables. Our digital twins are the simplest gateway to multiple services letting owners track, protect and trade with trust.">
     <meta name="twitter:title" content="Unlocking collectibles - Unikbase">
-  <title>FAQ - Unikbase</title>
+  <title>Collections & Plateformes d'Enchères - Unikbase</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../assets/css/main.min.css" />
-  <link rel="icon" href="../assets/images/fav.png" type="image/png">
-  
+  <link rel="stylesheet" href="../../assets/css/main.min.css" />
+  <link rel="icon" href="../../assets/images/fav.png" type="image/png">
   <script type="text/javascript">
     window._current_lang = 'fr';
-    </script>
+    var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage)
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let urlLang = params.lang; // "some_value"
+
+    if(!urlLang=="en" && userLang.indexOf("fr") > -1) {
+        //window.location.replace("/fr/index.html");
+    }
+</script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -47,7 +56,7 @@
         <div class="container flex container flex flex--end">
             <div class="brand">
                 <div class="site__logo">
-                    <a href="index.html" title="UnikBase">
+                    <a href="../index.html" title="UnikBase">
                         <svg id="logo_unikbase" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.17 102.05">
                             <path class="cls-2"  fill="#081d24" d="m95.7,65.04c.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4.27.27.4.62.4,1.07v18.57c0,7.59,3.31,11.38,9.92,11.38,3.2,0,5.74-1.01,7.62-3.03s2.83-4.8,2.83-8.36v-18.57c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v31.69c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-3.13c-1.33,1.73-2.85,3.04-4.56,3.93-1.71.89-3.89,1.33-6.56,1.33-4.35,0-7.66-1.38-9.92-4.13-2.26-2.75-3.39-6.35-3.39-10.79v-18.91c0-.44.13-.8.4-1.07Z"/>
                             <path class="cls-2"  fill="#081d24" d="m163.01,98.86c-.27.27-.62.4-1.06.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-18.58c0-3.59-.88-6.39-2.63-8.39-1.75-2-4.27-3-7.56-3s-5.75,1.01-7.66,3.03c-1.91,2.02-2.86,4.81-2.86,8.36v18.58c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4s-.4-.62-.4-1.07v-31.69c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v3.13c1.33-1.73,2.85-3.04,4.56-3.93,1.71-.89,3.92-1.33,6.62-1.33,4.35,0,7.7,1.39,10.05,4.16,2.35,2.77,3.53,6.36,3.53,10.75v18.91c0,.44-.13.8-.4,1.07Z"/>
@@ -70,25 +79,26 @@
             <div class="menu--mobile-float">
                 <div class="navigation main-navigation menutext flex">
                     <ul class="menu menu--horizontal">
-                        <li class=""><a href="./index.html#what-we-do" title="Solution">Solution</a></li>
-                        <li><a href="./index.html#benefits" title="Advantages">Advantages</a></li>
+                        <li class=""><a href="../index.html?" title="Solution">Solution</a></li>
+                        <li><a href="../index.html?#benefits" title="Advantages">Advantages</a></li>
                         <li class="has-submenu">
-                            <a href="./index.html#industries" title="Industries">Industries <i class="fa fa-plus"></i></a>
+                            <a href="../index.html?#industries" title="Industries">Industries <i class="fa fa-plus"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="./industries/furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
-                                <li><a href="./industries/fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
-                                <li><a href="./industries/collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
-                                <li><a href="./industries/artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
+                                <li><a href="./furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
+                                <li><a href="./fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
+                                <li><a href="./collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
+                                <li><a href="./artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
                             </ul>
                         </li>
-                        <li class=""><a href="./index.html#about-us" title="Équipe">Équipe</a></li>
-                        <li class=""><a href="./index.html#footer" rel="noopener" title="Contact">Contact</a></li>
+                        <li class=""><a href="../index.html?#about-us" title="Équipe">Équipe</a></li>
+                        <li class=""><a href="../index.html?#footer" rel="noopener" title="Contact">Contact</a></li>
                     </ul>
                 </div>
     
-                <div class="navigation flex margin--l flex--end">
+                
+                <div class="navigation flex margin--l">
                     <div class="dropdown-menu sign-in">
-                        <span class="handle">SE CONNECTER</span>
+                        <span class="handle">Se connector</span>
                         <ul class="menu menu--vertical text--align-right">
                             <li class=""><a href="https://collector.unikbase.com" target="_blank" rel="noopener" title="Operator Sign in">Connection opérateur
                             </a></li>
@@ -97,10 +107,10 @@
                     </div>
 
                     <div class="dropdown-menu languages">
-                        <span data-active-lang="fr" class="handle">FR</span>
+                        <span data-active-lang="en" class="handle">FR</span>
                         <ul class="menu menu--languages">
-                            <li data-lang="en"><a href="../index.html" alt=""><i class="icon icon--global"></i>EN</a></li>
-                            <li data-lang="fr" class="active" ><a href="#" alt=""><i class="icon icon--global"></i>FR</a></li>
+                            <li data-lang="en" ><a href="../../industries/furniture-designers-manufacturers.html" alt=""><i class="icon icon--global"></i>EN</a></li>
+                            <li data-lang="fr" class="active"><a href="../index.html" alt=""><i class="icon icon--global"></i>FR</a></li>
                         </ul>
                     </div>
                 </div>
@@ -108,129 +118,170 @@
         </div>
     </section>
 
+    <div class="section section--bg-dark section--hero">
+        <div class="container container--small" style="background-image: url(../../assets/images/SVG/illustration-furniture.svg);">
+            <div class="flex flex--end">
+                <div class="hero__content">
+                    <h1><span class="underline">Concepteurs</span> & <br> <span class="underline">Fabricants de Meubles</span> </h1>
+                    <p>Revers de l'engouement pour les pièces phare du design, la contrefaçon explose,afortiori sur Internet. Faute de solutions techniques et d'une législation suffisamment sévère, les éditeurs peinent à riposter.</p>
+                    <p>La technologie brevetée Unikbase permet aux designers, aux marques de mobilier, et au marketplaces de créer en quelques clicks un certificat digital d'authenticité et de propriété, dont la correspondance avec l'objet ne peut-être remise en question.</p>
+                    <p>La solution Unikbase s'imbrique très facilement dans votre workflow opérationnel et dans votre logiciel de gestion produit.</p>
+                </div>
+                <div class="hero__actions">
+                    <a href="./artists-galleries-art-marketplaces.html" class="prev" title="Artists, Galleries & Art Marketplaces"><i class="icon icon-prev"></i></a>
+                    <a href="./fashion-accessories.html" class="next" title="Fashion & Accessories"><i class="icon icon-next"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <section id="faq" class="section section--bg-white">
-        <div class="container flex flex--no-wrap flex--start">
-            <h4 class="section__sub-title">FAQ</h4>
-            <div class="articles section--bg-gray">
-                <div class="article">
-                    <h1 class="article__title">Foire Aux Questions.</h1>
-                    <p>
-                        Tout ce que vous devez savoir lors de votre inscription à la solution Unikbase.<br>
-                        Si vous ne trouvez pas la réponse que vous cherchez, veuillez contacter notre support.
-                    </p>
-                    <div class="flex flex--no-wrap flex--start">
-                        <div class="article__content">
+    <div class="section section--bg-transparent industries__content">
+        <div class="container container--small">
+            <div class="industries__content--overview">
+                <h3 class="section__title">Comment ça marche?</h3>
+                <p>A l'atelier, au moment d'expédier le meuble, l'opérateur (le de-signer, l'éditeur ou la marketplace) muni d'un simple téléphone portable utilise l'application Unikbase pour créer le passeport digital de l'objet.</p>
+            </div> 
+
+            <div class="wrapper">
+                <div class="industries__content--details section--bg-gray">
+                    <div class="row">
+                        <div class="col" style="padding-right: 5ch;">
+                            <h3 class="section__title">Générer le passeport du meuble</h3>
+                            <div class="content">
+                                <p>D'abord, il prend quelques photographies du meuble, renseigne ses dimensions, son prix de vente, la date de sa mise sur le marché, etc.</p>
+                                <p>Dans l'application mobile, tous types de documents utiles peuvent être très simplement envoyés vers le passeport: facture d'achat, certificat original d'authenticité, rapport de condition en sortie d'usine...</p>
+                                <p>L'upload dans le passeport (données sur l'objet et sur la transac tion) peut être entièrement automatisé, sur la base d'un simple fichier excel par exemple.</p>
+
+                                <div class="divider"></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="illustration">
+                                <img src="../../assets/images/desktop-industrie-furniture.png" alt="Generating the Digital Passprt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="industries__content--details section--bg-gray">
+                    <h3 class="section__title">Marquer l'objet</h3>
+                    <p>Unikbase a conçu 3 technologies d'enregistrement et de contrôle d'identité:</p>
+                    <div class="row" style="flex-direction: row-reverse; margin-top: 40px;">
+                        <div class="col" style="padding-right: 5ch;">
                             <ul class="list list--number">
-                                <li class="collapse collapse--in">
-                                    <h3>Qu'est-ce qu'un jumeau numérique ?</h3>
+                                <li class="collapse">
+                                    <h3>Marquage digital
+                                    </h3>
                                     <div class="collapse__toggle"></div>
                                     <div class="collapse__content">
-                                        <p>Un jumeau numérique est une image numérique d'un objet réel. On dit que l'objet a été 'tokenisé'. La tokenisation est le processus de conversion d'un actif en un jeton qui peut être stocké sur une blockchain. Virtuellement, tout peut être tokenisé, que ce soit un actif numérique, physique ou immatériel.</p>
-                                        <p>Les actifs du monde réel (par exemple, les produits de mode et les montres de luxe) sont liés à des équivalents numériques qui ont des caractéristiques uniques telles que la preuve de propriété et d'authenticité, la résistance à la manipulation et le suivi de l'objet tout au long de son cycle de vie, même s'il change de mains.</p>
+                                        L'expert se laisse guider par l'app pour prendre des photos Macro HD de l'article, et créer des points de singularité, qui seront reconnaissa bles par une A.I. (assistée) conçue par Unikbase.
                                     </div>
                                 </li>
-                                
+    
                                 <li class="collapse">
-                                    <h3>Quelques points importants à savoir sur les jumeaux numériques ?</h3>
+                                    <h3>Marquage par puce</h3>
                                     <div class="collapse__toggle"></div>
                                     <div class="collapse__content">
-                                        <p>Chaque jumeau numérique a une signature numérique, qui est cruciale pour prouver l'authenticité.</p>
-                                        <p>De plus, chaque jumeau numérique sera spécifique à un objet réel particulier ; le jumeau pointe via une URL vers l'image numérique de cet objet.</p>
-                                        <p>Les jumeaux « existent » sur les blockchains et c'est ainsi que l'unicité et la propriété peuvent être vérifiées.</p>
-                                        <p>Chaque jumeau numérique est unique et numéroté.</p>
-                                        <p>Enfin, les jumeaux numériques sont étayés par des contrats intelligents et ces contrats utilisent des « standards » variables ; Unikbase utilise le standard de jeton ERC-721.</p>
+                                        Quand cela est possible, et s'il le souhaite, l'expert applique sur l'objet 
+                                        de collection un 'tag' NFC tamperproof, qui permet 'échange de don-nées entre deux appareils, distants de quelques centimètres. Exacte-ment comme pour un paiement sans contact, les information pub-liques de l'objet sont transmises sur le téléphone portable de son pro-priétaire. S'il le sticker est arraché, le circuit de la puce se détruit, et le passeport rendu inaccessible. 
                                     </div>
                                 </li>
-
+    
                                 <li class="collapse">
-                                    <h3>Comment se fait-il que mon double numérique se comporte comme un passeport, et pourquoi?</h3>
+                                    <h3>Marquage physique</h3>
                                     <div class="collapse__toggle"></div>
                                     <div class="collapse__content">
-                                        <p>La preuve physique de la propriété et de la valeur d'un objet peut être égarée, prise ou falsifiée.</p>
-                                        <p>En enregistrant votre objet de valeur vous-même ou en transférant le passeport du propriétaire précédent au nouveau propriétaire lorsque l'objet a déjà été enregistré (en particulier par le fabricant/marque lui-même), Unikbase vous permet de sauvegarder toutes les données et les documents de soutien de votre objet de valeur dans un portefeuille numérique unique, non duplicable, inviolable et strictement confidentiel.</p>
-                                    </div>
-                                </li>
-
-                                <li class="collapse">
-                                    <h3>Je possède un objet de valeur : pourquoi posséder son jumeau numérique ?</h3>
-                                    <div class="collapse__toggle"></div>
-                                    <div class="collapse__content">
-                                        <p>Les actifs du monde réel (par exemple, les produits de mode et les montres de luxe) peuvent maintenant être liés à des équivalents numériques qui ont des caractéristiques uniques telles que la preuve de propriété et d'authenticité, la résistance à la manipulation et le suivi de l'objet tout au long de son cycle de vie, même s'il change de mains. 4 raisons de le croire :</p>
-                                        <ul>
-                                            <li>Démontrer la propriété</li>
-                                            <li>Authentifier la valeur de vos biens</li>
-                                            <li>Gérer vos objets de valeur de manière efficace</li>
-                                            <li>Profiter de services dédiés</li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="collapse">
-                                    <h3>Je suis un commerçant : pourquoi proposer des jumeaux numériques à mes clients ?</h3>
-                                    <div class="collapse__toggle"></div>
-                                    <div class="collapse__content">
-                                        <p>Pour protéger ceux qui achètent des objets de valeur en leur permettant de vérifier la véracité des informations données par le vendeur.</p>
-                                        <p>Pour rétablir la confiance sur le marché des objets de valeur, qui a été érodée par le vol et la contrefaçon.</p>
-                                    </div>
-                                </li>
-                                <li class="collapse">
-                                    <h3>COMMENT MON DOUBLE NUMÉRIQUE ET MA COLLECTION RÉELLE SONT-ILS CONNECTÉS ?</h3>
-                                    <div class="collapse__toggle"></div>
-                                    <div class="collapse__content">
-                                        <p>
-                                            Notre solution de bout en bout fonctionne en 2 étapes : <br>
-                                            1) nous prenons des photos haute résolution ou numérisons en 3D les objets de collection qui ne peuvent pas être modifiés. <br>
-                                            2) nous marquons l'objet réel avec une encre invisible qui marque vos produits avec 1,3 milliard de signatures uniques. Les marques ne peuvent être vérifiées qu'à l'aide de nos lampes UVB Unikbase et/ou d'une analyse chimique, et nous stockerons la photo de la marque dans le double numérique.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="collapse">
-                                    <h3>PUIS-JE UTILISER MON DOUBLE NUMÉRIQUE POUR ASSURER MES OBJETS DE VALEUR OU LES DÉCLARER VOLÉS?</h3>
-                                    <div class="collapse__toggle"></div>
-                                    <div class="collapse__content">
-                                        <p>Absolument! Les doubles numériques Unikbase sont acceptés par certaines grandes compagnies d'assurance internationales. De plus, les autorités judiciaires se fient à la technologie de la solution de marquage de notre partenaire Olnica (partie du groupe Socomore) dans les affaires de contrefaçon et de vol.</p>
-                                    </div>
-                                </li>
-                                <li class="collapse">
-                                    <h3>QUELS SONT LES COÛTS ENVIRONNEMENTAUX DE LA CRÉATION D'UN DOUBLE NUMÉRIQUE ?</h3>
-                                    <div class="collapse__toggle"></div>
-                                    <div class="collapse__content">
-                                        <p>Unikbase fonctionne sur une blockchain privée appelée Liquichain.</p>
-
-                                        <p>La blockchain soulève des préoccupations environnementales.</p>
-
-                                        <p>La consommation d'énergie est énorme et peut entraîner une augmentation des émissions de carbone et du changement climatique. Cela entraîne d'autres problèmes technologiques : la blockchain est lente et transfère peu.</p>
-
-                                        <p>Liquichain est une blockchain dont les nœuds forment un graphe de confiance et de proximité. Elle est conçue pour exécuter des contrats intelligents de manière rapide, sécurisée et à faible consommation d'énergie, ce qui permet de mettre en place des crypto-monnaies, des micropaiements mobiles, des systèmes de vote, de partage de fichiers, des processus d'entreprise, et plus encore.</p>
-
-                                        <p>En réorganisant le chemin de confiance entre pairs (Proof of Peers), Liquichain a résolu le problème environnemental et fourni un outil communautaire agile.</p>
-
-                                        <p>À qui dois-je m'adresser si j'ai un problème avec mon portefeuille de doubles numériques ?</p>
-
-                                        <p>Veuillez envoyer un e-mail à <a href="mailto:hello@unikbase.com" target="_blank" rel="noreferer" title="Mail hello@unikbase.com">hello@unikbase.com</a> avec votre requête.</p>
-                                    </div>
-                                </li>
-                                <li class="collapse">
-                                    <h3>QU'EST-CE QU'UNE BLOCKCHAIN ?</h3>
-                                    <div class="collapse__toggle"></div>
-                                    <div class="collapse__content">
-                                        <p>Un registre distribué public de pair à pair qui stocke des transactions est appelé une blockchain.</p>
-                                        <p>Une blockchain est simplement un réseau d'ordinateurs interconnectés, ou "nœuds", qui élimine le besoin d'un hub central, la rendant ainsi plus sécurisée, fiable et plus difficile à modifier les données. Elle ne peut pas être modifiée et ne peut pas être falsifiée.</p>
-                                            
-                                        <p>Il existe maintenant plusieurs blockchains différentes ; Unikbase utilise Liquichain. <a href="https://www.liquichain.io" target="_blank" rel="noreferer" title="Liquichain"> Liquichain</a>.</p>
-                                        <p>Sur chaque chaîne, un nombre prédéterminé de nœuds doit approuver une transaction avant qu'elle puisse être incluse de manière permanente dans la chaîne.</p>
-                                        <p>Des frais de gaz doivent être payés pour que la chaîne puisse être modifiée.</p>
+                                        L'opérateur marque le meuble d'une encre invisible et inaltérable dont la formule a été créée uniquement pour lui, véritable signature ADN. La formule chimique de cette encre unique et inaltérable est automa tiquement renseignée dans le passeport. Seul son propriétaire en a connaissance.
                                     </div>
                                 </li>
                             </ul>
+    
+                            <p>Ces éléments de preuve sont enregistrés dans le passeport. que seul son détenteur pourra partager depuis l'application Unikbase:</p>
+                            <ul class="list list--disc">
+                                <li><strong>pour prouver qu'il est le propriétaire du meuble</strong></li>
+                                <li><strong>pour certifier de l'authenticité du meuble</strong></li>
+                                <li><strong>pour déclarer une perte, un vol....</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col hide-mobile">
+                            <div class="illustration">
+                                <img src="../../assets/images/chip-tagging-furniture.png" alt="Marking the furniture" style="top: 0;left: 0;translate: 0 0;">
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-        
+    </div>
+
+    <section id="lifetime" class="section section--bg-dark">
+        <div class="container container--small">
+            <div class="row flex flex--justify-center">
+                <div class="col">
+                    <h3 class="section__title">
+                        Pour la vie!
+                    </h3>
+                    <p>Le passeport pourra bien sûr être enrichi par son propriétaire taut au long de la vie du meuble: s'il est abimé, réparé, expertisé ă un nouveau prix, prêté, vendu à un nouveau propriétaire...</p>
+                </div>
+                <img class="logo" src="../../assets/images/SVG/icon-unikbase-gray.svg" alt="Unikbse">
+            </div>
+        </div>
+    </section>
+
+    <div class="section section--bg-gray industries__about">
+        <div class="container container--small">
+            <h3 class="section__title border-corners">Unformidable vecteur de  <span class="highlight">confiance</span> entre <span class="highlight">l'éditeur</span> et ses <span class="highlight">clients</span>.</h3>
+            <p>La solution Unikbase s'adapte en "marque blanche" à l'éditeur, c'est à dire qu'elle vient se loger facilement dans votre logiciel de CRM, et de gestion de stocks. L'interface, aux couleurs de la marque, vous permet d'administrer très simplement les passeports pour vos clients, et de les contacter directement depuis l'application mobile (par exemple, pour leur proposer de nouvelles éditions).</p>
+
+            <p>Si le propriétaire vend son meuble, vous en serez immédiatement informé, et vous pourrez engager le dialogue avec le nouveau propriétaire.</p>
+        </div>
+    </div>
+
+    <section id="industries" class="section section--bg-dark">
+        <div class="container flex flex--column">
+            <h3 class="section__title">Autres Industries</h3>
+            <ul class="list industries industries--others">
+                <li style="background-image: url(../../assets/images/SVG/illustration-accessories.svg);"><a href="./fashion-accessories.html" title="Fashion & Accessories">Mode &<br> Accessoires <span>&gt;</span></a></li>
+                <li style="background-image: url(../../assets/images/SVG/illustration-collectibles.svg);"><a href="./collectibles-auction-platforms.html" title="Collectibles & Auction Platforms">Collections &<br> Plateformes d'Enchères <span>&gt;</span></a></li>
+                <li style="background-image: url(../../assets/images/SVG/illustration-art.svg);"><a href="./artists-galleries-art-marketplaces.html" title="Artists, Galleries & Art Marketplaces">Artistes, Galeries &<br> 
+                    Marchés de l'Art<span>&gt;</span></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="instagram" class="section section--bg-white">
+
+        <div class="instagram">
+            <div class="instagram__feed flex flex--start">
+                <div class="instagram__slider instagram__slider--placeholder">
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                    <div class="instagram__post">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer id="footer" class="site__footer section--bg-dark">
@@ -253,7 +304,7 @@
                                 <li><a href="mailto:jobs@unikbase.com" target="_blank" rel="noopener" title="Jobs">Jobs</a></li>
                                 <li><a href="mailto:press@unikbase.com" target="_blank" rel="noopener" title="Presse">Presse</a></li>
                                 <li><a href="https://medium.com/@unikbase" target="_blank" rel="noopener" title="Blog">Blog</a></li>
-                                <li><a href="FAQ.html" title="FAQ">FAQ</a></li>
+                                <li><a href="../FAQ.html" title="FAQ">FAQ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -261,10 +312,10 @@
                     <div class="col">
                         <div class="widget">
                             <ul class="menu menu-term list">
-                                <li><a href="./industries/furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
-                                <li><a href="./industries/fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
-                                <li><a href="./industries/collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
-                                <li><a href="./industries/artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
+                                <li><a href="./furniture-designers-manufacturers.html" title="Concepteurs & Fabricants de Meubles">Concepteurs & Fabricants de Meubles</a></li>
+                                <li><a href="./fashion-accessories.html" title="Mode & Accessoires">Mode & Accessoires</a></li>
+                                <li><a href="./collectibles-auction-platforms.html" title="Collections & Plateformes d'Enchères">Collections & Plateformes d'Enchères</a></li>
+                                <li><a href="./artists-galleries-art-marketplaces.html" title="Artistes, Galeries & Marchés de l'Art">Artistes, Galeries & Marchés de l'Art</a></li>
                             </ul>
                         </div>
                     </div>
@@ -275,7 +326,7 @@
         <div class="container flex flex--horizontal flex--end flex--space-between">
             <div class="brand" style="flex-basis: 50%;">
                 <div class="site__logo">
-                    <a href="index.html" title="Unikbase">
+                    <a href="../index.html" title="Unikbase">
                         <svg id="logo_unikbase" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.17 102.05">
                             <path class="cls-2"  fill="#081d24" d="m95.7,65.04c.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4.27.27.4.62.4,1.07v18.57c0,7.59,3.31,11.38,9.92,11.38,3.2,0,5.74-1.01,7.62-3.03s2.83-4.8,2.83-8.36v-18.57c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v31.69c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-3.13c-1.33,1.73-2.85,3.04-4.56,3.93-1.71.89-3.89,1.33-6.56,1.33-4.35,0-7.66-1.38-9.92-4.13-2.26-2.75-3.39-6.35-3.39-10.79v-18.91c0-.44.13-.8.4-1.07Z"/>
                             <path class="cls-2"  fill="#081d24" d="m163.01,98.86c-.27.27-.62.4-1.06.4h-1.13c-.44,0-.8-.13-1.07-.4-.27-.27-.4-.62-.4-1.07v-18.58c0-3.59-.88-6.39-2.63-8.39-1.75-2-4.27-3-7.56-3s-5.75,1.01-7.66,3.03c-1.91,2.02-2.86,4.81-2.86,8.36v18.58c0,.44-.13.8-.4,1.07-.27.27-.62.4-1.07.4h-1.13c-.44,0-.8-.13-1.07-.4s-.4-.62-.4-1.07v-31.69c0-.44.13-.8.4-1.07.27-.27.62-.4,1.07-.4h1.13c.44,0,.8.13,1.07.4s.4.62.4,1.07v3.13c1.33-1.73,2.85-3.04,4.56-3.93,1.71-.89,3.92-1.33,6.62-1.33,4.35,0,7.7,1.39,10.05,4.16,2.35,2.77,3.53,6.36,3.53,10.75v18.91c0,.44-.13.8-.4,1.07Z"/>
@@ -295,25 +346,25 @@
             <div class="socials">
                 <ul class="list list--vertical flex--center flex--space-between">
                     <!-- <li><a target="_blank" href="https://facebook.com" title="Unikbase on Facebook"><img src="../assets/images/SVG/icon-facebook.svg" alt="unikbase on facebook"></a></li> -->
-                    <li><a target="_blank" rel="noopener" href="https://medium.com/@unikbase" title="Unikbase on medium"><img src="../assets/images/SVG/icon-medium.svg" alt="unikbase on medium"></a></li>
-                    <li><a target="_blank" rel="noopener" href="https://www.instagram.com/unikbase/" title="Unikbase on Instagram"><img src="../assets/images/SVG/icon-instagram.svg" alt="unikbase on instagram"></a></li>
-                    <li><a target="_blank" rel="noopener" href="https://twitter.com/unikbase_off" title="Unikbase on twitter"><img src="../assets/images/SVG/icon-twitter.svg" alt="unikbase on twitter"></a></li>
-                    <li><a target="_blank" rel="noopener" href=" https://www.linkedin.com/company/unikbase/" title="Unikbase on linkedin"><img src="../assets/images/SVG/icon-linkedin.svg" alt="unikbase on linkedin"></a></li>
+                    <li><a target="_blank" rel="noopener" href="https://medium.com/@unikbase" title="Unikbase on medium"><img src="../../assets/images/SVG/icon-medium.svg" alt="unikbase on medium"></a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.instagram.com/unikbase/" title="Unikbase on Instagram"><img src="../../assets/images/SVG/icon-instagram.svg" alt="unikbase on instagram"></a></li>
+                    <li><a target="_blank" rel="noopener" href="https://twitter.com/unikbase_off" title="Unikbase on twitter"><img src="../../assets/images/SVG/icon-twitter.svg" alt="unikbase on twitter"></a></li>
+                    <li><a target="_blank" rel="noopener" href=" https://www.linkedin.com/company/unikbase/" title="Unikbase on linkedin"><img src="../../assets/images/SVG/icon-linkedin.svg" alt="unikbase on linkedin"></a></li>
                 </ul>
             </div>
 
             <div class="copy-right" style="margin-left: auto;">
                 © unikbase, 2023 &#8226; 
                 <ul class="list list--inline">
-                    <li><a href="privacy-policy.html" title="Confidentialité">Confidentialité</a></li>
-                    <li><a href="terms-conditions.html" title="Conditions Générales de Vente">Conditions Générales de Vente</a></li>
+                    <li><a href="../privacy-policy.html" title="Confidentialité">Confidentialité</a></li>
+                    <li><a href="../terms-conditions.html" title="Conditions Générales de Vente">Conditions Générales de Vente</a></li>
                 </ul>
             </div>
         </div>
-    </footer>
+    </footer> 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="../assets/js/main.js?ver=084601102023"></script>
+    <script src="../../assets/js/main.js?ver=084601102023"></script>
 </body>
 </html>
