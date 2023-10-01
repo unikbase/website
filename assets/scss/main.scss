@@ -1375,15 +1375,25 @@ html {
         &__content {
             z-index: 3;
             padding-bottom: 0;
+            &--overview {
+                h3 {
+                    font-size: 30px;
+                    line-height: 1.5em;
+                }
+            }
             h3 {
                 font-weight: 400;
-                margin-bottom: 1em;
+                font-size: 26px;
+                line-height: 1.5em;
             }
+            ul li,
             p {
                 margin-left: 0;
+                font-size: 16px;
+                line-height: 1.5em;
             }
             &--overview p {
-                max-width: 600px;
+                max-width: 480px;
                 margin-bottom: 40px;
             }
             &--details {
@@ -1391,11 +1401,14 @@ html {
                 h3 {
                     color: $red;
                 }
+                &:first-child {
+                    padding-bottom: 0;
+                }
                 .divider {
                     height: 2px;
                     background-color: #FFF;
                     width: 100%;
-                    margin-top: 80px; 
+                    margin-top: 2em; 
                 }
                 .illustration {
                     pointer-events: none;
@@ -1422,6 +1435,7 @@ html {
                         h3 {
                             color: $black;
                             padding: 12px 0;
+                            font-size: 20px;
                             &::before {
                                 display: inline;
                                 position: relative;
@@ -1469,7 +1483,7 @@ html {
                     .illustration {
                         img {
                             height: 220%;
-                            max-height: 600px;
+                            max-height: 560px;
                             translate: 0 calc(-50%);
                         }
                     }

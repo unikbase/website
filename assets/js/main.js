@@ -298,7 +298,7 @@
 		let path = url.pathname.split("/");
 		path.pop();
 		url.pathname = path.join("/")
-		return url.href;
+		return url.href.replace(/#(.+)$/, '');
 	}
   const generateSlider = (items, wrapper) => {
     if ( !wrapper ) return;

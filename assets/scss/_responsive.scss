@@ -1065,12 +1065,12 @@
 
 
 @media only screen and (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
-    .container {
+    .container:not(.container--small) {
         width: calc(100vw - 80px);
     }
 }
 @media only screen and (min-width: 901px) and (max-width: 1366px) {
-    .container {
+    .container:not(.container--small) {
         width: calc(100vw - 40px);
     }
     #what-we-do {
