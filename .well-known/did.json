@@ -1,0 +1,15 @@
+{
+  "@context": "https://www.w3.org/ns/did/v1",
+  "id": "did:web:unikbase.com",
+  "publicKey": [{
+    "id": "did:web:unikbase.com#owner",
+    "type": "EcdsaSecp256k1VerificationKey2019",
+    "controller": "did:web:unikbase.com",
+    "ethereumAddress": "0xEDE62eD1773e40115004A54491909B2D4cfDF3e9"
+  }],
+  "authentication": [{
+    "type": "EcdsaSecp256k1SignatureAuthentication2019",
+    "publicKey": "did:web:unikbase.com#owner"
+  }],
+  "service": []
+}
