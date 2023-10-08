@@ -209,7 +209,7 @@
 //     } 
 //   });
 // }
-  $('.collapse__toggle').on('click', (e) => {
+  $('.collapse__toggle, .collapse h3').on('click', (e) => {
     e.preventDefault();
     let parent = $(e.currentTarget).closest('.collapse');
     let content = parent.find('.collapse__content')[0];

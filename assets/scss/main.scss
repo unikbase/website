@@ -832,7 +832,7 @@ html {
             list-style-type: initial;
             list-style-position: outside;
             font-weight: normal;
-            padding-left: 1em;
+            padding-left: 0.5em;
         }
         .articles {
             z-index: 3;
@@ -855,6 +855,7 @@ html {
                 &__content ul li {
                     font-size: 16px;
                     line-height: 25px;
+                    margin-bottom: 0.5em;
                     span {
                         position: relative;
                         left: 1em;
@@ -1324,6 +1325,7 @@ html {
         margin-top: -50px;
         z-index: 1;
         padding-bottom: 20px;
+        padding-top: 150px;
         .industries {
             width: 100%;
             display: flex;
@@ -1345,12 +1347,11 @@ html {
                 margin-bottom: 80px;
                 a {
                     line-height: 1.5em;
-                    text-underline-offset: 8px;
-                    text-decoration-color: $red;
-                    span {
-                        display: inline;
-                        text-decoration: none!important;
-                        text-decoration-line: none!important;
+                    text-decoration: none;
+                    span:first-child {
+                        text-decoration: underline;
+                        text-underline-offset: 4px;
+                        text-decoration-color: $red;
                     }
                 }
             }
