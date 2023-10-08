@@ -428,6 +428,14 @@
                 }
             }
         }
+        #customers {
+            padding-bottom: 40px;
+            .list {
+                width: 100%;
+                flex-basis: 100%;
+                margin-top: 40px;
+            }
+        }
         #industries .industries {
             &--others {
                 flex-direction: column;
@@ -708,7 +716,10 @@
             .container .row {
                 flex-direction: column;
                 img {
+                    margin-top: 40px;
+                    max-width: 250px;
                     margin-right: auto;
+                    margin-left: auto;
                 }
             }
         }

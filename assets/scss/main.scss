@@ -1327,7 +1327,18 @@ html {
             }
         }
     }
-
+    #customers {
+        .section__title {
+            font-size: 27px;
+            line-height: 27px;
+        }
+        .list {
+            flex:1;
+            flex-direction: row; 
+            justify-content: space-around; 
+            align-items: center;
+        }
+    }
     #industries {
         margin-top: -50px;
         z-index: 1;
