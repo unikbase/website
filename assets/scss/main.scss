@@ -1613,9 +1613,13 @@ html {
                 .menu-term {
                     font-weight: normal;
                     a {
-                        text-decoration: underline;
-                        text-decoration-color: $red;
-                        text-underline-offset: 4px;
+                        &::before {
+                            content: ">";
+                            display: inline-block;
+                            font-size: 0.9em;
+                            margin-right: 0.5em;
+                            color: $red;
+                        }
                     }
                 }
             }
