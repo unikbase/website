@@ -71,6 +71,7 @@
             > a::after {
                 content: "+";
                 display: inline-block;
+                color: $red;
             }
             &:hover .sub-menu {
                 display: flex;
