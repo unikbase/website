@@ -85,11 +85,18 @@
                 align-items: center;
                 justify-content: center;
                 margin-left: 8px;
+                transition: translate ease-out 300ms;
                 &.prev {
                     width: 30px;
+                    &:hover {
+                        translate: -8px 0;
+                    }
                 }
                 &.next {
                     width: 50px;
+                    &:hover {
+                        translate: 8px 0;
+                    }
                 }
                 .icon {
                     cursor: pointer;

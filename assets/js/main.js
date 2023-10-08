@@ -215,13 +215,39 @@
     let content = parent.find('.collapse__content')[0];
     if ( parent.hasClass('collapse--in') ) {
       parent.removeClass('collapse--in');
-      content.style.maxHeight = null;
+      content.style.maxHeight = 0;
+			parent.trigger('rb-collapse-close');
     } else {
+
+			parent.closest('ul').find('.collapse').removeClass('collapse--in');
+			parent.closest('ul').find('.collapse .collapse__content').css('max-height', 0);
+
       parent.addClass('collapse--in');
-        content.style.maxHeight = content.scrollHeight + "px";
+			parent.trigger('rb-collapse-open', { el: parent });
+      content.style.maxHeight = content.scrollHeight + "px";
     }
-      
   })
+
+	$('.collapse').on('rb-collapse-open', (event, { el }) => {
+		const parent = el.closest('ul');
+		const type = parent.data('type');
+		if( !type ) return;
+		const wrapper = parent.closest('.industries__content--details')
+		if ( !wrapper ) return;
+		const illustration = wrapper.find('.steps__illustration img');
+		if ( !illustration ) return;
+		const step = parent.find('li').index(el);
+		const steps = ['digital-fingerprinting', 'chip-tagging', 'physical-marking'];
+		if ( !illustration ) return;
+		const match = illustration.attr('src').match(/(.+\/)[^\/]+\.(png|jpg|jpeg)$/);
+		const newimage  = illustration.clone();
+		newimage.attr('src', `${match[1]}${steps[step]}-${type}.${match[2]}`)
+		newimage.on('load', () => {
+			newimage.hide();
+			illustration.replaceWith(newimage)
+			newimage.fadeIn(1500)
+		})
+	})
 
   $('.dropdown-menu .handle').on('click', (e) => {
     e.preventDefault();
