@@ -1435,9 +1435,9 @@ html {
                 }
                 .illustration {
                     pointer-events: none;
-                    position: relative;
+                    position: absolute;
                     height: 100%;
-                    width: 100%;
+                    width: auto;
                     .wrapper {
                         position: absolute;
                         width: 100%;
@@ -1452,11 +1452,22 @@ html {
                         left:0;
                         width: 100%;
                         height: 100%;
+                        overflow: hidden;
+                        .video-wrapper {
+                            height: 100%;
+                            position: relative;
+                            overflow: hidden;
+                            width: calc(100% - 20px);
+                            left: 50%;
+                            translate: -50% 0;
+                        }
                         video,
                         iframe {
-                            width: 100%;
-                            height: calc(100% - 20px);
-                            translate: 0 13px;
+                            position: relative;
+                            left: 50%;
+                            width: calc(100% + 800px);
+                            height: calc(100% - 30px);
+                            translate: -50% 12px;
                             border-radius: 40px;
                             z-index: 2;
                             &.loading {
@@ -1464,10 +1475,10 @@ html {
                             }
                         }
                         .mockup {
-                            background-image: url("../images/SVG/mobile-mockup.svg");
+                            background-image: url("../images/mobile-mockup.png");
                             background-repeat: no-repeat;
                             background-size: 100%;
-                            background-position: 0 0;
+                            background-position: top left;
                             background-color: transparent;
                             z-index: 3;
                             position: absolute;
@@ -1544,9 +1555,10 @@ html {
                 &:first-child {
                     .illustration {
                         img {
-                            height: 220%;
+                            position: relative;
+                            height: auto;
                             max-height: 560px;
-                            translate: 0 calc(-50%);
+                            translate: 0 -150px;
                         }
                     }
                 }
@@ -1559,8 +1571,8 @@ html {
                             }
                             &:nth-child(2) {
                                 flex-basis: auto; 
-                                width: auto;
                                 margin-right: 40px;
+                                width: 230px;
                             }
                         }
                         .illustration {
