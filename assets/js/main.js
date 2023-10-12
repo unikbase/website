@@ -228,25 +228,58 @@
     }
   })
 
+	const videos = {
+		furniture: ['1jisAEz7hTlBiOemNpydBUHdC0UiTSDQq', '1jisAEz7hTlBiOemNpydBUHdC0UiTSDQq']
+	}
+	const getVideoEl = (id) => {
+		if ( !id ) return;
+		let iframe = document.createElement('video')
+		iframe.classList.add('video');
+		iframe.classList.add('loading');
+		iframe.setAttribute('autoplay', true);
+		let sourceEl = document.createElement('source');
+		// <video autoplay>
+		// 		<source src="https://drive.google.com/uc?export=preview&id=1jisAEz7hTlBiOemNpydBUHdC0UiTSDQq" type="video/mp4">
+		// 		Your browser does not support the video tag.
+		// </video>
+		sourceEl.setAttribute('src', `https://drive.google.com/uc?export=preview&id=${id}`)
+		sourceEl.setAttribute('type', 'video/mp4');
+		iframe.insertAdjacentElement('beforeend', sourceEl);
+		return iframe;
+	}
+
 	$('.collapse').on('rb-collapse-open', (event, { el }) => {
 		const parent = el.closest('ul');
 		const type = parent.data('type');
 		if( !type ) return;
 		const wrapper = parent.closest('.industries__content--details')
 		if ( !wrapper ) return;
-		const illustration = wrapper.find('.steps__illustration img');
-		if ( !illustration ) return;
 		const step = parent.find('li').index(el);
 		const steps = ['digital-fingerprinting', 'chip-tagging', 'physical-marking'];
-		if ( !illustration ) return;
-		const match = illustration.attr('src').match(/(.+\/)[^\/]+\.(png|jpg|jpeg)$/);
-		const newimage  = illustration.clone();
-		newimage.attr('src', `${match[1]}${steps[step]}-${type}.${match[2]}`)
-		newimage.on('load', () => {
-			newimage.hide();
-			illustration.replaceWith(newimage)
-			newimage.fadeIn(1500)
-		})
+
+		const illustration = wrapper.find('.steps__illustration img');
+		if ( illustration ) {
+			const match = illustration.attr('src').match(/(.+\/)[^\/]+\.(png|jpg|jpeg)$/);
+			const newimage  = illustration.clone();
+			newimage.attr('src', `${match[1]}${steps[step]}-${type}.${match[2]}`)
+			newimage.on('load', () => {
+				newimage.hide();
+				illustration.replaceWith(newimage)
+				newimage.fadeIn(1500)
+			})
+		}
+		// const video = wrapper.find('.illustration--video');
+		// const oldVideo = video.find('video')
+		// const newVideo = getVideoEl(videos[type][step]);
+		// if ( video && newVideo ) {
+		// 	if ( oldVideo.length ) {
+		// 		oldVideo.replaceWith(newVideo)	
+		// 	} else {
+		// 		video.prepend(newVideo)
+		// 	}
+		// } else if( !newVideo && oldVideo ) {
+		// 	oldVideo.remove();
+		// }
 	})
 
   $('.dropdown-menu .handle').on('click', (e) => {
