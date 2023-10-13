@@ -410,6 +410,7 @@
                     .divider {
                         margin-top: 20px;
                         margin-bottom: 20px;
+                        display: none;
                     }
                     .illustration {
                         height: auto;
@@ -430,6 +431,9 @@
                             width: 100vw!important;
                             translate: none!important;
                             max-height: none;
+                        }
+                        .col:last-child {
+                            border-bottom: 1px solid $white;
                         }
                     }
 
