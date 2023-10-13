@@ -419,11 +419,34 @@
                         align-items: center;
                         justify-content: center;
                         position: relative;
-                        img {
+                        .wrapper {
+                            position: relative;
+                        }
+                    }
+                    &:nth-child(1) {
+                        .illustration img {
                             position: relative;
                             height: auto!important;
                             width: 100vw!important;
                             translate: none!important;
+                            max-height: none;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        > div {
+                            flex-direction: column-reverse!important;
+                        }
+                        .steps__illustration {
+                            margin-left: auto;
+                            margin-right: auto!important;
+                            width: 60%!important;
+                            max-width: 240px;
+                        }
+                    }
+                    .collapse {
+                        &__toggle {
+                            right: -8px;
                         }
                     }
                 }

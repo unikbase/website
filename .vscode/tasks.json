@@ -6,7 +6,7 @@
         {
             "label": "Sass compile",
             "type": "shell",
-            "command": "sass --style=compressed assets/scss/main.scss:assets/css/main.min.css",
+            "command": "sass --style=compressed assets/scss/main.scss:assets/css/main.min.css?ver=110313102023",
             "group": "build"
         }
     ]

@@ -204,7 +204,7 @@
     if ( parent.hasClass('collapse--in') ) {
       parent.removeClass('collapse--in');
       content.style.maxHeight = 0;
-			parent.trigger('rb-collapse-close');
+			parent.trigger('rb-collapse-close', { el: parent });
     } else {
 
 			parent.closest('ul').find('.collapse').removeClass('collapse--in');
@@ -242,39 +242,45 @@
 		return iframe;
 	}
 
-	$('.collapse').on('rb-collapse-open', (event, { el }) => {
-		const parent = el.closest('ul');
-		const type = parent.data('type');
-		if( !type ) return;
-		const wrapper = parent.closest('.industries__content--details')
-		if ( !wrapper ) return;
-		const step = parent.find('li').index(el);
-		const steps = ['digital-fingerprinting', 'chip-tagging', 'physical-marking'];
+	$('.collapse')
+		.on('rb-collapse-open', (event, { el }) => {
+			const parent = el.closest('ul');
+			const type = parent.data('type');
+			if( !type ) return;
+			const wrapper = parent.closest('.industries__content--details')
+			if ( !wrapper ) return;
+			const step = parent.find('li').index(el);
+			const steps = ['digital-fingerprinting', 'chip-tagging', 'physical-marking'];
 
-		const illustration = wrapper.find('.steps__illustration img');
-		if ( illustration ) {
-			const match = illustration.attr('src').match(/(.+\/)[^\/]+\.(png|jpg|jpeg)$/);
-			const newimage  = illustration.clone();
-			newimage.attr('src', `${match[1]}${steps[step]}-${type}.${match[2]}`)
-			newimage.on('load', () => {
-				newimage.hide();
-				illustration.replaceWith(newimage)
-				newimage.fadeIn(1500)
-			})
-		}
-		const video = wrapper.find('.illustration--video');
-		const oldVideo = video.find('iframe')
-		const newVideo = getVideoEl(videos[type][step]);
-		if ( video && newVideo ) {
-			if ( oldVideo.length ) {
-				oldVideo.replaceWith(newVideo)	
-			} else {
-				video.find('.video-wrapper').prepend(newVideo)
+			const illustration = wrapper.find('.steps__illustration img');
+			if ( illustration ) {
+				const match = illustration.attr('src').match(/(.+\/)[^\/]+\.(png|jpg|jpeg)$/);
+				const newimage  = illustration.clone();
+				newimage.attr('src', `${match[1]}${steps[step]}-${type}.${match[2]}`)
+				newimage.on('load', () => {
+					newimage.hide();
+					illustration.replaceWith(newimage)
+					newimage.fadeIn(1500)
+				})
 			}
-		} else if( !newVideo && oldVideo ) {
-			oldVideo.remove();
-		}
-	})
+			const video = wrapper.find('.illustration--video');
+			const oldVideo = video.find('iframe')
+			const newVideo = getVideoEl(videos[type][step]);
+			if ( video && newVideo ) {
+				if ( oldVideo.length ) {
+					oldVideo.replaceWith(newVideo)	
+				} else {
+					video.find('.video-wrapper').prepend(newVideo)
+				}
+			} else if( !newVideo && oldVideo ) {
+				oldVideo.remove();
+			}
+		})
+		.on('rb-collapse-close', (event, { el }) => {
+			const wrapper = el.closest('.industries__content--details')
+			if( !wrapper ) return;
+			wrapper.find('.steps__illustration .illustration--video iframe').remove();
+		})
 
   $('.dropdown-menu .handle').on('click', (e) => {
     e.preventDefault();
