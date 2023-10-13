@@ -232,7 +232,7 @@
 		
 		// <iframe src="https://www.youtube.com/embed/g_CLvAoxXyU?si=PgpSEUIvbQimsHbm&autohide=1&showinfo=0&controls=0&autoplay=1&modestbranding=1&loop=1&rel=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-		iframe.setAttribute('src', `https://www.youtube.com/embed/${id}?si=PgpSEUIvbQimsHbm&autohide=1&showinfo=0&controls=0&autoplay=1&modestbranding=1&loop=1&rel=0&autoplay=1`)
+		iframe.setAttribute('src', `https://www.youtube.com/embed/${id}?si=PgpSEUIvbQimsHbm&autohide=1&showinfo=0&controls=0&autoplay=1&modestbranding=1&loop=1&rel=0&autoplay=1&mute=1`)
 		
 		// iframe.insertAdjacentElement('beforeend', sourceEl);
 		iframe.addEventListener('load', () => {
