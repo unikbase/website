@@ -1494,6 +1494,12 @@ html {
                     //     translate: 0 calc(-50% - 60px);
                     // }
                 }
+                .video {
+                    video {
+                        margin-top: 2em;
+                        height: auto!important;
+                    }
+                }
                 .list {
                     .collapse {
                         padding-left: 0;
@@ -1575,6 +1581,10 @@ html {
                         .illustration {
                             width: 230px;
                             height: auto;
+                            position: relative;
+                            .wrapper {
+                                position: relative;
+                            }
                             img {
                                 height: 468px;
                                 width: 100%;
