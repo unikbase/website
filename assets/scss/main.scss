@@ -1470,9 +1470,6 @@ html {
                             translate: -50% 12px;
                             border-radius: 40px;
                             z-index: 2;
-                            &.loading {
-                                opacity: 0.3;
-                            }
                         }
                         .mockup {
                             background-image: url("../images/mobile-mockup.png");
