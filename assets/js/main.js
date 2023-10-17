@@ -256,7 +256,9 @@
 			if ( illustration ) {
 				const match = illustration.attr('src').match(/(.+\/)[^\/]+\.(png|jpg|jpeg)$/);
 				const newimage  = illustration.clone();
-				newimage.attr('src', `${match[1]}${steps[step]}-${type}.${match[2]}`)
+				let imageSrc = el[0].getAttribute('data-image') || `${match[1]}${steps[step]}-${type}.${match[2]}`;
+
+				newimage.attr('src', imageSrc)
 				newimage.on('load', () => {
 					newimage.hide();
 					illustration.replaceWith(newimage)
