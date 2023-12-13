@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pestel Debord - Unikbase</title>
+		<link rel="stylesheet" href="assets/css/main.min.css" />
+	</head>
+	<body class="site">
+		<header class="site__header">
+			<div class="container brand">
+				<div class="row">
+					<div class="logo">
+						<img src="assets/img/logo-pestel-debord.png" alt="Pestel Debord" />
+						<div class="unikbase">
+							<span>Powered by</span>
+							<div class="logo">
+								<a href="https://unikbase.com/fr/" target="_blank" rel="noreferrer" title="Unikbase">
+									<img src="assets/img/logo-unikbase.svg" alt="Unikbase" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+        <main class="main">
+            <div class="container">
+                <fieldset class="pestel-form content">
+                    <div class="row">
+                        <h3>
+                            Le passeport digital de l'objet que vous venez d'acquérir est disponible. Pour le récupérer, veuillez renseigner les informations suivantes:
+                        </h3>
+                    </div>
+                    <form class="form">
+                        <section class="passport-fields content">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form__group">
+                                        <label for="lot-number">n° Lot</label>
+                                        <input required type="text" id="lot-number" name="lot-number" placeholder="n° Lot" />
+                                    </div>
+                                    <div class="form__group">
+                                        <label for="dimensions">Dimensions</label>
+                                        <div>
+                                            <label for="width">
+                                                <input required type="number" id="width" name="width" placeholder="" /> cm
+                                            </label>
+                                            *
+                                            <label for="height">
+                                                <input required type="number" id="height" name="height" placeholder="" /> cm
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <label for="name">Nom</label>
+                                        <input required type="text" id="name" name="name" placeholder="Nom" />
+                                    </div>
+
+                                    <div class="form__group">
+                                        <!-- Prenom -->
+                                        <label for="firstname">Prénom</label>
+                                        <input required type="text" id="firstname" name="firstname" placeholder="Prénom" />
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="form__group">
+                                        <label for="email">Email</label>
+                                        <input required type="email" id="email" name="email" placeholder="Email" />  
+                                    </div>
+
+                                    <!-- Tel  -->
+                                    <div class="form__group">
+                                        <label for="tel">Téléphone (optional)</label>
+                                        <input type="tel" id="tel" name="tel" placeholder="Téléphone" />
+                                    </div>
+
+                                    <!-- Upload file Bordereau -->
+                                    <div class="form__group">
+                                        <label for="bordereau">Bordereau</label>
+                                        <input required type="file" id="bordereau" name="bordereau" placeholder="Bordereau" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="pricing-options">
+                            <div class="row">
+                                <div class="col pricing-option">
+                                    <div class="pricing-option__header">
+                                        <div class="pricing-option__title">Free</div>
+                                        <div class="pricing-option__price"><span class="currency">€</span> 0.00</div>
+                                        <div class="pricing-option__select">
+                                            <input type="hidden" name="pricing-option" value="free">
+                                            <button type="button" class="btn btn-default btn-option-select">Select option</button>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-option__description">
+                                        <ul class="list">
+                                            <li>Les informations clés sur votre objet sont stockées en toute sécurité *</li>
+                                            <li>Données cryptées inscrites sur la blockchain</li>
+                                            <li>Partage des informations du passeport à un tiers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col pricing-option active">
+                                    <div class="pricing-option__header">
+                                        <div class="pricing-option__title">Plus</div>
+                                        <div class="pricing-option__price"><span class="currency">€</span> 9.90</div>
+                                        <div class="pricing-option__select">
+                                            <input type="hidden" name="pricing-option" value="plus">
+                                            <button type="button" class="btn btn-default btn-option-select">Select option</button>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-option__description">
+                                        <ul class="list">
+                                            <li>Les informations clés sur votre objet sont stockées en toute sécurité *</li>
+                                            <li>Données cryptées inscrites sur la blockchain</li>
+                                            <li>Partage des informations du passeport à un tiers</li>
+                                            <li>Authentification des empreintes digitales</li>
+                                            <li>Mise à jour des informations du passeport</li>
+                                            <li>Génération de certificats de propriété
+                                                <ul>
+                                                    <li>Transfert du passeport à un nouveau propriétaire</li>
+                                                    <li>Verification des empreintes digitales sur demande auprès de l’étude.</li> 
+                                                    <li>Compatibilité multi-blockchain**</li>
+                                                    <li>Création d’empreintes physiques sur l’objet (avec l'encre invisible et perpétuelle Unikbase)</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="pricing-options--note">
+                                        <ul>
+                                            <li>*Notre plan comprend 5 ans d'hébergement. Vos données de passeport sont toujours disponibles pour un stockage local (gratuit). Au-delà de 5 ans, vous pouvez souscrire à un plan d'hébergement annuel.</li>
+                                            <li>** Cette fonctionnalité sera bientôt disponible. Ceci n'inclut pas les frais de gaz potentiels appliqués par la blockchain cible.</li>
+                                            <li>Toutes les fonctionnalités sont accessibles et payables à l’unité depuis la version offerte.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <section class="form__submittion content">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- checkbox -->
+                                    <div class="form__group">
+                                        <label for="checkbox">
+                                            <input class="term-condition-agreement" required type="checkbox" id="checkbox" name="checkbox" />J'affirme avoir pris connaissances des <a href="https://unikbase.com/terms-conditions.html" target="_blank" rel="noreferrer">Conditions Générales de Vente</a> et de la politique de traitement des données de la société Unikbase.
+                                        </label>
+                                    </div>
+                                    <div class="form__group">
+                                        <button disabled type="submit" class="btn btn--primary btn-submit-form">OBTENIR LE PASSEPORT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+                </fieldset>
+            </div>
+        </main>
+
+		<footer class="site__footer">
+			<div class="container">
+				<div class="row">
+					<div class="brand">
+						<div class="logo">
+							<a href="https://unikbase.com/fr/" target="_blank" rel="noreferrer" title="Unikbase">
+								<img src="assets/img/logo-unikbase.svg" alt="Unikbase" />
+							</a>
+						</div>
+					</div>
+					<div class="socials">
+						<ul class="list list--vertical flex--center flex--space-between">
+							<li>
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href="https://medium.com/@unikbase"
+									title="Unikbase on medium"
+									><span
+										style="
+											mask-image: url('https://unikbase.com/assets/images/SVG/icon-medium.svg');
+										"
+									></span
+								></a>
+							</li>
+							<li>
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href="https://www.instagram.com/unikbase/"
+									title="Unikbase on Instagram"
+									><span
+										style="
+											mask-image: url('https://unikbase.com/assets/images/SVG/icon-instagram.svg');
+										"
+									></span
+								></a>
+							</li>
+							<li>
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href="https://twitter.com/unikbase"
+									title="Unikbase on twitter"
+									><span
+										style="
+											mask-image: url('https://unikbase.com/assets/images/SVG/icon-twitter.svg');
+										"
+									></span
+								></a>
+							</li>
+							<li>
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href=" https://www.linkedin.com/company/unikbase/"
+									title="Unikbase on linkedin"
+									><span
+										style="
+											mask-image: url('https://unikbase.com/assets/images/SVG/icon-linkedin.svg');
+										"
+									></span
+								></a>
+							</li>
+						</ul>
+					</div>
+					<div class="others">
+						<ul class="menu menu-term list">
+							<li>
+								<a href="https://unikbase.com/privacy-policy.html" title="Privacy Policy"
+									>Privacy Policy</a
+								>
+							</li>
+							<li>
+								<a href="https://unikbase.com/terms-conditions.html" title="Terms &amp; Conditions"
+									>Terms &amp; Conditions</a
+								>
+							</li>
+						</ul>
+						<div class="copy-right">© unikbase, 2023</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+        <script src="assets/js/main.js"></script>
+	</body>
+</html>
