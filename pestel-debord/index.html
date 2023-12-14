@@ -33,16 +33,16 @@
                             Le passeport digital de l'objet que vous venez d'acquérir est disponible. Pour le récupérer, veuillez renseigner les informations suivantes:
                         </h3>
                     </div>
-                    <form class="form">
+                    <form method="POST" id="pestel-submittion" class="form">
                         <section class="passport-fields content">
                             <div class="row">
                                 <div class="col">
                                     <div class="form__group">
-                                        <label for="lot-number">n° Lot</label>
+                                        <label for="lot-number">n° Lot <span class="required">*</span></label>
                                         <input required type="text" id="lot-number" name="lot-number" placeholder="n° Lot" />
                                     </div>
                                     <div class="form__group">
-                                        <label for="dimensions">Dimensions</label>
+                                        <label for="dimensions">Dimensions <span class="required">*</span></label>
                                         <div>
                                             <label for="width">
                                                 <input required type="number" id="width" name="width" placeholder="" /> cm
@@ -55,32 +55,32 @@
                                     </div>
 
                                     <div class="form__group">
-                                        <label for="name">Nom</label>
+                                        <label for="name">Nom <span class="required">*</span></label>
                                         <input required type="text" id="name" name="name" placeholder="Nom" />
                                     </div>
 
                                     <div class="form__group">
                                         <!-- Prenom -->
-                                        <label for="firstname">Prénom</label>
+                                        <label for="firstname">Prénom <span class="required">*</span></label>
                                         <input required type="text" id="firstname" name="firstname" placeholder="Prénom" />
                                     </div>
 
                                     <!-- Email -->
                                     <div class="form__group">
-                                        <label for="email">Email</label>
+                                        <label for="email">Email <span class="required">*</span></label>
                                         <input required type="email" id="email" name="email" placeholder="Email" />  
                                     </div>
 
                                     <!-- Tel  -->
                                     <div class="form__group">
-                                        <label for="tel">Téléphone (optional)</label>
+                                        <label for="tel">Téléphone</label>
                                         <input type="tel" id="tel" name="tel" placeholder="Téléphone" />
                                     </div>
 
                                     <!-- Upload file Bordereau -->
                                     <div class="form__group">
-                                        <label for="bordereau">Bordereau</label>
-                                        <input required type="file" id="bordereau" name="bordereau" placeholder="Bordereau" />
+                                        <label for="bordereau">Bordereau <span class="required">*</span></label>
+                                        <input required type="file" id="bordereau" name="bordereau" placeholder="Bordereau" accept="image/*,.pdf" />
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                         <div class="pricing-option__price"><span class="currency">€</span> 0.00</div>
                                         <div class="pricing-option__select">
                                             <input type="hidden" name="pricing-option" value="free">
-                                            <button type="button" class="btn btn-default btn-option-select">Select option</button>
+                                            <button type="button" class="btn btn-default btn-option-select">Sélectionner</button>
                                         </div>
                                     </div>
                                     <div class="pricing-option__description">
@@ -111,7 +111,7 @@
                                         <div class="pricing-option__price"><span class="currency">€</span> 9.90</div>
                                         <div class="pricing-option__select">
                                             <input type="hidden" name="pricing-option" value="plus">
-                                            <button type="button" class="btn btn-default btn-option-select">Select option</button>
+                                            <button type="button" class="btn btn-default btn-option-select">Sélectionner</button>
                                         </div>
                                     </div>
                                     <div class="pricing-option__description">
