@@ -1,6 +1,21 @@
 (() => {
 	"use strict";
 
+	const UNKB_SERVER_URL = 'https://dev1.unikbase.dev/meveo/rest/';
+	const error_message = 'Nous ne trouvons pas votre lot, notre support va analyser votre borderau et vous contactera a l\'email {email}';
+
+
+	const getPasseportData = async (passportUUID) => {
+		const data = await fetch(UNKB_SERVER_URL + 'unikbase-token/' + passportUUID + '?mode=public', {
+		}).then((response) => {
+			return response.json();
+		})
+
+		if ( !data || data.status === 'fail' ) {
+			return false;
+		}
+		return true;
+	}
 	const readFileAsBase64 = (file) => {
     return new Promise((resolve, reject) => {
         // Create a new FileReader object
@@ -27,6 +42,10 @@
 
 	document.addEventListener("click", (event) => {
 		const target = event.target;
+		const site = document.querySelector('.site');
+		if ( target.classList.contains('close') ) {
+			!!site  && site.classList.remove('error');
+		}
 		if ( target.classList.contains('btn-option-select')) {
 			const options = document.querySelectorAll('.pricing-option');
 			const activeOption = target.closest('.pricing-option');
@@ -60,9 +79,11 @@
 
 	// Submit form handle
 	const processForm = async (formData) => {
+		const site = document.querySelector('.site');
+		if ( site ) site.classList.add('loading');
 		// get form data
 		const passportUUID = formData.get('lot-number').replace(/\.0+$/,'').replace(".0", "-").replace(".", "-");
-		let storedData = {
+		let requestData = {
 			uuid: passportUUID,
 			client: {
 				name: formData.get('name'),
@@ -70,11 +91,25 @@
 				email: formData.get('email'),
 				phone: formData.get('tel'),
 			},
-			file: await readFileAsBase64(formData.get('bordereau')),
+			// file: await readFileAsBase64(formData.get('bordereau')),
 			plan: formData.get('pricing-option'),
 		}
-		console.log(storedData);
-
+		let checkPassportExist = await getPasseportData(passportUUID);
+		if ( !checkPassportExist ) {
+			// Show error message
+			let messageBox = document.querySelector('.error__message .content');
+			if ( messageBox ) {
+				messageBox.innerHTML = error_message.replace('{email}', requestData.client.email);
+			}
+			!!site && site.classList.remove('loading');
+			!!site && site.classList.add('error');
+			return false;
+		}
+		if ( plan !== 'free' ) {
+			let price = 9.90;
+		}
+		
+		!!site && site.classList.remove('loading');
 	}
 	const form = document.querySelector('#pestel-submittion');
 	if ( form ) {
