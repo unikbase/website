@@ -261,6 +261,46 @@ $mobile-break: 800px;
         }
     }
 
+    .passport {
+        @include content();
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin: 1em auto;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+        &__thumbnail {
+            flex-basis: 30%;
+            flex-shrink: 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1em;
+            aspect-ratio: 3/2;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        &__description {
+            flex-shrink: 0;
+            flex-grow: 1;
+            padding-left: 1em;
+            padding-right: 1em;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: $mobile-break) {
+            .row {
+
+                flex-wrap: wrap;
+            }
+            &__thumbnail,
+            &__description {
+                flex-basis: 100%;
+            }
+        }
+    }
+
     .pestel-form {
         h3 {
             @include content();

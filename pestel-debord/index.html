@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pestel Debord - Unikbase</title>
-		<link rel="stylesheet" href="assets/css/main.min.css" />
+		<link rel="stylesheet" href="assets/css/main.min.css?ver=202312180224" />
 	</head>
 	<body class="site">
 		<header class="site__header">
@@ -29,7 +29,6 @@
             <div class="container">
                 <fieldset class="pestel-form content">
                     <form method="POST" id="pestel-submittion" class="form">
-                        <input type="hidden" name="sign" value="">
                         <section class="passport">
                             <div class="row">
                                 <div class="passport__thumbnail"></div>
@@ -37,6 +36,8 @@
                             </div>
                         </section>
                         <section class="passport-fields content hide">
+                            <input type="hidden" name="sign" value="">
+                            <input type="hidden" name="operator-code" value="">
                             <div class="row">
                                 <h3>
                                     Le passeport digital de l'objet que vous venez d'acquérir est disponible. Pour le récupérer, veuillez renseigner les informations suivantes:
@@ -263,6 +264,6 @@
             <div class="content">Error message</div>
             <div class="close">x</div>
         </div>
-        <script src="assets/js/main.js?version=202312141049"></script>
+        <script src="assets/js/main.js?version=202312180224"></script>
 	</body>
 </html>

@@ -199,6 +199,7 @@
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 		return [{
+			'operator-code': urlParams.get('operator-code'),
 			'lot-number': urlParams.get('lot-number'),
 			'firstname': urlParams.get('firstname'),
 			'name': urlParams.get('name'),
@@ -224,6 +225,11 @@
 		if ( token.description ) {
 			let description = document.querySelector('.passport__description');
 			description.innerHTML = token.description;
+		}
+		if ( token.coverImage && token.description ) {
+			document.querySelector('.passport').classList.remove('hide');
+		} else {
+			document.querySelector('.passport').classList.add('hide');
 		}
 
 		const form = site.querySelector('.passport-fields')
