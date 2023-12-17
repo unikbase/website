@@ -2,6 +2,10 @@
 	"use strict";
 
 	const UNKB_SERVER_URL = 'https://dev1.unikbase.dev/meveo/rest/';
+	const STRIPE_PAYMENT_URL = 'https://dev1.unikbase.dev/meveo/rest/stripe-checkout';
+	const UNKB_PESTEL_SIGNUP_URL = 'https://collector-dev.unikbase.dev/pestel-signup';
+	const PRICE_ID = 1;
+	const PRICE_VALUE = 9.9;
 	const error_message = 'Nous ne trouvons pas votre lot, notre support va analyser votre borderau et vous contactera a l\'email {email}';
 
 
@@ -16,6 +20,58 @@
 		}
 		return true;
 	}
+	const sendStripePayment = async (value, requestData) => {
+		let payload = {
+			tpk_id: requestData.tokenUUID,
+			tokenUUID: requestData.tokenUUID,
+			price_id: PRICE_ID,
+			value: PRICE_VALUE, //price_item
+			name: requestData.name,
+			firtname: requestData.firstname,
+			email: requestData.email,
+			phone: requestData.phone,
+			width: requestData.width,
+			height: requestData.height,
+			commercialOfferCode: requestData.plan
+		};
+		fetch(STRIPE_PAYMENT_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(payload)
+		}).then((response) => {
+			try {
+				return response.json();
+			} catch (e) {
+				return response;
+			}
+		}).then((data) => {
+			if ( !!data.error ) {
+				// Show error message
+				let site = document.querySelector('.site');
+				let messageBox = document.querySelector('.error__message .content');
+				if ( messageBox ) {
+					messageBox.innerHTML = data.message;
+				}
+				!!site && site.classList.remove('loading');
+				!!site && site.classList.add('error');
+				return false;
+			}
+			let url = data;
+			let session_id = url
+				.split("https://checkout.stripe.com/c/pay/")
+				.join("");
+			session_id = session_id.split('#')[0]
+			
+			localStorage.setItem("_pestel_stripe_session_id", session_id);
+			localStorage.setItem(`_pestel_request_${session_id}`, JSON.stringify({
+				...payload,
+				currency: data?.currency || '€'
+			}));
+		});
+	}
+
 	const readFileAsBase64 = (file) => {
     return new Promise((resolve, reject) => {
         // Create a new FileReader object
@@ -82,41 +138,97 @@
 		const site = document.querySelector('.site');
 		if ( site ) site.classList.add('loading');
 		// get form data
+		const operator = formData.get('operator') || 'RBDV';
 		const passportUUID = formData.get('lot-number').replace(/\.0+$/,'').replace(".0", "-").replace(".", "-");
-		let requestData = {
-			uuid: passportUUID,
-			client: {
-				name: formData.get('name'),
-				firtname: formData.get('firstname'),
-				email: formData.get('email'),
-				phone: formData.get('tel'),
-			},
-			// file: await readFileAsBase64(formData.get('bordereau')),
-			plan: formData.get('pricing-option'),
-		}
-		let checkPassportExist = await getPasseportData(passportUUID);
-		if ( !checkPassportExist ) {
-			// Show error message
-			let messageBox = document.querySelector('.error__message .content');
-			if ( messageBox ) {
-				messageBox.innerHTML = error_message.replace('{email}', requestData.client.email);
+		// const plan = site.querySelector('input[name="pricing-option"]:checked').toUpperCase();
+		// Get plan value from checkbox checked input
+		let plan = '';
+		const options = document.querySelectorAll('.pricing-option');
+		options.forEach((option) => {
+			const input = option.querySelector('input');
+			if ( input && input.checked ) {
+				plan = input.value.toUpperCase();
 			}
-			!!site && site.classList.remove('loading');
-			!!site && site.classList.add('error');
-			return false;
-		}
-		if ( plan !== 'free' ) {
-			let price = 9.90;
-		}
+		})
 		
-		!!site && site.classList.remove('loading');
+		let requestData = {
+			tokenUUID: `${operator}_231219_${passportUUID}`,
+			name: formData.get('name'),
+			firtname: formData.get('firstname'),
+			email: formData.get('email'),
+			phone: formData.get('tel'),
+			// file: await readFileAsBase64(formData.get('bordereau')),
+			width: formData.get('width'),
+			height: formData.get('height'),
+			sign: formData.get('sign'),
+			commercialOfferCode: plan,
+		}
+		// let checkPassportExist = await getPasseportData(passportUUID);
+		// if ( !checkPassportExist ) {
+		// 	// Show error message
+		// 	let messageBox = document.querySelector('.error__message .content');
+		// 	if ( messageBox ) {
+		// 		messageBox.innerHTML = error_message.replace('{email}', requestData.client.email);
+		// 	}
+		// 	!!site && site.classList.remove('loading');
+		// 	!!site && site.classList.add('error');
+		// 	return false;
+		// }
+
+		if ( plan !== 'BASIC' ) {
+			// send to stripe
+			sendStripePayment(requestData);
+		} else {
+			let params = Object.keys(requestData).map((key) => { return key + '=' + encodeURIComponent(requestData[key]) }).join('&');
+			window.location.href = UNKB_PESTEL_SIGNUP_URL + '?' + params;
+			!!site && site.classList.remove('loading');
+		}
 	}
 	const form = document.querySelector('#pestel-submittion');
 	if ( form ) {
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault();
+			// create new FormData included disabled fields
+
 			const formData = new FormData(form);
 			processForm(formData);
 		});
 	}
+  // Generate function get all query string from url
+	const getQueryString = () => {
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		return {
+			'lot-number': urlParams.get('lot-number'),
+			'firstname': urlParams.get('firstname'),
+			'name': urlParams.get('name'),
+			'email': urlParams.get('email'),
+			'tel': urlParams.get('tel'),
+			'width': urlParams.get('width'),
+			'height': urlParams.get('height'),
+			'sign': urlParams.get('sign'),
+		}
+	}
+
+	// event when document ready
+	document.addEventListener("DOMContentLoaded", () => {
+		const site = document.querySelector('.site');
+		const requestData = getQueryString();
+		const form = site.querySelector('.passport-fields')
+		// If any params is empty, show form
+		const validData = Object.values(requestData).filter((item) => {
+			return item === null || item === undefined || item === '';
+		});
+		if ( validData.length > 0 ) {
+			!!form && form.classList.remove('hide');
+			return;
+		}
+		Object.keys(requestData).forEach((key) => {
+			const input = form.querySelector(`input[name="${key}"]`);
+			if ( input ) {
+				input.value = requestData[key];
+				input.setAttribute('value', requestData[key]);
+			}
+		});
+	});
 })();

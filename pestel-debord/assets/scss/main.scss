@@ -15,6 +15,9 @@ $mobile-break: 800px;
     --color-light-gray: lighten(#EFEBE6, 10%);
 }
 
+.hide {
+    display: none;
+}
 // keyframe spin
 @keyframes spin {
     0% {

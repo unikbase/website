@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pestel Debord - Unikbase</title>
-		<link rel="stylesheet" href="assets/css/main.min.css?version=202312141049" />
+		<link rel="stylesheet" href="assets/css/main.min.css" />
 	</head>
 	<body class="site">
 		<header class="site__header">
@@ -28,13 +28,19 @@
         <main class="main">
             <div class="container">
                 <fieldset class="pestel-form content">
-                    <div class="row">
-                        <h3>
-                            Le passeport digital de l'objet que vous venez d'acquérir est disponible. Pour le récupérer, veuillez renseigner les informations suivantes:
-                        </h3>
-                    </div>
                     <form method="POST" id="pestel-submittion" class="form">
-                        <section class="passport-fields content">
+                        <input type="hidden" name="sign" value="">
+                        <section class="passport">
+                            <div class="row">
+                                <div class="passport__thumbnail" style="background-image: url('http://placehold.it/300x200?text=thumbnail');"></div>
+                            </div>
+                        </section>
+                        <section class="passport-fields content hide">
+                            <div class="row">
+                                <h3>
+                                    Le passeport digital de l'objet que vous venez d'acquérir est disponible. Pour le récupérer, veuillez renseigner les informations suivantes:
+                                </h3>
+                            </div>
                             <div class="row">
                                 <div class="col">
                                     <div class="form__group">
@@ -80,7 +86,7 @@
                                     <!-- Upload file Bordereau -->
                                     <div class="form__group">
                                         <label for="bordereau">Bordereau <span class="required">*</span></label>
-                                        <input required type="file" id="bordereau" name="bordereau" placeholder="Bordereau" accept="image/*,.pdf" />
+                                        <input type="file" id="bordereau" name="bordereau" placeholder="Bordereau" accept="image/*,.pdf" />
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +99,7 @@
                                         <div class="pricing-option__title">Free</div>
                                         <div class="pricing-option__price"><span class="currency">€</span> 0.00</div>
                                         <div class="pricing-option__select">
-                                            <input type="hidden" name="pricing-option" value="free">
+                                            <input type="hidden" name="pricing-option" value="BASIC">
                                             <button type="button" class="btn btn-default btn-option-select">Sélectionner</button>
                                         </div>
                                     </div>
@@ -110,7 +116,7 @@
                                         <div class="pricing-option__title">Plus</div>
                                         <div class="pricing-option__price"><span class="currency">€</span> 9.90</div>
                                         <div class="pricing-option__select">
-                                            <input type="hidden" name="pricing-option" value="plus">
+                                            <input type="hidden" name="pricing-option" value="STANDARD" checked>
                                             <button type="button" class="btn btn-default btn-option-select">Sélectionner</button>
                                         </div>
                                     </div>
