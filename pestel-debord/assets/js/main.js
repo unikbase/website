@@ -20,7 +20,7 @@
 		}
 		return true;
 	}
-	const sendStripePayment = async (value, requestData) => {
+	const sendStripePayment = async (requestData) => {
 		let payload = {
 			tpk_id: requestData.tokenUUID,
 			tokenUUID: requestData.tokenUUID,
@@ -198,26 +198,38 @@
 	const getQueryString = () => {
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
-		return {
+		return [{
 			'lot-number': urlParams.get('lot-number'),
 			'firstname': urlParams.get('firstname'),
 			'name': urlParams.get('name'),
 			'email': urlParams.get('email'),
-			'tel': urlParams.get('tel'),
+			'phone': urlParams.get('phone'),
 			'width': urlParams.get('width'),
 			'height': urlParams.get('height'),
 			'sign': urlParams.get('sign'),
-		}
+		}, {
+			'coverImage': urlParams.get('image'),
+			'description': urlParams.get('description')
+		}]
 	}
 
 	// event when document ready
 	document.addEventListener("DOMContentLoaded", () => {
 		const site = document.querySelector('.site');
-		const requestData = getQueryString();
+		const [requestData, token] = getQueryString();
+		if ( token.coverImage ) {
+			let image = document.querySelector('.passport__thumbnail');
+			image.style.backgroundImage = `url(${token.coverImage})`;
+		}
+		if ( token.description ) {
+			let description = document.querySelector('.passport__description');
+			description.innerHTML = token.description;
+		}
+
 		const form = site.querySelector('.passport-fields')
 		// If any params is empty, show form
 		const validData = Object.values(requestData).filter((item) => {
-			return item === null || item === undefined || item === '';
+			return item === null || item === undefined;
 		});
 		if ( validData.length > 0 ) {
 			!!form && form.classList.remove('hide');
