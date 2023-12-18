@@ -22,7 +22,7 @@
 	}
 	const sendStripePayment = async (requestData) => {
 		let payload = {
-			"operator-code": requestData.operator,
+			"operator-code": requestData["operator-code"],
 			tpk_id: requestData.tokenUUID,
 			tokenUUID: requestData.tokenUUID,
 			price_id: PRICE_ID+'',
@@ -164,7 +164,7 @@
 			height: formData.get('height'),
 			sign: formData.get('sign'),
 			commercialOfferCode: plan,
-			operator: operator,
+			"operator-code": operator,
 		}
 		// let checkPassportExist = await getPasseportData(passportUUID);
 		// if ( !checkPassportExist ) {
