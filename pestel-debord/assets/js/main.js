@@ -54,7 +54,7 @@
 				let site = document.querySelector('.site');
 				let messageBox = document.querySelector('.error__message .content');
 				if ( messageBox ) {
-					messageBox.innerHTML = data.message;
+					messageBox.innerHTML = data.message || data.result;
 				}
 				!!site && site.classList.remove('loading');
 				!!site && site.classList.add('error');
