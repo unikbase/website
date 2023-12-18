@@ -263,8 +263,8 @@ $mobile-break: 800px;
 
     .passport {
         @include content();
-        padding-top: 1em;
-        padding-bottom: 1em;
+        box-sizing: border-box;
+        padding: 1em;
         margin: 1em auto;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
@@ -282,11 +282,12 @@ $mobile-break: 800px;
             background-size: cover;
         }
         &__description {
-            flex-shrink: 0;
+            flex-shrink: 1;
             flex-grow: 1;
             padding-left: 1em;
             padding-right: 1em;
             box-sizing: border-box;
+            white-space: pre-wrap;
         }
 
         @media screen and (max-width: $mobile-break) {
