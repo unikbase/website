@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pestel Debord - Unikbase</title>
-		<link rel="stylesheet" href="assets/css/main.min.css?ver=202312180714" />
+		<link rel="stylesheet" href="assets/css/main.min.css?ver=202312181821" />
 	</head>
 	<body class="site">
 		<header class="site__header">
@@ -127,7 +127,7 @@
                                             <li>Les informations clés sur votre objet sont stockées en toute sécurité *</li>
                                             <li>Données cryptées inscrites sur la blockchain</li>
                                             <li>Partage des informations du passeport à un tiers</li>
-                                            <li>Authentification des empreintes digitales</li>
+                                            <li>Création d'empreintes digitales</li>
                                             <li>Mise à jour des informations du passeport</li>
                                             <li>Génération de certificats de propriété
                                                 <ul>
@@ -141,6 +141,23 @@
                                     </div>
                                 </div>
                             </div>
+                        </section>
+
+                        <section class="form__submittion content">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- checkbox -->
+                                    <div class="form__group">
+                                        <label for="checkbox">
+                                            <input class="term-condition-agreement" required type="checkbox" id="checkbox" name="checkbox" />J'affirme avoir pris connaissance des <a href="https://unikbase.com/fr/terms-conditions.html" target="_blank" rel="noreferrer">Conditions Générales d'Utilisation</a> et de la politique de traitement des données de la société Unikbase.
+                                        </label>
+                                    </div>
+                                    <div class="form__group">
+                                        <button disabled type="submit" class="btn btn--primary btn-submit-form">OBTENIR LE PASSEPORT</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col">
                                     <div class="pricing-options--note">
@@ -149,23 +166,6 @@
                                             <li>** Cette fonctionnalité sera bientôt disponible. Ceci n'inclut pas les frais de gaz potentiels appliqués par la blockchain cible.</li>
                                             <li>Toutes les fonctionnalités sont accessibles et payables à l’unité depuis la version offerte.</li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-
-                        <section class="form__submittion content">
-                            <div class="row">
-                                <div class="col">
-                                    <!-- checkbox -->
-                                    <div class="form__group">
-                                        <label for="checkbox">
-                                            <input class="term-condition-agreement" required type="checkbox" id="checkbox" name="checkbox" />J'affirme avoir pris connaissances des <a href="https://unikbase.com/fr/terms-conditions.html" target="_blank" rel="noreferrer">Conditions Générales de Vente</a> et de la politique de traitement des données de la société Unikbase.
-                                        </label>
-                                    </div>
-                                    <div class="form__group">
-                                        <button disabled type="submit" class="btn btn--primary btn-submit-form">OBTENIR LE PASSEPORT</button>
                                     </div>
                                 </div>
                             </div>
@@ -264,6 +264,6 @@
             <div class="content">Error message</div>
             <div class="close">x</div>
         </div>
-        <script src="assets/js/main.js?version=202312180224"></script>
+        <script src="assets/js/main.js?version=202312181821"></script>
 	</body>
 </html>
