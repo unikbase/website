@@ -24,8 +24,8 @@
 		let payload = {
 			tpk_id: requestData.tokenUUID,
 			tokenUUID: requestData.tokenUUID,
-			price_id: PRICE_ID,
-			value: PRICE_VALUE, //price_item
+			price_id: PRICE_ID+'',
+			value: PRICE_VALUE+'', //price_item
 			name: requestData.name,
 			firtname: requestData.firstname,
 			email: requestData.email,
@@ -47,7 +47,8 @@
 				return response;
 			}
 		}).then((data) => {
-			if ( !!data.error ) {
+			let url = data?.result?.url;
+			if ( !!data.error || url === undefined ) {
 				// Show error message
 				let site = document.querySelector('.site');
 				let messageBox = document.querySelector('.error__message .content');
@@ -58,7 +59,6 @@
 				!!site && site.classList.add('error');
 				return false;
 			}
-			let url = data;
 			let session_id = url
 				.split("https://checkout.stripe.com/c/pay/")
 				.join("");
@@ -69,6 +69,7 @@
 				...payload,
 				currency: data?.currency || '€'
 			}));
+			window.location.href = url;
 		});
 	}
 
@@ -138,7 +139,7 @@
 		const site = document.querySelector('.site');
 		if ( site ) site.classList.add('loading');
 		// get form data
-		const operator = formData.get('operator') || 'RBDV';
+		const operator = formData.get('operator-code') || 'RBDV';
 		const passportUUID = formData.get('lot-number').replace(/\.0+$/,'').replace(".0", "-").replace(".", "-");
 		// const plan = site.querySelector('input[name="pricing-option"]:checked').toUpperCase();
 		// Get plan value from checkbox checked input
