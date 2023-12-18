@@ -183,7 +183,8 @@
 			sendStripePayment(requestData);
 		} else {
 			let params = Object.keys(requestData).map((key) => { return key + '=' + encodeURIComponent(requestData[key]) }).join('&');
-			window.location.href = UNKB_PESTEL_SIGNUP_URL + '?' + params;
+			console.log(UNKB_PESTEL_SIGNUP_URL + '?' + params)
+			// window.location.href = UNKB_PESTEL_SIGNUP_URL + '?' + params;
 			!!site && site.classList.remove('loading');
 		}
 	}

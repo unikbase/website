@@ -120,8 +120,8 @@ $primary-color: $green;
             z-index: 9999;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            border: 10px solid lighten($red, 40%);
-            border-top-color: $red;
+            border: 10px solid lighten($green, 40%);
+            border-top-color: $green;
         }
     }
     .btn {
