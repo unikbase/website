@@ -33,8 +33,9 @@
 			phone: requestData.phone,
 			width: requestData.width,
 			height: requestData.height,
-			commercialOfferCode: requestData.plan
+			commercialOfferCode: requestData.commercialOfferCode
 		};
+		
 		fetch(STRIPE_PAYMENT_URL, {
 			method: 'POST',
 			headers: {
@@ -153,30 +154,30 @@
 			}
 		})
 		
+		let tokenUUID = `${operator}_231219-${passportUUID}`;
 		let requestData = {
-			tokenUUID: `${operator}_231219_${passportUUID}`,
+			tokenUUID,
 			name: formData.get('name'),
 			firtname: formData.get('firstname'),
 			email: formData.get('email'),
 			phone: formData.get('tel'),
-			// file: await readFileAsBase64(formData.get('bordereau')),
 			width: formData.get('width'),
 			height: formData.get('height'),
 			sign: formData.get('sign'),
 			commercialOfferCode: plan,
 			"operator-code": operator,
 		}
-		// let checkPassportExist = await getPasseportData(passportUUID);
-		// if ( !checkPassportExist ) {
-		// 	// Show error message
-		// 	let messageBox = document.querySelector('.error__message .content');
-		// 	if ( messageBox ) {
-		// 		messageBox.innerHTML = error_message.replace('{email}', requestData.client.email);
-		// 	}
-		// 	!!site && site.classList.remove('loading');
-		// 	!!site && site.classList.add('error');
-		// 	return false;
-		// }
+		let checkPassportExist = await getPasseportData(tokenUUID);
+		if ( !checkPassportExist ) {
+			// Show error message
+			let messageBox = document.querySelector('.error__message .content');
+			if ( messageBox ) {
+				messageBox.innerHTML = error_message.replace('{email}', requestData.email);
+			}
+			!!site && site.classList.remove('loading');
+			!!site && site.classList.add('error');
+			return false;
+		}
 
 		if ( plan !== 'BASIC' ) {
 			// send to stripe
