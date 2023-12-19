@@ -202,7 +202,7 @@
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 		return [{
-			'operator-code': urlParams.get('operator-code'),
+			'operator-code': urlParams.get('operator-code') || 'PSTL',
 			'lot-number': urlParams.get('lot-number'),
 			'firstname': urlParams.get('firstname'),
 			'name': urlParams.get('name'),
