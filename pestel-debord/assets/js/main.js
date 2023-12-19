@@ -28,7 +28,7 @@
 			price_id: PRICE_ID+'',
 			value: PRICE_VALUE+'', //price_item
 			name: requestData.name,
-			firtname: requestData.firstname,
+			firstname: requestData.firstname,
 			email: requestData.email,
 			phone: requestData.phone,
 			width: requestData.width,
@@ -140,7 +140,7 @@
 		const site = document.querySelector('.site');
 		if ( site ) site.classList.add('loading');
 		// get form data
-		const operator = formData.get('operator-code') || 'RBDV';
+		const operator = formData.get('operator-code') || 'PSTL';
 		const passportUUID = formData.get('lot-number').replace(/\.0+$/,'').replace(".0", "-").replace(".", "-");
 		// const plan = site.querySelector('input[name="pricing-option"]:checked').toUpperCase();
 		// Get plan value from checkbox checked input
@@ -182,9 +182,8 @@
 			// send to stripe
 			sendStripePayment(requestData);
 		} else {
-			let params = Object.keys(requestData).map((key) => { return key + '=' + encodeURIComponent(requestData[key]) }).join('&');
-			console.log(UNKB_PESTEL_SIGNUP_URL + '?' + params)
-			// window.location.href = UNKB_PESTEL_SIGNUP_URL + '?' + params;
+			let params = Object.keys(requestData).map((key) => { return requestData[key] ? key + '=' + encodeURIComponent(requestData[key]) : '' }).filter(item => !!item).join('&');
+			window.location.href = UNKB_PESTEL_SIGNUP_URL + '?' + params;
 			!!site && site.classList.remove('loading');
 		}
 	}
@@ -241,10 +240,7 @@
 		const validData = Object.values(requestData).filter((item) => {
 			return item === null || item === undefined;
 		});
-		if ( validData.length > 0 ) {
-			!!form && form.classList.remove('hide');
-			return;
-		}
+
 		Object.keys(requestData).forEach((key) => {
 			const input = form.querySelector(`input[name="${key}"]`);
 			if ( input ) {

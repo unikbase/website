@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pestel Debord - Unikbase</title>
-		<link rel="stylesheet" href="assets/css/main.min.css?ver=202312182015" />
+		<link rel="stylesheet" href="assets/css/main.min.css?ver=202312191232" />
 	</head>
 	<body class="site">
 		<header class="site__header">
@@ -35,7 +35,7 @@
                                 <div class="passport__description"></div>
                             </div>
                         </section>
-                        <section class="passport-fields content hide">
+                        <section class="passport-fields content">
                             <input type="hidden" name="sign" value="">
                             <input type="hidden" name="operator-code" value="">
                             <div class="row">
@@ -49,28 +49,28 @@
                                         <label for="lot-number">n° Lot <span class="required">*</span></label>
                                         <input required type="text" id="lot-number" name="lot-number" placeholder="n° Lot" />
                                     </div>
-                                    <div class="form__group">
+                                    <div class="form__group hide">
                                         <label for="dimensions">Dimensions <span class="required">*</span></label>
                                         <div>
                                             <label for="width">
-                                                <input required type="number" id="width" name="width" placeholder="" /> cm
+                                                <input type="number" id="width" name="width" placeholder="" /> cm
                                             </label>
                                             *
                                             <label for="height">
-                                                <input required type="number" id="height" name="height" placeholder="" /> cm
+                                                <input type="number" id="height" name="height" placeholder="" /> cm
                                             </label>
                                         </div>
                                     </div>
 
-                                    <div class="form__group">
+                                    <div class="form__group hide">
                                         <label for="name">Nom <span class="required">*</span></label>
-                                        <input required type="text" id="name" name="name" placeholder="Nom" />
+                                        <input type="text" id="name" name="name" placeholder="Nom" />
                                     </div>
 
-                                    <div class="form__group">
+                                    <div class="form__group hide">
                                         <!-- Prenom -->
                                         <label for="firstname">Prénom <span class="required">*</span></label>
-                                        <input required type="text" id="firstname" name="firstname" placeholder="Prénom" />
+                                        <input type="text" id="firstname" name="firstname" placeholder="Prénom" />
                                     </div>
 
                                     <!-- Email -->
@@ -86,7 +86,7 @@
                                     </div>
 
                                     <!-- Upload file Bordereau -->
-                                    <div class="form__group">
+                                    <div class="form__group hide">
                                         <label for="bordereau">Bordereau <span class="required">*</span></label>
                                         <input type="file" id="bordereau" name="bordereau" placeholder="Bordereau" accept="image/*,.pdf" />
                                     </div>
@@ -264,6 +264,6 @@
             <div class="content">Error message</div>
             <div class="close">x</div>
         </div>
-        <script src="assets/js/main.js?version=202312181908"></script>
+        <script src="assets/js/main.js?version=202312191232"></script>
 	</body>
 </html>

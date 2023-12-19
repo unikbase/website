@@ -24,7 +24,7 @@ $primary-color: $green;
 }
 
 .hide {
-    display: none;
+    display: none!important;
 }
 // keyframe spin
 @keyframes spin {
@@ -208,6 +208,7 @@ $primary-color: $green;
                         order: 3;
                         flex-direction: column;
                         margin-bottom: 1em;
+                        justify-content: center;
                     }
                     .socials {
                         flex-basis: auto;
