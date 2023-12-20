@@ -310,6 +310,8 @@ $primary-color: $green;
             padding-right: 1em;
             box-sizing: border-box;
             white-space: pre-wrap;
+            display: flex;
+            flex-direction: column;
         }
 
         @media screen and (max-width: $mobile-break) {
@@ -401,6 +403,8 @@ $primary-color: $green;
                 box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
                 border-radius: 4px;
                 margin: 0 1em;
+                display: flex;
+                flex-direction: column;
                 &__header {
                     display: flex;
                     flex-direction: column;
@@ -411,16 +415,19 @@ $primary-color: $green;
                     padding: 1em;
                     border-bottom: 1px solid var(--color-gray);
                 }
-                &.active .pricing-option__header {
-                    background-color: var(--color-gray);
-                    // color: var(--color-white);
-                    .btn {
-                        background-color: $primary-color;
-                        color: var(--color-white);
-                        border-color: $primary-color;
-                        &:hover {
-                            background-color: lighten($primary-color, 10%);
-                            border-color: lighten($primary-color, 10%);
+                &.active .pricing-option {
+                    &__header {
+                        background-color: var(--color-gray);
+                    }
+                    &__select {
+                        .btn {
+                            background-color: $primary-color;
+                            color: var(--color-white);
+                            border-color: $primary-color;
+                            &:hover {
+                                background-color: lighten($primary-color, 10%);
+                                border-color: lighten($primary-color, 10%);
+                            }
                         }
                     }
                 }
@@ -443,6 +450,9 @@ $primary-color: $green;
                 }
                 &__description {
                     padding: 1em;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
                     ul {
                         li {
                             line-height: 1.5em;
@@ -470,6 +480,13 @@ $primary-color: $green;
                                 font-size: 0.95em;
                             }
                         }
+                    }
+                }
+                &__select {
+                    margin-top: auto;
+                    text-align: center;
+                    button {
+                        margin-top: 1.618em;
                     }
                 }
             }
