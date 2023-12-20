@@ -1,9 +1,9 @@
 (() => {
 	"use strict";
 
-	const UNKB_SERVER_URL = 'https://dev1.unikbase.dev/meveo/rest/';
-	const STRIPE_PAYMENT_URL = 'https://dev1.unikbase.dev/meveo/rest/stripe-checkout';
-	const UNKB_PESTEL_SIGNUP_URL = 'https://collector-dev.unikbase.dev/tpk-signup';
+	const UNKB_SERVER_URL = 'https://wallet.unikbase.dev/meveo/rest/';
+	const STRIPE_PAYMENT_URL = 'https://wallet.unikbase.dev/meveo/rest/stripe-checkout';
+	const UNKB_PESTEL_SIGNUP_URL = 'https://collector.unikbase.com/tpk-signup';
 	const PRICE_ID = 1;
 	const PRICE_VALUE = 9.9;
 	const error_message = 'Nous ne trouvons pas votre lot, notre support va analyser votre borderau et vous contactera a l\'email {email}';
