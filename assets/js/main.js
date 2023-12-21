@@ -354,13 +354,14 @@
   }
 
 	const getSiteUrl = () => {
-
 		const url = new URL(window.location.href);
 		let path = url.pathname.split("/");
 		path.pop();
 		url.pathname = path.join("/")
-		return url.href.replace(/(?:\?[^\#]*)#(.+)$/, '');
+		// remove all search and hash params in url
+		return url.href.replace(/(?:\?.+)?(?:\#.*)?$/, '');
 	}
+
   const generateSlider = (items, wrapper) => {
     if ( !wrapper ) return;
 		const siteUrl = getSiteUrl();
